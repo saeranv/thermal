@@ -1,2 +1,0 @@
-C:
-"C:\openstudio-3.4.0\bin\openstudio.exe" -I "C:\Users\admin\ladybug_tools\resources\measures\honeybee_openstudio_gem\lib" run -m -w "C:\users\admin\master\thermal-mass\act\hb_models\20230210_MidOffice_Baseline_Ideal\openstudio\workflow.osw"
