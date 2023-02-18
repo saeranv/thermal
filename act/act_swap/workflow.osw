@@ -1,0 +1,4 @@
+{
+    "weather_file": "C:\\Users\\admin\\master\\thermal\\resources\\weather\\USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw", 
+    "seed_file": "C:\\Users\\admin\\master\\thermal\\act\\act_swap\\in.osm"
+}

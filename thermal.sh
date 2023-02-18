@@ -28,9 +28,9 @@ import os; hb_models_dp = "$ACT_DP/hb_models"
 is_hb = lambda x: not os.path.isdir(x)
 hb_models = list(filter(is_hb, os.listdir(hb_models_dp)))
 assert len(hb_models) > 0, f'No HB dirs in act/hb_models/ dir.'
-if len(hb_models) > 1:
-    print(f'Warning! {len(hb_models)} hb_models found'
-           'reverse prefix sorting.')
+#if len(hb_models) > 1:
+#    print(f'Warning! {len(hb_models)} hb_models found'
+#           'reverse prefix sorting.')
 print(os.path.join(hb_models_dp, sorted(hb_models)[-1]))
 EOF
 )
@@ -64,10 +64,16 @@ python - << EOF
 # Rewrite .osm seed location in given .osw
 import json; from pprint import pprint
 osw_fp = '$1'
+filter_m = lambda m: 'OpenStudio Results' not in m['name'] 
 with open(osw_fp, 'r') as f:
     data = json.load(f)
-with open(osw_fp, 'w') as f: 
-    if 'hash' in data: data.pop('hash') 
+with open(osw_fp, 'w') as f:    
+    if 'hash' in data: 
+        data.pop('hash') 
+    if 'weather_file' in data:
+        data.pop('weather_file')
+    data['weather_file'] = './in.epw'
+    data['steps'] = list(filter(filter_m, data['steps']))
     data['seed_file'] = '../$2.osm'
     json.dump(data, f, indent=4)
 pprint(data)
@@ -121,6 +127,15 @@ cp_mod () {
     modify_osw $MOD_OSW "$MOD_NAME"
 }
 
+#mk_hb_model_swap () {
+#    # Create HB_MODEL_DIR for future swap model 
+#    HB_SWAP_DP="${HB_MODEL_DP}_Swap" 
+#    if [ ! -d "$HB_SWAP_DP" ]; then
+#        cp -r "$HB_MODEL_DP" "$HB_SWAP_DP"
+#    else
+#        cp -u "ACT_OSM" "$HB_SWAP_DP/openstudio/run/in.osm"
+#    fi
+#}
 
 helpcmd=$(python -c 'print("""thermal [-h] [-cp] [-rm] [-ls]
 Example:

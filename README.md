@@ -8,6 +8,8 @@ Broadly, the resources to generate both OSMs are in the following highlevel dire
 
 ## Structure
 
+The initial structure consists of the seed models placed in the `ref/` and `act/` directories for each model, respectively.
+
 ```
 ./   
     thermal.sh
@@ -15,14 +17,14 @@ Broadly, the resources to generate both OSMs are in the following highlevel dire
         ref_seed.osm 
         ref_seed/ 
     act/
-        act.osm
-        act/
         hb_models/
         gh/
             ..
     resources/
        .. 
 ```
+
+In order to generate self-contained `./ref/ref.osm`, and `./act/act.osm` models, the following bash commands can be executed:
 
 ```bash
 . ./thermal.sh -rm -cp ref    # creates ref/ref.osm, ref/ref/
@@ -32,27 +34,27 @@ Broadly, the resources to generate both OSMs are in the following highlevel dire
                               # from act_seed/*/openstudio/in.osm model
 ```
 
+The subsequent structure will look like this:
+
 ```
 ./   
     thermal.sh
     ref/ 
         ref_seed.osm 
         ref.osm
-        ref_ideal.osm
         ref_seed/ 
         ref/
-        ref_ideal/
     # resources for creation of "act" GH BEM 
     act/
         act.osm
-        act_seed.osm
         act/
-        act_seed/
+        hb_models/
         gh/
     resources/
        .. 
 
 ```
+
 
 ## REF MODEL
 
