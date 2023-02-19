@@ -2869,7 +2869,11 @@ OS:ClimateZones,
   ASHRAE,                                 !- Climate Zone Institution Name 1
   ANSI/ASHRAE Standard 169,               !- Climate Zone Document Name 1
   2006,                                   !- Climate Zone Document Year 1
-  2B;                                     !- Climate Zone Value 1
+  2B,                                     !- Climate Zone Value 1
+  CEC,                                    !- Climate Zone Institution Name 2
+  California Climate Zone Descriptions,   !- Climate Zone Document Name 2
+  1995,                                   !- Climate Zone Document Year 2
+  ;                                       !- Climate Zone Value 2
 
 OS:LifeCycleCost:Parameters,
   {01cfb60e-f379-40f6-a048-f4cebd282760}, !- Handle
@@ -6140,22 +6144,6 @@ OS:ZoneHVAC:EquipmentList,
 OS:ThermostatSetpoint:DualSetpoint,
   {4a0e5646-e8ae-421e-85b7-70f40459e013}, !- Handle
   Plenum Thermostat 3;                    !- Name
-
-OS:WeatherFile,
-  {3bedeacb-83cf-46d6-885c-dc29c19c11f6}, !- Handle
-  Tucson-Davis Monthan AFB,               !- City
-  AZ,                                     !- State Province Region
-  USA,                                    !- Country
-  TMY3,                                   !- Data Source
-  722745,                                 !- WMO Number
-  32.17,                                  !- Latitude {deg}
-  -110.88,                                !- Longitude {deg}
-  -7,                                     !- Time Zone {hr}
-  809,                                    !- Elevation {m}
-  files/USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw, !- Url
-  C53C368B,                               !- Checksum
-  ,                                       !- Start Date Actual Year
-  Sunday;                                 !- Start Day of Week
 
 OS:Site:WaterMainsTemperature,
   {fc52d635-0be5-4b0c-9be5-988b529a2409}, !- Handle

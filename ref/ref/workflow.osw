@@ -1,6 +1,6 @@
 {
     "created_at": "20230219T000721Z",
-    "seed_file": "../act.osm",
+    "seed_file": "../ref.osm",
     "steps": [],
     "updated_at": "20230219T000721Z",
     "weather_file": "./in.epw"

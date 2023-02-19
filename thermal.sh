@@ -6,10 +6,11 @@ THERM_DP=$PWD
 
 # REF VARS
 REF_DP="$THERM_DP/ref"
-REF_SEED_DP="$REF_DP/ref_seed/run/000_CreateDOEPrototypeBuilding"
-REF_SEED_DP="$REF_SEED_DP/output/SR1"
-REF_SEED_OSW="$REF_SEED_DP/in.osw" 
-REF_SEED_EPW="$REF_SEED_DP/in.epw"
+REF_SEED_DP="$REF_DP/ref_seed/run"
+REF_DOE_DP="$REF_SEED_DP/000_CreateDOEPrototypeBuilding/output/SR1"
+# NOTE: only use REF_DOE for osw, epw the .osm is empty!
+REF_SEED_OSW="$REF_DOE_DP/in.osw"
+REF_SEED_EPW="$REF_DOE_DP/in.epw"
 REF_SEED_OSM="$REF_SEED_DP/in.osm"
 REF_OSM="$REF_DP/ref.osm"
 REF_OSW="$REF_DP/ref/workflow.osw"
@@ -25,13 +26,14 @@ REF_VARS=( \
 ACT_DP="$THERM_DP/act"
 HB_MODEL_DP=$(python - << EOF
 import os; hb_models_dp = "$ACT_DP/hb_models"
-is_hb = lambda x: not os.path.isdir(x)
-hb_models = list(filter(is_hb, os.listdir(hb_models_dp)))
-assert len(hb_models) > 0, f'No HB dirs in act/hb_models/ dir.'
-#if len(hb_models) > 1:
-#    print(f'Warning! {len(hb_models)} hb_models found'
-#           'reverse prefix sorting.')
-print(os.path.join(hb_models_dp, sorted(hb_models)[-1]))
+from sys import stderr
+is_hb = lambda x: "Swap" not in x
+hb_models = [hb for hb in os.listdir(hb_models_dp)
+             if is_hb(hb)]
+if len(hb_models) != 1:
+    stderr.write('Must be one HB model in act/hb_models/ dir without '
+                 f'Swap in name, found:\n\t{os.listdir(hb_models_dp)}.')
+print(os.path.join(hb_models_dp, hb_models[0]))
 EOF
 )
 HB_MODEL_NAME="${HB_MODEL_DP##*/}"
@@ -59,6 +61,7 @@ chk_fp_exist () {
     done
 }
 
+# TODO: move to ops.py
 modify_osw () {
 python - << EOF
 # Rewrite .osm seed location in given .osw
@@ -91,7 +94,7 @@ rm_mod () {
     [ -d "$MOD_DP" ] && \
         rm -r "$MOD_DP" 
     echo "Deleted $MOD_NAME/$MOD_NAME/" 
-    [ -f $MOD_OSM ] && \ 
+    [ -f $MOD_OSM ] && \
         rm -f $MOD_OSM
     echo "Deleted $MOD_NAME/$MOD_NAME.osm" 
 }

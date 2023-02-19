@@ -111,6 +111,190 @@ OS:WeatherFile,
   ,                                       !- Start Date Actual Year
   Sunday;                                 !- Start Day of Week
 
+OS:SizingPeriod:DesignDay,
+  {3ad49faa-0503-4aab-a08c-1e8af1b05d27}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg 99.6% Condns DB, !- Name
+  0.5,                                    !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  140,                                    !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  WinterDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  0.5,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:SizingPeriod:DesignDay,
+  {a4c43ad2-31d7-4b73-aabf-24a4708f2b87}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Hum_n 99.6% Condns DP=>MCDB, !- Name
+  15.2,                                   !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  140,                                    !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  WinterDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Dewpoint,                               !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  -17.1,                                  !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:SizingPeriod:DesignDay,
+  {d53c80b5-d266-4a99-93d9-0ca2ee679933}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg Wind 99.6% Condns WS=>MCDB, !- Name
+  14.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  9.8,                                    !- Wind Speed {m/s}
+  140,                                    !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  WinterDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  14.8,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:SizingPeriod:DesignDay,
+  {dd08838b-af9f-4a21-ac18-2070896c7d4e}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DB=>MWB, !- Name
+  40.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  4.8,                                    !- Wind Speed {m/s}
+  310,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  18.5,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {4710a9c6-45d5-4801-8deb-752e782ade48}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns WB=>MDB, !- Name
+  29.5,                                   !- Maximum Dry-Bulb Temperature {C}
+  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  4.8,                                    !- Wind Speed {m/s}
+  310,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  22.7,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {948fedc2-e239-4399-9adf-0c10062e97d6}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DP=>MDB, !- Name
+  24.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  4.8,                                    !- Wind Speed {m/s}
+  310,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Dewpoint,                               !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  21.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {cf76c21f-326d-4544-87e9-be7702af8d7c}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns Enth=>MDB, !- Name
+  29.6,                                   !- Maximum Dry-Bulb Temperature {C}
+  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  4.8,                                    !- Wind Speed {m/s}
+  310,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Enthalpy,                               !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  23,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  71000,                                  !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
 OS:Site:WaterMainsTemperature,
   {bbc8de5b-05f1-4fa9-a904-3689ea32d725}, !- Handle
   CorrelationFromWeatherFile;             !- Calculation Method
@@ -2743,9 +2927,9 @@ OS:Surface,
   {875e528a-a092-4ebc-ae88-53bd9329438d}, !- Handle
   Perimeter_bot_ZN_2_06238537..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {47511bba-91b4-425e-adb3-11d88727cb6a}, !- Construction Name
+  ,                                       !- Construction Name
   {b8e710e9-a9a7-40b8-8c3b-1c8e0bcd9bc2}, !- Space Name
-  GroundFCfactorMethod,                   !- Outside Boundary Condition
+  Ground,                                 !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -3073,9 +3257,9 @@ OS:Surface,
   {9abe1162-cf46-40b6-9b28-681f4c0448e6}, !- Handle
   Perimeter_bot_ZN_3_0d4d8101..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {ffa74425-40bc-4f3b-a163-a3e9d435700b}, !- Construction Name
+  ,                                       !- Construction Name
   {e39365dd-8d18-4362-ab45-619aa5c23995}, !- Space Name
-  GroundFCfactorMethod,                   !- Outside Boundary Condition
+  Ground,                                 !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -3435,9 +3619,9 @@ OS:Surface,
   {948cd300-9afb-46d8-8af5-3ef398ff8dfe}, !- Handle
   Perimeter_bot_ZN_4_5e7d91d2..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {a6e55f20-a2c3-43b5-93aa-f30982c28c19}, !- Construction Name
+  ,                                       !- Construction Name
   {db977165-b7d2-4e75-9ac0-443b38d1d5f9}, !- Space Name
-  GroundFCfactorMethod,                   !- Outside Boundary Condition
+  Ground,                                 !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -3765,9 +3949,9 @@ OS:Surface,
   {22ac5dd4-ca1b-4631-bb43-a9fcb6909e52}, !- Handle
   Perimeter_bot_ZN_1_926be594..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {4ebccdda-e9f7-41c3-a8b5-293d2841188a}, !- Construction Name
+  ,                                       !- Construction Name
   {9dc58e79-f99b-42bd-bde0-bcddf802c597}, !- Space Name
-  GroundFCfactorMethod,                   !- Outside Boundary Condition
+  Ground,                                 !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -4127,9 +4311,9 @@ OS:Surface,
   {b5734f36-6f5e-434c-8400-b341c66a161c}, !- Handle
   Core_bottom_db36dc78..Face0,            !- Name
   Floor,                                  !- Surface Type
-  {20a4ea92-5026-4885-9e9b-cd5858e51dbd}, !- Construction Name
+  ,                                       !- Construction Name
   {e49fabd0-5dd8-4d3e-805c-80b056eed7db}, !- Space Name
-  GroundFCfactorMethod,                   !- Outside Boundary Condition
+  Ground,                                 !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -9648,248 +9832,4 @@ OS:Connection,
   4,                                      !- Outlet Port
   {71f3a0d7-04e9-4e0d-9f04-40a29ac404ac}, !- Target Object
   2;                                      !- Inlet Port
-
-OS:ComponentData,
-  {b0f9b790-6dc8-4928-a597-f06e0cc0b3c4}, !- Handle
-  Component Data 1,                       !- Name
-  {0fed15b3-a641-447d-bfac-089044ebf86a}, !- UUID
-  {140994f0-44d1-4202-bae6-6e8c204b2c82}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {47511bba-91b4-425e-adb3-11d88727cb6a}, !- Name of Object 1
-  {307f2637-9aa3-4085-85e1-d4c304d09e2e}, !- Name of Object 2
-  {55d7aada-dfbe-4773-b943-156b59b1b305}; !- Name of Object 3
-
-OS:Construction:FfactorGroundFloor,
-  {47511bba-91b4-425e-adb3-11d88727cb6a}, !- Handle
-  Foundation F 126 Perim 3327 Area 13125, !- Name
-  1.26343630645112,                       !- F-Factor {W/m-K}
-  131.25358392,                           !- Area {m2}
-  33.2738,                                !- PerimeterExposed {m}
-  {307f2637-9aa3-4085-85e1-d4c304d09e2e}; !- Surface Rendering Name
-
-OS:Rendering:Color,
-  {307f2637-9aa3-4085-85e1-d4c304d09e2e}, !- Handle
-  Rendering Color 7,                      !- Name
-  255,                                    !- Rendering Red Value
-  0,                                      !- Rendering Green Value
-  140;                                    !- Rendering Blue Value
-
-OS:StandardsInformation:Construction,
-  {55d7aada-dfbe-4773-b943-156b59b1b305}, !- Handle
-  {47511bba-91b4-425e-adb3-11d88727cb6a}; !- Construction Name
-
-OS:ComponentData,
-  {db7b5f74-7a81-4cee-a8c7-9c3112f40089}, !- Handle
-  Component Data 2,                       !- Name
-  {99077ffa-4c3a-4a88-9d11-4f0b4d51dc39}, !- UUID
-  {13e7dd39-15ac-41b1-8bce-96a2f00aa42e}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {ffa74425-40bc-4f3b-a163-a3e9d435700b}, !- Name of Object 1
-  {a35688b8-8145-4434-a5c6-8cfa3d796584}, !- Name of Object 2
-  {ffa2950c-920a-4533-9b51-be309d127baa}; !- Name of Object 3
-
-OS:Construction:FfactorGroundFloor,
-  {ffa74425-40bc-4f3b-a163-a3e9d435700b}, !- Handle
-  Foundation F 126 Perim 3327 Area 13126, !- Name
-  1.26343630645112,                       !- F-Factor {W/m-K}
-  131.25358392,                           !- Area {m2}
-  33.2738,                                !- PerimeterExposed {m}
-  {a35688b8-8145-4434-a5c6-8cfa3d796584}; !- Surface Rendering Name
-
-OS:Rendering:Color,
-  {a35688b8-8145-4434-a5c6-8cfa3d796584}, !- Handle
-  Rendering Color 8,                      !- Name
-  255,                                    !- Rendering Red Value
-  0,                                      !- Rendering Green Value
-  140;                                    !- Rendering Blue Value
-
-OS:StandardsInformation:Construction,
-  {ffa2950c-920a-4533-9b51-be309d127baa}, !- Handle
-  {ffa74425-40bc-4f3b-a163-a3e9d435700b}; !- Construction Name
-
-OS:ComponentData,
-  {6e87b5d9-8131-4128-99b8-e1ba663d43b0}, !- Handle
-  Component Data 3,                       !- Name
-  {8b09a6a8-3d01-440c-aa24-15a9be21e09d}, !- UUID
-  {07f134dd-17e5-4675-84a0-75e81b1ce387}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {a6e55f20-a2c3-43b5-93aa-f30982c28c19}, !- Name of Object 1
-  {3f7ae32e-9e15-4d98-bd10-9c4a8b1b1811}, !- Name of Object 2
-  {367f775c-ac26-4cd1-b9cf-cd38edbc1ae2}; !- Name of Object 3
-
-OS:Construction:FfactorGroundFloor,
-  {a6e55f20-a2c3-43b5-93aa-f30982c28c19}, !- Handle
-  Foundation F 126 Perim 3327 Area 13127, !- Name
-  1.26343630645112,                       !- F-Factor {W/m-K}
-  131.25358392,                           !- Area {m2}
-  33.2738,                                !- PerimeterExposed {m}
-  {3f7ae32e-9e15-4d98-bd10-9c4a8b1b1811}; !- Surface Rendering Name
-
-OS:Rendering:Color,
-  {3f7ae32e-9e15-4d98-bd10-9c4a8b1b1811}, !- Handle
-  Rendering Color 9,                      !- Name
-  255,                                    !- Rendering Red Value
-  0,                                      !- Rendering Green Value
-  140;                                    !- Rendering Blue Value
-
-OS:StandardsInformation:Construction,
-  {367f775c-ac26-4cd1-b9cf-cd38edbc1ae2}, !- Handle
-  {a6e55f20-a2c3-43b5-93aa-f30982c28c19}; !- Construction Name
-
-OS:ComponentData,
-  {d799cdd3-eee6-40c7-b7c1-974a42794f70}, !- Handle
-  Component Data 4,                       !- Name
-  {8b8faeb3-f1fd-4640-a755-403bd38f1980}, !- UUID
-  {915c294b-b29e-4663-a0b7-712fa6010ce0}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {4ebccdda-e9f7-41c3-a8b5-293d2841188a}, !- Name of Object 1
-  {a74a8bb5-bda5-40c2-8aaa-83e8801c7cac}, !- Name of Object 2
-  {b2927f27-d140-4071-9b7b-4374e5e79595}; !- Name of Object 3
-
-OS:Construction:FfactorGroundFloor,
-  {4ebccdda-e9f7-41c3-a8b5-293d2841188a}, !- Handle
-  Foundation F 126 Perim 3327 Area 13128, !- Name
-  1.26343630645112,                       !- F-Factor {W/m-K}
-  131.25358392,                           !- Area {m2}
-  33.2738,                                !- PerimeterExposed {m}
-  {a74a8bb5-bda5-40c2-8aaa-83e8801c7cac}; !- Surface Rendering Name
-
-OS:Rendering:Color,
-  {a74a8bb5-bda5-40c2-8aaa-83e8801c7cac}, !- Handle
-  Rendering Color 10,                     !- Name
-  255,                                    !- Rendering Red Value
-  0,                                      !- Rendering Green Value
-  140;                                    !- Rendering Blue Value
-
-OS:StandardsInformation:Construction,
-  {b2927f27-d140-4071-9b7b-4374e5e79595}, !- Handle
-  {4ebccdda-e9f7-41c3-a8b5-293d2841188a}; !- Construction Name
-
-OS:ComponentData,
-  {47c2af8c-97ad-4839-acac-f1cac96a35d5}, !- Handle
-  Component Data 5,                       !- Name
-  {eae45e47-f231-419f-b2d1-1014d2574c77}, !- UUID
-  {529f6b0f-0296-4c9e-98f7-e3d0cc168787}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {20a4ea92-5026-4885-9e9b-cd5858e51dbd}, !- Name of Object 1
-  {5a874619-6cc1-43f5-a0f2-fa1a0819d8ac}, !- Name of Object 2
-  {9b66a4c6-4c3a-4af2-b3a1-cb78316bd70e}; !- Name of Object 3
-
-OS:Construction:FfactorGroundFloor,
-  {20a4ea92-5026-4885-9e9b-cd5858e51dbd}, !- Handle
-  Foundation F 126 Perim 3327 Area 13129, !- Name
-  1.26343630645112,                       !- F-Factor {W/m-K}
-  131.25358392,                           !- Area {m2}
-  33.2738,                                !- PerimeterExposed {m}
-  {5a874619-6cc1-43f5-a0f2-fa1a0819d8ac}; !- Surface Rendering Name
-
-OS:Rendering:Color,
-  {5a874619-6cc1-43f5-a0f2-fa1a0819d8ac}, !- Handle
-  Rendering Color 11,                     !- Name
-  255,                                    !- Rendering Red Value
-  0,                                      !- Rendering Green Value
-  140;                                    !- Rendering Blue Value
-
-OS:StandardsInformation:Construction,
-  {9b66a4c6-4c3a-4af2-b3a1-cb78316bd70e}, !- Handle
-  {20a4ea92-5026-4885-9e9b-cd5858e51dbd}; !- Construction Name
-
-OS:ComponentData,
-  {64c75e2f-347e-437a-8536-a3309e4a12aa}, !- Handle
-  Component Data 6,                       !- Name
-  {8c0c57d0-73ec-4ba3-a82d-d37ed141999b}, !- UUID
-  {5d1f6242-8551-48e6-bd3c-91d2ce749d9c}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {051f6242-0f8c-4a85-95cc-2ea9655e40ba}; !- Name of Object 1
-
-OS:Site:GroundTemperature:FCfactorMethod,
-  {051f6242-0f8c-4a85-95cc-2ea9655e40ba}, !- Handle
-  20.9,                                   !- January Ground Temperature {C}
-  15.4,                                   !- February Ground Temperature {C}
-  11.9,                                   !- March Ground Temperature {C}
-  14.8,                                   !- April Ground Temperature {C}
-  12.7,                                   !- May Ground Temperature {C}
-  15.4,                                   !- June Ground Temperature {C}
-  23.3,                                   !- July Ground Temperature {C}
-  26.3,                                   !- August Ground Temperature {C}
-  31.2,                                   !- September Ground Temperature {C}
-  30.4,                                   !- October Ground Temperature {C}
-  29.8,                                   !- November Ground Temperature {C}
-  27.8;                                   !- December Ground Temperature {C}
-
-OS:ComponentData,
-  {3381a934-6b72-410d-9084-a48a39348895}, !- Handle
-  Component Data 7,                       !- Name
-  {c9f97a24-c9b4-4939-bd00-810fe17e93fc}, !- UUID
-  {7da28117-50ed-4d2b-ae44-74a21133d772}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {5dc36fcd-5f14-4f86-8936-4c93bf1a769b}; !- Name of Object 1
-
-OS:SizingPeriod:DesignDay,
-  {5dc36fcd-5f14-4f86-8936-4c93bf1a769b}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DB=>MWB, !- Name
-  40.8,                                   !- Maximum Dry-Bulb Temperature {C}
-  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  4.8,                                    !- Wind Speed {m/s}
-  310,                                    !- Wind Direction {deg}
-  ,                                       !- Sky Clearness
-  No,                                     !- Rain Indicator
-  No,                                     !- Snow Indicator
-  21,                                     !- Day of Month
-  7,                                      !- Month
-  SummerDesignDay,                        !- Day Type
-  No,                                     !- Daylight Saving Time Indicator
-  Wetbulb,                                !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  18.5,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAETau,                              !- Solar Model Indicator
-  ,                                       !- Beam Solar Day Schedule Name
-  ,                                       !- Diffuse Solar Day Schedule Name
-  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
-  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
-
-OS:ComponentData,
-  {14f0e74f-9fd5-4c23-971b-cdd3ec136f0a}, !- Handle
-  Component Data 8,                       !- Name
-  {0fb39061-67d5-4d7f-ba90-b132b71afa61}, !- UUID
-  {21efd92e-7d13-4cf6-be9c-43c31bceb92c}, !- Version UUID
-  1676173221,                             !- Creation Timestamp
-  1676173221,                             !- Version Timestamp
-  {53f08359-9565-44f9-8657-3e89900b03ad}; !- Name of Object 1
-
-OS:SizingPeriod:DesignDay,
-  {53f08359-9565-44f9-8657-3e89900b03ad}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg 99.6% Condns DB, !- Name
-  0.5,                                    !- Maximum Dry-Bulb Temperature {C}
-  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  2.1,                                    !- Wind Speed {m/s}
-  140,                                    !- Wind Direction {deg}
-  0,                                      !- Sky Clearness
-  No,                                     !- Rain Indicator
-  No,                                     !- Snow Indicator
-  21,                                     !- Day of Month
-  12,                                     !- Month
-  WinterDesignDay,                        !- Day Type
-  No,                                     !- Daylight Saving Time Indicator
-  Wetbulb,                                !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  0.5,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAEClearSky;                         !- Solar Model Indicator
 

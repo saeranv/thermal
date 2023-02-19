@@ -1,7 +1,0 @@
-{
-   "created_at" : "20221118T191300Z",
-   "seed_file" : "../ashrae901_officemedium_std2016_tucson_fr.osm",
-   "steps" : [],
-   "updated_at" : "20221118T191314Z",
-   "weather_file" : "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw"
-}
