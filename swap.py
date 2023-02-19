@@ -9,7 +9,7 @@ INIT_ERR_MSG = lambda m: "{} not initialized.".format(m)
 IS_TTY = len(sys.argv[0]) != 0
 _LINEBREAK = "------------------------------------------"
 LINEBREAK = (_LINEBREAK, _LINEBREAK)
-
+###
 
 if not IS_TTY:
     from ladybug_rhino.openstudio import load_osm, dump_osm
