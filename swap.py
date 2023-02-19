@@ -9,7 +9,7 @@ INIT_ERR_MSG = lambda m: "{} not initialized.".format(m)
 IS_TTY = len(sys.argv[0]) != 0
 _LINEBREAK = "------------------------------------------"
 LINEBREAK = (_LINEBREAK, _LINEBREAK)
-###
+
 
 if not IS_TTY:
     from ladybug_rhino.openstudio import load_osm, dump_osm
@@ -44,12 +44,12 @@ else:
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
 
 
-def ppdir(obj, qstr=""):
+def ppdir(obj, qstr="", *args, **kwargs):
     """Helper function to pretty print directories."""
     def cond_fn(x):
         return (not x.startswith("__")) and (qstr.lower() in x)
-    return [x for x in dir(obj) if cond_fn(x.lower())]
-
+    result = [x for x in dir(obj) if cond_fn(x.lower())]
+    print(*result, *args, **kwargs)
 
 def argmin(arr):
     """argmin: arr[int|float] -> [int|None]"""
@@ -313,15 +313,18 @@ def swap_equip(act_osm, ref_osm, verbose=False):
     act_spcs = act_osm.getSpaces()
     ref_spcs, act_spcs = _match_spc(ref_spcs, act_spcs)
     ref_equips = ref_osm.getElectricEquipmentDefinitions()
-    for num_def, equip in enumerate(ref_equips):
+    for ref_spc, act_spc in zip(ref_spcs, act_spcs):
+        ref_equips = ref_spc.electricEquipment()
+        for equip in ref_equips:
+            if "elevator" not in equip.nameString().lower():
+                continue
+            pass
+            assert False
+    #meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
+    #assert_init(meter).get().remove()
 
-        if "elevator" in equip.nameString().lower():
-            equip.remove()
-    meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
-    assert_init(meter).get().remove()
-
-    meter = ref_osm.getMeterCustomDecrementByName("Wired_Int_EQUIP")
-    assert_init(meter).get().remove()
+    #meter = ref_osm.getMeterCustomDecrementByName("Wired_Int_EQUIP")
+    #assert_init(meter).get().remove()
     #print(ppdir(ref_osm, 'meter'))
     return ref_osm
 
