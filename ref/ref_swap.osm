@@ -2869,7 +2869,11 @@ OS:ClimateZones,
   ASHRAE,                                 !- Climate Zone Institution Name 1
   ANSI/ASHRAE Standard 169,               !- Climate Zone Document Name 1
   2006,                                   !- Climate Zone Document Year 1
-  2B;                                     !- Climate Zone Value 1
+  2B,                                     !- Climate Zone Value 1
+  CEC,                                    !- Climate Zone Institution Name 2
+  California Climate Zone Descriptions,   !- Climate Zone Document Name 2
+  1995,                                   !- Climate Zone Document Year 2
+  ;                                       !- Climate Zone Value 2
 
 OS:LifeCycleCost:Parameters,
   {01cfb60e-f379-40f6-a048-f4cebd282760}, !- Handle
@@ -4478,10 +4482,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {29b73563-3f34-44a0-b135-d1007828dd1b}, !- Handle
@@ -4577,10 +4584,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {b56d6c15-3041-433f-9806-f31c530dd360}, !- Handle
@@ -4676,10 +4686,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {c7c68486-dcf5-4029-b514-34626b4ba4cc}, !- Handle
@@ -4772,7 +4785,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {b618f460-8956-445d-b316-7dd6ff0788a1}, !- Handle
@@ -4857,7 +4877,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {ee42f780-0354-4e97-88dd-f502829413eb}, !- Handle
@@ -4945,10 +4972,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {4047821b-36de-4ce1-9307-119573708953}, !- Handle
@@ -5044,10 +5074,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {43cabdb0-e961-4fda-a437-5349e32d2a39}, !- Handle
@@ -5143,10 +5176,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {25c24732-bafd-4e5d-8d9a-41d95e514c97}, !- Handle
@@ -5242,10 +5278,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {140d43f0-953c-4cdd-9324-24413050bfac}, !- Handle
@@ -5341,10 +5380,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {c3e0a9e0-596b-49ce-af72-26518b800125}, !- Handle
@@ -5440,10 +5482,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {ac26615c-8f20-4886-a469-0bab2e1cd9f4}, !- Handle
@@ -5539,10 +5584,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {0e13d6ab-95b3-4fe0-a267-ee7be79cf135}, !- Handle
@@ -5638,10 +5686,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {d97c757e-48dd-4ffb-80ac-ff51dcb6bc0f}, !- Handle
@@ -5737,10 +5788,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {74ec7c64-6797-4a53-b71d-686d39839992}, !- Handle
@@ -5836,10 +5890,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {59e2b31f-adb4-4d62-8ea0-674967949d22}, !- Handle
@@ -5935,10 +5992,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {320ecdf8-fe9b-4af1-bc4a-405ec0f49ac7}, !- Handle
@@ -6034,10 +6094,13 @@ OS:Sizing:Zone,
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
   autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
-  ,                                       !- Design Zone Air Distribution Effectiveness in Cooling Mode
-  ,                                       !- Design Zone Air Distribution Effectiveness in Heating Mode
-  ,                                       !- Design Zone Secondary Recirculation Fraction {dimensionless}
-  0.6;                                    !- Design Minimum Zone Ventilation Efficiency {dimensionless}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.6,                                    !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {82ab61b2-b909-48c7-a018-306369ed325f}, !- Handle
@@ -6130,7 +6193,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {a19b9f5f-b072-406a-80fd-03d3db150624}, !- Handle
@@ -6140,22 +6210,6 @@ OS:ZoneHVAC:EquipmentList,
 OS:ThermostatSetpoint:DualSetpoint,
   {f375a4b9-dbeb-4fcd-ae56-95782b886184}, !- Handle
   Plenum Thermostat 3;                    !- Name
-
-OS:WeatherFile,
-  {249ce8e0-4be6-4b92-9da6-c63bd109452f}, !- Handle
-  Tucson-Davis Monthan AFB,               !- City
-  AZ,                                     !- State Province Region
-  USA,                                    !- Country
-  TMY3,                                   !- Data Source
-  722745,                                 !- WMO Number
-  32.17,                                  !- Latitude {deg}
-  -110.88,                                !- Longitude {deg}
-  -7,                                     !- Time Zone {hr}
-  809,                                    !- Elevation {m}
-  /mnt/c/users/admin/master/thermal/ref/ref_seed/run/000_CreateDOEPrototypeBuilding/extracted_files/weather/USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw, !- Url
-  C53C368B,                               !- Checksum
-  ,                                       !- Start Date Actual Year
-  Sunday;                                 !- Start Day of Week
 
 OS:Site:WaterMainsTemperature,
   {5baaa239-2ca6-4ccd-973a-95f336db5d26}, !- Handle
@@ -13832,4 +13886,136 @@ OS:Daylighting:Control,
   1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
   ,                                       !- Number of Daylighting Views
   22;                                     !- Maximum Allowable Discomfort Glare Index
+
+OS:StandardsInformation:Material,
+  {ba481773-31ad-4933-9343-9ec91a72db40}, !- Handle
+  {c32aa097-d62a-4a8e-94ac-7cac63adc0aa}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {c169da9b-01f6-402d-81a5-fe7efef48112}, !- Handle
+  {04ee02ea-444e-42c2-8edb-e7660b0f7484}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {24e2f815-d9ab-43be-aac4-ee3044b996e8}, !- Handle
+  {be46e9fe-2904-40c3-814f-5d060201ee1f}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {8c32772d-42db-4287-8e28-13ed2677766d}, !- Handle
+  {5194bfcb-fb40-48ee-b3c3-a528ec6a343e}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {bd5a06a4-264c-4827-b298-c80b15792683}, !- Handle
+  {a33fccb6-1465-4aa2-ba09-9f8b0fb360e7}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {37f311e0-333d-4c3f-acdb-6b0642ea268c}, !- Handle
+  {817e0d5b-19f2-4597-bd17-cf0411ea4d42}; !- Material Name
+
+OS:StandardsInformation:Construction,
+  {981bdac5-a184-4613-a598-ce35db97625d}, !- Handle
+  {e89e53aa-4169-407c-8d67-fc3f1b5f6cc5}; !- Construction Name
+
+OS:StandardsInformation:Construction,
+  {63be4672-1213-4918-9c3a-63879db67b91}, !- Handle
+  {6b06213a-4c97-4ce3-877a-473639e90b77}; !- Construction Name
+
+OS:StandardsInformation:Construction,
+  {ee341018-0598-4802-9014-fbbe68e1993d}, !- Handle
+  {ad21aeca-6e9c-4b2f-8e6c-ed3ebf73b16f}; !- Construction Name
+
+OS:StandardsInformation:Construction,
+  {a69605fa-8b9d-4cf5-a974-59bcb4a36ca1}, !- Handle
+  {1a2e8723-fdfd-4a76-97f1-af6eeecdeb4f}; !- Construction Name
+
+OS:StandardsInformation:Material,
+  {a736c18f-1f32-4153-b4f5-7e4c386c5057}, !- Handle
+  {c2a28297-10c5-4265-be18-2d825c23f89f}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {3c45ad03-b258-4c76-b33f-55c54c359ce9}, !- Handle
+  {92398ae2-f93f-4afe-9a3c-6d95223bff5f}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {4ec5ecad-3ff0-4cb9-9883-5177f902fae2}, !- Handle
+  {04add3f1-59df-4a1e-9ffd-620b4f30300f}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {77c08c87-94d3-448b-b92e-d5588804deb0}, !- Handle
+  {dc7497c9-3b35-48c4-94e3-fa59733bb0e3}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {ca052e58-7b31-4515-a7b9-d8b214c90e92}, !- Handle
+  {5da444e4-5fdb-47a4-a953-1cc932da76c0}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {bfd57f9e-370b-408f-a9f7-8f9daaeb3f87}, !- Handle
+  {f39d4d57-5cfb-421a-b87b-4a7b857ff0e3}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {4013290d-8f83-44c2-b994-d547a480d63b}, !- Handle
+  {1219a1c0-be8a-4d9b-a6a6-6cb3cb2bdc89}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {d9c73f3f-2985-4f67-be6b-d827bd98471e}, !- Handle
+  {49ac89dc-2708-44f8-9a1c-3e51b95b0028}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {32af8972-438a-42cc-86b5-1a4ab6b77cb4}, !- Handle
+  {16b5dd94-832a-475f-a07f-1656daf96c04}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {30706271-a413-4323-8cdc-9a62f742fcc3}, !- Handle
+  {220cffe5-0a57-453b-a218-3ebb6376b84a}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {b91e7365-dcaf-4561-9cf5-900834a860d9}, !- Handle
+  {1cf0e609-86db-486e-9d8a-af876ab22c45}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {7cb1ad1c-4652-45a4-8f8a-fe1a6f4eb2b3}, !- Handle
+  {675d9469-29f0-4093-b9b7-e5e2f3078403}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {123426d6-5d71-4855-97a6-589c19c1b9d4}, !- Handle
+  {cdde8161-eb15-4e2f-b380-61b706d18008}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {96a8a0ca-2c1b-4d36-bb48-fd362af052b9}, !- Handle
+  {05428748-f310-47c0-9539-f7786d2f94f4}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {64cfd57e-e625-4cff-a79e-60e4a532b110}, !- Handle
+  {1e327157-06ed-4c13-984a-fbaef809f6c8}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {17c13359-9481-4734-9672-7d91d4b23107}, !- Handle
+  {dff9dea0-ea2d-4dd5-9837-cdc591f52f94}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {7d15a1d4-a59a-4511-93cd-882d396a3303}, !- Handle
+  {ae0c5788-d871-4b19-a8f3-3a4ed9294bbf}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {d6d42a42-3700-416a-b31c-69c8544b7e18}, !- Handle
+  {dd9ec311-1d32-43e3-869b-d683db24bad2}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {716ab742-cce6-4106-a2c7-0d77aad353c0}, !- Handle
+  {8444b494-8de4-41a6-adc4-7ff72cb3ccb1}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {f9cacd73-a44c-486a-abb8-a1e3d2da3227}, !- Handle
+  {a5de6636-c63d-48b3-b353-79746460c6b3}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {3fb2bdee-6f01-4798-9b6d-778801b25cd9}, !- Handle
+  {c39b64a7-206b-4574-98fa-1111bdf87f89}; !- Material Name
+
+OS:StandardsInformation:Material,
+  {93088fad-a010-45bb-9bc8-c05ec5ccc8c9}, !- Handle
+  {6bd5caf2-c3b0-4a74-9e20-e566c2e49a9a}; !- Material Name
+
+OS:StandardsInformation:Construction,
+  {a37457f5-038b-4567-8f6d-e626d73bc849}, !- Handle
+  {3b6874b1-f32a-4cc5-8fce-2db915044e07}; !- Construction Name
 

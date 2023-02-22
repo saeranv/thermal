@@ -42,8 +42,8 @@ OS:SimulationControl,
 
 OS:Sizing:Parameters,
   {efb47678-df4b-4ead-bfde-d4c101f11159}, !- Handle
-  1.25,                                   !- Heating Sizing Factor
-  1.15;                                   !- Cooling Sizing Factor
+  1,                                      !- Heating Sizing Factor
+  1;                                      !- Cooling Sizing Factor
 
 OS:Timestep,
   {67301b20-73cc-461d-a3df-07f39bb1a348}, !- Handle
@@ -110,190 +110,6 @@ OS:WeatherFile,
   C53C368B,                               !- Checksum
   ,                                       !- Start Date Actual Year
   Sunday;                                 !- Start Day of Week
-
-OS:SizingPeriod:DesignDay,
-  {3ad49faa-0503-4aab-a08c-1e8af1b05d27}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg 99.6% Condns DB, !- Name
-  0.5,                                    !- Maximum Dry-Bulb Temperature {C}
-  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  2.1,                                    !- Wind Speed {m/s}
-  140,                                    !- Wind Direction {deg}
-  0,                                      !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  12,                                     !- Month
-  WinterDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Wetbulb,                                !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  0.5,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAEClearSky;                         !- Solar Model Indicator
-
-OS:SizingPeriod:DesignDay,
-  {a4c43ad2-31d7-4b73-aabf-24a4708f2b87}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Hum_n 99.6% Condns DP=>MCDB, !- Name
-  15.2,                                   !- Maximum Dry-Bulb Temperature {C}
-  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  2.1,                                    !- Wind Speed {m/s}
-  140,                                    !- Wind Direction {deg}
-  0,                                      !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  12,                                     !- Month
-  WinterDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Dewpoint,                               !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  -17.1,                                  !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAEClearSky;                         !- Solar Model Indicator
-
-OS:SizingPeriod:DesignDay,
-  {d53c80b5-d266-4a99-93d9-0ca2ee679933}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg Wind 99.6% Condns WS=>MCDB, !- Name
-  14.8,                                   !- Maximum Dry-Bulb Temperature {C}
-  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  9.8,                                    !- Wind Speed {m/s}
-  140,                                    !- Wind Direction {deg}
-  0,                                      !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  12,                                     !- Month
-  WinterDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Wetbulb,                                !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  14.8,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAEClearSky;                         !- Solar Model Indicator
-
-OS:SizingPeriod:DesignDay,
-  {dd08838b-af9f-4a21-ac18-2070896c7d4e}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DB=>MWB, !- Name
-  40.8,                                   !- Maximum Dry-Bulb Temperature {C}
-  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  4.8,                                    !- Wind Speed {m/s}
-  310,                                    !- Wind Direction {deg}
-  ,                                       !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  7,                                      !- Month
-  SummerDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Wetbulb,                                !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  18.5,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAETau,                              !- Solar Model Indicator
-  ,                                       !- Beam Solar Day Schedule Name
-  ,                                       !- Diffuse Solar Day Schedule Name
-  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
-  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
-
-OS:SizingPeriod:DesignDay,
-  {4710a9c6-45d5-4801-8deb-752e782ade48}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns WB=>MDB, !- Name
-  29.5,                                   !- Maximum Dry-Bulb Temperature {C}
-  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  4.8,                                    !- Wind Speed {m/s}
-  310,                                    !- Wind Direction {deg}
-  ,                                       !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  7,                                      !- Month
-  SummerDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Wetbulb,                                !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  22.7,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAETau,                              !- Solar Model Indicator
-  ,                                       !- Beam Solar Day Schedule Name
-  ,                                       !- Diffuse Solar Day Schedule Name
-  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
-  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
-
-OS:SizingPeriod:DesignDay,
-  {948fedc2-e239-4399-9adf-0c10062e97d6}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DP=>MDB, !- Name
-  24.8,                                   !- Maximum Dry-Bulb Temperature {C}
-  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  4.8,                                    !- Wind Speed {m/s}
-  310,                                    !- Wind Direction {deg}
-  ,                                       !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  7,                                      !- Month
-  SummerDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Dewpoint,                               !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  21.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAETau,                              !- Solar Model Indicator
-  ,                                       !- Beam Solar Day Schedule Name
-  ,                                       !- Diffuse Solar Day Schedule Name
-  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
-  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
-
-OS:SizingPeriod:DesignDay,
-  {cf76c21f-326d-4544-87e9-be7702af8d7c}, !- Handle
-  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns Enth=>MDB, !- Name
-  29.6,                                   !- Maximum Dry-Bulb Temperature {C}
-  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
-  91976,                                  !- Barometric Pressure {Pa}
-  4.8,                                    !- Wind Speed {m/s}
-  310,                                    !- Wind Direction {deg}
-  ,                                       !- Sky Clearness
-  ,                                       !- Rain Indicator
-  ,                                       !- Snow Indicator
-  21,                                     !- Day of Month
-  7,                                      !- Month
-  SummerDesignDay,                        !- Day Type
-  ,                                       !- Daylight Saving Time Indicator
-  Enthalpy,                               !- Humidity Condition Type
-  ,                                       !- Humidity Condition Day Schedule Name
-  23,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
-  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
-  71000,                                  !- Enthalpy at Maximum Dry-Bulb {J/kg}
-  ,                                       !- Dry-Bulb Temperature Range Modifier Type
-  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
-  ASHRAETau,                              !- Solar Model Indicator
-  ,                                       !- Beam Solar Day Schedule Name
-  ,                                       !- Diffuse Solar Day Schedule Name
-  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
-  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
 
 OS:Site:WaterMainsTemperature,
   {bbc8de5b-05f1-4fa9-a904-3689ea32d725}, !- Handle
@@ -2887,7 +2703,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {d530885c-b937-4a7a-84fe-c8583890bc54}, !- Handle
@@ -2927,9 +2750,9 @@ OS:Surface,
   {875e528a-a092-4ebc-ae88-53bd9329438d}, !- Handle
   Perimeter_bot_ZN_2_06238537..Face0,     !- Name
   Floor,                                  !- Surface Type
-  ,                                       !- Construction Name
+  {98b44fa9-c1ae-4d54-9256-c72afb4bf5e3}, !- Construction Name
   {b8e710e9-a9a7-40b8-8c3b-1c8e0bcd9bc2}, !- Space Name
-  Ground,                                 !- Outside Boundary Condition
+  GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -3226,7 +3049,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {9c3f23cd-455b-4b32-80f1-a095ab529d82}, !- Handle
@@ -3257,9 +3087,9 @@ OS:Surface,
   {9abe1162-cf46-40b6-9b28-681f4c0448e6}, !- Handle
   Perimeter_bot_ZN_3_0d4d8101..Face0,     !- Name
   Floor,                                  !- Surface Type
-  ,                                       !- Construction Name
+  {988e763d-123e-4714-b3e0-919f58913188}, !- Construction Name
   {e39365dd-8d18-4362-ab45-619aa5c23995}, !- Space Name
-  Ground,                                 !- Outside Boundary Condition
+  GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -3588,7 +3418,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {d33ba034-89c8-4b3a-8ab0-0c92ec70591c}, !- Handle
@@ -3619,9 +3456,9 @@ OS:Surface,
   {948cd300-9afb-46d8-8af5-3ef398ff8dfe}, !- Handle
   Perimeter_bot_ZN_4_5e7d91d2..Face0,     !- Name
   Floor,                                  !- Surface Type
-  ,                                       !- Construction Name
+  {e0190134-9d4b-4571-9476-43632e4e3a7d}, !- Construction Name
   {db977165-b7d2-4e75-9ac0-443b38d1d5f9}, !- Space Name
-  Ground,                                 !- Outside Boundary Condition
+  GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -3918,7 +3755,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {c03abbb0-c716-485a-a961-c28d2dc85e86}, !- Handle
@@ -3949,9 +3793,9 @@ OS:Surface,
   {22ac5dd4-ca1b-4631-bb43-a9fcb6909e52}, !- Handle
   Perimeter_bot_ZN_1_926be594..Face0,     !- Name
   Floor,                                  !- Surface Type
-  ,                                       !- Construction Name
+  {c9e996fc-4843-4611-9155-aec8a07c84ee}, !- Construction Name
   {9dc58e79-f99b-42bd-bde0-bcddf802c597}, !- Space Name
-  Ground,                                 !- Outside Boundary Condition
+  GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -4280,7 +4124,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {8641cfd1-7d50-401f-857a-124db6b6aa5c}, !- Handle
@@ -4311,9 +4162,9 @@ OS:Surface,
   {b5734f36-6f5e-434c-8400-b341c66a161c}, !- Handle
   Core_bottom_db36dc78..Face0,            !- Name
   Floor,                                  !- Surface Type
-  ,                                       !- Construction Name
+  {ca83b308-4c15-4e6a-9a7f-cfd2bae60f88}, !- Construction Name
   {e49fabd0-5dd8-4d3e-805c-80b056eed7db}, !- Space Name
-  Ground,                                 !- Outside Boundary Condition
+  GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
   NoSun,                                  !- Sun Exposure
   NoWind,                                 !- Wind Exposure
@@ -4561,7 +4412,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {a1fb6593-fe96-41bc-aa16-d1ed7d85dd84}, !- Handle
@@ -4961,7 +4819,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {32deb808-8ad8-46ec-bdd8-efba760d8541}, !- Handle
@@ -5458,7 +5323,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {5ec03025-5baf-444a-ba43-ca5514e51305}, !- Handle
@@ -5756,7 +5628,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {e111a08a-e305-434d-8adf-2bacf56b3680}, !- Handle
@@ -6054,7 +5933,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {94bd7f20-1723-4380-b4e1-b0e06c45ff31}, !- Handle
@@ -6352,7 +6238,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {a394c88e-bc9a-45cc-a11c-986a45247091}, !- Handle
@@ -6650,7 +6543,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {e2372378-012e-4901-9cd4-8a71a7cb29ed}, !- Handle
@@ -6931,7 +6831,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {33323301-e34b-4ee7-b728-578a410b68ab}, !- Handle
@@ -7428,7 +7335,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {52e2e327-548e-4b94-8812-9a68a6971e53}, !- Handle
@@ -7726,7 +7640,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {3bce1a01-2e60-405c-85cb-cc9fcc423abb}, !- Handle
@@ -8024,7 +7945,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {e6cdf5fa-ba10-4bd8-b2eb-dd114bad647d}, !- Handle
@@ -8322,7 +8250,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {f128ce22-4aa2-4ecd-a8ec-290c53a2708c}, !- Handle
@@ -8620,7 +8555,14 @@ OS:Sizing:Zone,
   No,                                     !- Account for Dedicated Outdoor Air System
   NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
   autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
-  autosize;                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  ,                                       !- Zone Load Sizing Method
+  ,                                       !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  ,                                       !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ;                                       !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
 
 OS:ZoneHVAC:EquipmentList,
   {2b07ec46-aaf0-4a3e-b6a6-b52d703e45db}, !- Handle
@@ -9833,60 +9775,178 @@ OS:Connection,
   {71f3a0d7-04e9-4e0d-9f04-40a29ac404ac}, !- Target Object
   2;                                      !- Inlet Port
 
-OS:ElectricEquipment:Definition,
-  {f36d0f40-24cb-418a-8b42-5180c8cfd2b2}, !- Handle
-  Elevator Lights,                        !- Name
-  EquipmentLevel,                         !- Design Level Calculation Method
-  32.3485714285714,                       !- Design Level {W}
-  ,                                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  ,                                       !- Fraction Latent
-  0.5;                                    !- Fraction Radiant
+OS:StandardsInformation:Construction,
+  {a4bdac63-f557-430b-af16-d14bc360ea72}, !- Handle
+  {988e763d-123e-4714-b3e0-919f58913188}; !- Construction Name
+
+OS:Construction:FfactorGroundFloor,
+  {988e763d-123e-4714-b3e0-919f58913188}, !- Handle
+  Foundation F 126 Perim 4991 Area 20734, !- Name
+  1.26343630645112,                       !- F-Factor {W/m-K}
+  207.33814098,                           !- Area {m2}
+  49.911;                                 !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {71e791f4-c361-4652-ad5e-b852183d80c2}, !- Handle
+  {f4719164-e1e9-4d00-ad76-488b20a0aeb6}, !- Handle
   Component Data 1,                       !- Name
-  {caa429e1-1ac4-413d-80fc-51ac03d03e12}, !- UUID
-  {b9a5a9a9-0d04-428d-be0d-69799dd1372f}, !- Version UUID
-  1676777049,                             !- Creation Timestamp
-  1676777049,                             !- Version Timestamp
-  {f36d0f40-24cb-418a-8b42-5180c8cfd2b2}; !- Name of Object 1
+  {159838d9-c391-489f-b37c-81a8ea917d7f}, !- UUID
+  {0d595c16-9281-432e-b278-c6bc4cabb750}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {988e763d-123e-4714-b3e0-919f58913188}, !- Name of Object 1
+  {a4bdac63-f557-430b-af16-d14bc360ea72}; !- Name of Object 2
 
-OS:ElectricEquipment:Definition,
-  {6da1fdf9-23ce-4611-b9af-9dcf611a7176}, !- Handle
-  Elevator Fan,                           !- Name
-  EquipmentLevel,                         !- Design Level Calculation Method
-  30.9575828571429,                       !- Design Level {W}
-  ,                                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  ,                                       !- Fraction Latent
-  0.5;                                    !- Fraction Radiant
+OS:StandardsInformation:Construction,
+  {227484c3-712e-4469-ac93-3cef3e601d67}, !- Handle
+  {c9e996fc-4843-4611-9155-aec8a07c84ee}; !- Construction Name
+
+OS:Construction:FfactorGroundFloor,
+  {c9e996fc-4843-4611-9155-aec8a07c84ee}, !- Handle
+  Foundation F 126 Perim 4991 Area 20735, !- Name
+  1.26343630645112,                       !- F-Factor {W/m-K}
+  207.33814098,                           !- Area {m2}
+  49.911;                                 !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {4e0c6345-f491-4fb4-b356-347c13917afa}, !- Handle
+  {a901dcb7-67c4-4757-afdd-26a7eebd1a91}, !- Handle
   Component Data 2,                       !- Name
-  {75a3eb3c-e58b-4377-92da-1e7fd3fed642}, !- UUID
-  {71263256-0949-4ba7-87e0-e2c6c95518c0}, !- Version UUID
-  1676777049,                             !- Creation Timestamp
-  1676777049,                             !- Version Timestamp
-  {6da1fdf9-23ce-4611-b9af-9dcf611a7176}; !- Name of Object 1
+  {011f9c7c-f90e-46eb-b66a-b0ddaa06c0d3}, !- UUID
+  {7ee8a7a5-cd5c-46de-8f63-f05feb51bc2e}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {c9e996fc-4843-4611-9155-aec8a07c84ee}, !- Name of Object 1
+  {227484c3-712e-4469-ac93-3cef3e601d67}; !- Name of Object 2
 
-OS:ElectricEquipment:Definition,
-  {207fed7e-d49b-4901-a70f-89eb13da8967}, !- Handle
-  Elevator Lift Motor,                    !- Name
-  EquipmentLevel,                         !- Design Level Calculation Method
-  16055,                                  !- Design Level {W}
-  ,                                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  ,                                       !- Fraction Latent
-  0.5;                                    !- Fraction Radiant
+OS:StandardsInformation:Construction,
+  {22ebe11e-e24a-4366-95d6-3fd7ddceebd3}, !- Handle
+  {98b44fa9-c1ae-4d54-9256-c72afb4bf5e3}; !- Construction Name
+
+OS:Construction:FfactorGroundFloor,
+  {98b44fa9-c1ae-4d54-9256-c72afb4bf5e3}, !- Handle
+  Foundation F 126 Perim 3327 Area 13125, !- Name
+  1.26343630645112,                       !- F-Factor {W/m-K}
+  131.25358392,                           !- Area {m2}
+  33.2738;                                !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {c4c91edb-116f-4340-b5d4-d101fe5183ce}, !- Handle
+  {a628ea00-e43a-4e3a-b159-4db778999e57}, !- Handle
   Component Data 3,                       !- Name
-  {d1fef07f-f660-42fe-ae92-853a4be01bd6}, !- UUID
-  {cfff04fb-7ef8-4ffa-84aa-2278e3f32d85}, !- Version UUID
-  1676777049,                             !- Creation Timestamp
-  1676777049,                             !- Version Timestamp
-  {207fed7e-d49b-4901-a70f-89eb13da8967}; !- Name of Object 1
+  {8d25cac2-adca-4026-b3a6-a23cfe55900c}, !- UUID
+  {a06747d0-135c-4c2a-ac4f-5d2509ec7339}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {98b44fa9-c1ae-4d54-9256-c72afb4bf5e3}, !- Name of Object 1
+  {22ebe11e-e24a-4366-95d6-3fd7ddceebd3}; !- Name of Object 2
+
+OS:StandardsInformation:Construction,
+  {57c68b9f-f124-421b-ac52-0b4cab25663f}, !- Handle
+  {ca83b308-4c15-4e6a-9a7f-cfd2bae60f88}; !- Construction Name
+
+OS:Construction:FfactorGroundFloor,
+  {ca83b308-4c15-4e6a-9a7f-cfd2bae60f88}, !- Handle
+  Foundation F 126 Perim 0 Area 98354,    !- Name
+  1.26343630645112,                       !- F-Factor {W/m-K}
+  983.53657182,                           !- Area {m2}
+  0;                                      !- PerimeterExposed {m}
+
+OS:ComponentData,
+  {f3bc730b-a89e-407f-a3b3-5cf91f4dff03}, !- Handle
+  Component Data 4,                       !- Name
+  {838b602b-cfc7-4e56-8570-640ed68b2560}, !- UUID
+  {fdcfb8a0-a9c2-4db2-973d-fc273844e4d4}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {ca83b308-4c15-4e6a-9a7f-cfd2bae60f88}, !- Name of Object 1
+  {57c68b9f-f124-421b-ac52-0b4cab25663f}; !- Name of Object 2
+
+OS:StandardsInformation:Construction,
+  {cd337b89-79b7-48c7-a27a-febf018bccbd}, !- Handle
+  {e0190134-9d4b-4571-9476-43632e4e3a7d}; !- Construction Name
+
+OS:Construction:FfactorGroundFloor,
+  {e0190134-9d4b-4571-9476-43632e4e3a7d}, !- Handle
+  Foundation F 126 Perim 3327 Area 13126, !- Name
+  1.26343630645112,                       !- F-Factor {W/m-K}
+  131.25358392,                           !- Area {m2}
+  33.2738;                                !- PerimeterExposed {m}
+
+OS:ComponentData,
+  {98c8305d-edd6-4a7c-bf63-a8a956831deb}, !- Handle
+  Component Data 5,                       !- Name
+  {0dc2a921-1235-4bc7-a336-ce42d6005612}, !- UUID
+  {1943c44d-f8d7-4879-a676-b6eb1e9a4557}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {e0190134-9d4b-4571-9476-43632e4e3a7d}, !- Name of Object 1
+  {cd337b89-79b7-48c7-a27a-febf018bccbd}; !- Name of Object 2
+
+OS:SizingPeriod:DesignDay,
+  {4bdfc342-e844-497c-9604-4cd638e01fec}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg 99.6% Condns DB, !- Name
+  0.5,                                    !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  140,                                    !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  WinterDesignDay,                        !- Day Type
+  No,                                     !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  0.5,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:ComponentData,
+  {a20b283f-cf76-4e33-8bab-e98096dc0c98}, !- Handle
+  Component Data 6,                       !- Name
+  {a75c36fd-7e9f-47a3-982c-81f6c5b1cb8f}, !- UUID
+  {1c0459e4-4de6-44e8-9e8f-4de86c902f7f}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {4bdfc342-e844-497c-9604-4cd638e01fec}; !- Name of Object 1
+
+OS:SizingPeriod:DesignDay,
+  {092dc37b-3710-4cdb-8f48-44e5ad913299}, !- Handle
+  Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DB=>MWB, !- Name
+  40.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  91976,                                  !- Barometric Pressure {Pa}
+  4.8,                                    !- Wind Speed {m/s}
+  310,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  No,                                     !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  18.5,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.555,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:ComponentData,
+  {2f34f9e3-f759-466d-aa78-2b125fa220c7}, !- Handle
+  Component Data 7,                       !- Name
+  {605deffe-e8b3-408e-bcbb-a5a85a9c4964}, !- UUID
+  {6a249036-3d9c-4f5a-b064-0f0c1489bcaa}, !- Version UUID
+  1676928812,                             !- Creation Timestamp
+  1676928812,                             !- Version Timestamp
+  {092dc37b-3710-4cdb-8f48-44e5ad913299}; !- Name of Object 1
 

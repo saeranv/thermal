@@ -33,8 +33,8 @@ else:
     if len(args) == 0:
         _swaps = (0, 0, 1)
     elif args[0] == "-h":
-        print("Usage: python swap.py <swap_constr> <swap_sizing> <swap_equip>")
-        assert False
+        print("Usage: python swap.py [swap_constr] [swap_sizing] [swap_equip]")
+        exit()
     else:
         _swaps = args
     swap_constr_, swap_sizing_, swap_equip_ = [bool(int(i)) for i in _swaps]
@@ -315,10 +315,15 @@ def swap_equip(act_osm, ref_osm, verbose=False):
     ref_equips = ref_osm.getElectricEquipmentDefinitions()
     for ref_spc, act_spc in zip(ref_spcs, act_spcs):
         ref_equips = ref_spc.electricEquipment()
-        for equip in ref_equips:
-            if "elevator" not in equip.nameString().lower():
+        for ref_equip in ref_equips:
+            if "elevator" not in ref_equip.nameString().lower():
                 continue
-            pass
+            ref_equip_defn = ref_equip.electricEquipmentDefinition()
+            print(ref_equip_defn)
+            #act_equip = swap_modelobj(ref_equip, act_osm)
+
+            print(act_equip)
+            #ppdir(equip, 'electricequipment', sep='\n')
             assert False
     #meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
     #assert_init(meter).get().remove()
