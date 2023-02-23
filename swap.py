@@ -320,30 +320,28 @@ def swap_equip(act_osm, ref_osm, verbose=False):
     act_defn_names = {d.nameString() for d in act_defns}
 
     # Get act_equip set
-    act_equips = act_osm.getElectricEquipment()
+    #ppdir(act_osm, 'electricequipment', sep='\n')
+    act_equips = act_osm.getElectricEquipments()
     act_equip_names = {e.nameString() for e in act_equips}
 
     # Swap ref equips_defn to to act model
-    for rd in ref_defns:
-        if rd.nameString() in act_defn_names
+    for ref_defn in ref_defns:
+        if ref_defn.nameString() in act_defn_names:
             continue
-        ref_modelobj = assert_init(rd).get()
-        _ = swap_modelobj(ref_modelobj, act_osm)
+        _ = swap_modelobj(ref_defn, act_osm)
 
     # Loop through spaces and assign eqiuip_defn to space
     for ref_spc, act_spc in zip(ref_spcs, act_spcs):
         ref_equips = ref_spc.electricEquipment()
-        #act_equip_names = set(x for x in act_spc.electricEquipment())
-        # TODO: diff w/ ref
         for ref_equip in ref_equips:
-            if "elevator" not in ref_equip.nameString().lower():
+            #if "elevator" not in ref_equip.nameString().lower():
+            if ref_equip.nameString() in act_equip_names:
                 continue
             ref_equip_defn = ref_equip.electricEquipmentDefinition()
-            print(ref_equip_defn)
-            #act_equip = swap_modelobj(ref_equip, act_osm)
-
-            print(act_equip)
-            #ppdir(equip, 'electricequipment', sep='\n')
+            #print(ref_equip_defn)
+            ppdir(act_spc, 'electricEquipment', sep='\n')
+            act_equip_defn =
+            act_osm.ElectricEquipment(ref_
             assert False
     #meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
     #assert_init(meter).get().remove()
