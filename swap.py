@@ -309,12 +309,32 @@ def swap_equip(act_osm, ref_osm, verbose=False):
                 "Names don't match in spc."
         return rspcs, aspcs
 
+    # Get all spaces, and sort them
     ref_spcs = ref_osm.getSpaces()
     act_spcs = act_osm.getSpaces()
     ref_spcs, act_spcs = _match_spc(ref_spcs, act_spcs)
-    ref_equips = ref_osm.getElectricEquipmentDefinitions()
+
+    # Get equip def vars
+    ref_defns = ref_osm.getElectricEquipmentDefinitions()
+    act_defns = act_osm.getElectricEquipmentDefinitions()
+    act_defn_names = {d.nameString() for d in act_defns}
+
+    # Get act_equip set
+    act_equips = act_osm.getElectricEquipment()
+    act_equip_names = {e.nameString() for e in act_equips}
+
+    # Swap ref equips_defn to to act model
+    for rd in ref_defns:
+        if rd.nameString() in act_defn_names
+            continue
+        ref_modelobj = assert_init(rd).get()
+        _ = swap_modelobj(ref_modelobj, act_osm)
+
+    # Loop through spaces and assign eqiuip_defn to space
     for ref_spc, act_spc in zip(ref_spcs, act_spcs):
         ref_equips = ref_spc.electricEquipment()
+        #act_equip_names = set(x for x in act_spc.electricEquipment())
+        # TODO: diff w/ ref
         for ref_equip in ref_equips:
             if "elevator" not in ref_equip.nameString().lower():
                 continue
