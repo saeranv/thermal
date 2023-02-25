@@ -5,7 +5,7 @@ import sys
 pp = lambda *x: print(x, sep="\n")
 import traceback
 
-INIT_ERR_MSG = lambda m: "{} not initialized.".format(m)
+INIT_ERR_MSG = lambda m: "Not initialized error, for {}.".format(m)
 IS_TTY = len(sys.argv[0]) != 0
 _LINEBREAK = "------------------------------------------"
 LINEBREAK = (_LINEBREAK, _LINEBREAK)
@@ -18,7 +18,6 @@ else:
     #assert len(argv) == 2, "Expected 2 args, got {}.".format(len(argv))
     # Define load_osm, dump_osm
     import openstudio as ops
-    #print(*dir(ops), sep="\n")
     def load_osm(osm_fpath):
         model = ops.model.Model.load(ops.toPath(osm_fpath))
         assert model.is_initialized()
@@ -44,12 +43,23 @@ else:
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
 
 
-def ppdir(obj, qstr="", *args, **kwargs):
+def ppdir(modelobj, qstr=""):#, *args, **kwargs):
     """Helper function to pretty print directories."""
-    def cond_fn(x):
+    def _cond_fn(x):
+        x = x.lower()
         return (not x.startswith("__")) and (qstr.lower() in x)
-    result = [x for x in dir(obj) if cond_fn(x.lower())]
-    print(*result, *args, **kwargs)
+
+    def modelobj_method_strs(obj, cond_fn, result):
+        result += [mstr for mstr in dir(obj) if cond_fn(mstr)]
+        if not (hasattr(obj, 'parent') and obj.parent().is_initialized()):
+            return result
+        else:
+            parent = obj.parent().get()
+            return modelobj_method_strs(parent, cond_fn, result)
+
+    result = modelobj_method_strs(modelobj, _cond_fn, [])
+    print(*result)#, *args, **kwargs)
+
 
 def argmin(arr):
     """argmin: arr[int|float] -> [int|None]"""
@@ -283,8 +293,8 @@ def swap_sizing_params(act_osm, ref_osm, verbose=False):
     return act_osm
 
 
-def swap_equip(act_osm, ref_osm, verbose=False):
-    """Remove elevator from ref_osm."""
+def swap_spc_equip(act_osm, ref_osm, verbose=False):
+    """Remove spc equip from ref_osm."""
 
     def _diff_equip(act_osm, ref_osm):
         """Compare required sizing parameters."""
@@ -310,47 +320,54 @@ def swap_equip(act_osm, ref_osm, verbose=False):
         return rspcs, aspcs
 
     # Get all spaces, and sort them
-    ref_spcs = ref_osm.getSpaces()
-    act_spcs = act_osm.getSpaces()
+    ref_spcs, act_spcs = ref_osm.getSpaces(), act_osm.getSpaces()
     ref_spcs, act_spcs = _match_spc(ref_spcs, act_spcs)
 
-    # Get equip def vars
-    ref_defns = ref_osm.getElectricEquipmentDefinitions()
-    act_defns = act_osm.getElectricEquipmentDefinitions()
-    act_defn_names = {d.nameString() for d in act_defns}
-
-    # Get act_equip set
-    #ppdir(act_osm, 'electricequipment', sep='\n')
-    act_equips = act_osm.getElectricEquipments()
-    act_equip_names = {e.nameString() for e in act_equips}
-
-    # Swap ref equips_defn to to act model
-    for ref_defn in ref_defns:
-        if ref_defn.nameString() in act_defn_names:
-            continue
-        _ = swap_modelobj(ref_defn, act_osm)
-
-    # Loop through spaces and assign eqiuip_defn to space
+    ## Loop through spaces and remove/then assign eqiuip_defn to space
     for ref_spc, act_spc in zip(ref_spcs, act_spcs):
-        ref_equips = ref_spc.electricEquipment()
-        for ref_equip in ref_equips:
+        for act_equip in act_spc.electricEquipment():
+            pass #act_equip.remove()
+        for ref_equip in ref_spc.electricEquipment():
+            ## TODO: add the diff-check which adds unique_ref_equip
+            ## unique_ref_equip = ref_equip not in (act_equip AND ref_equip)
             #if "elevator" not in ref_equip.nameString().lower():
-            if ref_equip.nameString() in act_equip_names:
-                continue
-            ref_equip_defn = ref_equip.electricEquipmentDefinition()
-            #print(ref_equip_defn)
-            ppdir(act_spc, 'electricEquipment', sep='\n')
-            act_equip_defn =
-            act_osm.ElectricEquipment(ref_
-            assert False
-    #meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
-    #assert_init(meter).get().remove()
+            #    continue
+            act_equip = swap_modelobj(ref_equip, act_osm)
+            is_parent_set = act_equip.setParent(act_spc)
+            assert is_parent_set, \
+                "Error! setParent fail for {}".format(act_equip)
+            print('Added equip: {} to space: {}'.format(
+                act_equip.nameString(), act_spc.nameString()))
+    #swap_spctype_equip(act_osm, ref_osm)
 
-    #meter = ref_osm.getMeterCustomDecrementByName("Wired_Int_EQUIP")
-    #assert_init(meter).get().remove()
-    #print(ppdir(ref_osm, 'meter'))
-    return ref_osm
+    return act_osm
 
+def swap_spctype_equip(act_osm, ref_osm):
+    """Swap spctype equip."""
+
+    ref_equips = ref_osm.getElectricEquipments()
+    act_equips = act_osm.getElectricEquipments()
+    act_names = [act.nameString() for act in act_equips]
+    act_equip = act_equips[0]
+    parent = assert_init(act_equip.parent()).get()
+    print(type(parent.iddObjectType()))
+    #ppdir(parent, sep='\n')
+    #for ref_equip in ref_equips:
+    #
+    #    ref_parent = assert_init(ref_equip.parent()).get()
+    #ref_spc_types = ref_osm.getSpaceTypes()
+    #print(ref_light.lightsDefinition())
+
+
+def swap_light_spc(act_osm, ref_osm):
+    """Swap lights from spc."""
+    # TODO: define to space not spacetype:
+    ref_lights = ref_osm.getLightss()
+    for ref_light in ref_lights:
+        ref_parent = assert_init(ref_light.parent()).get()
+    ref_spc_types = ref_osm.getSpaceTypes()
+    print(ref_light.lightsDefinition())
+    #print(*ref_spc_types, sep='\n')
 
 
 def main(act_fpath, ref_fpath, act_swap_fpath,
@@ -380,14 +397,11 @@ def main(act_fpath, ref_fpath, act_swap_fpath,
     ## SWAP LOADS
     if is_swap_equip:
         print("{}\nSWAP EQUIP\n{}".format(*LINEBREAK))
-        #print('WIP - disabled.')
-        ref_model = swap_equip(act_model, ref_model, verbose=True)
+        act_model = swap_spc_equip(act_model, ref_model, verbose=True)
 
     ## Dump osm model
     act_swap_fpath = dump_osm(act_model, act_swap_fpath)
-    ref_swap_fpath = ref_fpath.replace('.osm', '_swap.osm')
-    ref_swap_fpath = dump_osm(ref_model, ref_swap_fpath)
-    return act_swap_fpath, ref_swap_fpath
+    return act_swap_fpath
 
 if run:
 
@@ -396,13 +410,9 @@ if run:
     else:
         # Create filepath for edited osm
         _osm_dpath = os.path.dirname(_osm_fpath)
-        if "hb_model" in _osm_fpath:
-            act_swap_dpath = os.path.join(_osm_dpath, '../../..') + "_Swap"
-        else:
-            act_swap_dpath = os.path.join(_osm_dpath, 'act_swap')
+        act_swap_dpath = os.path.join(_osm_dpath, '../../..') + "_Swap"
         if not os.path.isdir(act_swap_dpath):
             _ = os.mkdir(act_swap_dpath)
-
         act_swap_fpath_ = os.path.join(act_swap_dpath, "in.osm")
 
     # Define defaults
@@ -410,7 +420,7 @@ if run:
     swap_sizing_ = False if swap_sizing_ is None else swap_sizing_
     swap_equip_ = False if swap_equip_ is None else swap_equip_
     try:
-        osm_fpath_edit, ref_fpath_edit = \
+        osm_fpath_edit = \
             main(_osm_fpath, _ref_osm_fpath, act_swap_fpath_,
                  swap_constr_, swap_sizing_, swap_equip_)
         print("swap_constr:", swap_constr_,

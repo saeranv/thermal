@@ -1,4 +1,7 @@
 {
-    "weather_file": "in.epw", 
-    "seed_file": "../act_swap.osm"
+    "created_at": "20230219T000721Z",
+    "seed_file": "../act_swap.osm",
+    "steps": [],
+    "updated_at": "20230219T000721Z",
+    "weather_file": "./in.epw"
 }

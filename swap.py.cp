@@ -44,12 +44,12 @@ else:
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
 
 
-def ppdir(obj, qstr=""):
+def ppdir(obj, qstr="", *args, **kwargs):
     """Helper function to pretty print directories."""
     def cond_fn(x):
         return (not x.startswith("__")) and (qstr.lower() in x)
-    return [x for x in dir(obj) if cond_fn(x.lower())]
-
+    result = [x for x in dir(obj) if cond_fn(x.lower())]
+    print(*result, *args, **kwargs)
 
 def argmin(arr):
     """argmin: arr[int|float] -> [int|None]"""
@@ -301,26 +301,32 @@ def swap_equip(act_osm, ref_osm, verbose=False):
     #    print("Equipments are equal. No swapping.")
     #    return act_osm
     print("Equipments not equal. Swapping.")
-    # TODO: strip equip.
+    def _match_spc(rspcs, aspcs):
+        rspcs = sorted(rspcs, key=lambda x: x.nameString())
+        aspcs = sorted(aspcs, key=lambda x: x.nameString())
+        for rspc, aspc in zip(rspcs, aspcs):
+            assert rspc.nameString() in aspc.nameString(), \
+                "Names don't match in spc."
+        return rspcs, aspcs
+
     ref_spcs = ref_osm.getSpaces()
-    #act_spcs = act_osm.getSpaces()
-    #act_srfs = list(act_spcs[0].surfaces())
-    #act_zvec = list(map(lambda s: s.centroid().z(), act_srfs))
-    #for i, ref_spc in enumerate(ref_spcs):
-    #    equips = list(ref_spc.electricEquipment())
-    #    if len(equips) == 0:
-    #        continue
-    #    _ = [equip.remove() for equip in equips]
+    act_spcs = act_osm.getSpaces()
+    ref_spcs, act_spcs = _match_spc(ref_spcs, act_spcs)
     ref_equips = ref_osm.getElectricEquipmentDefinitions()
-    for num_def, equip in enumerate(ref_equips):
+    for ref_spc, act_spc in zip(ref_spcs, act_spcs):
+        ref_equips = ref_spc.electricEquipment()
+        for ref_equip in ref_equips:
+            if "elevator" not in ref_equip.nameString().lower():
+                continue
+            act_equip = swap_modelobj(ref_equip, act_osm)
+            print(act_equip)
+            #ppdir(equip, 'electricequipment', sep='\n')
+            assert False
+    #meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
+    #assert_init(meter).get().remove()
 
-        if "elevator" in equip.nameString().lower():
-            equip.remove()
-    meter = ref_osm.getMeterCustomByName("Wired_LTG_Electricity")
-    assert_init(meter).get().remove()
-
-    meter = ref_osm.getMeterCustomDecrementByName("Wired_Int_EQUIP")
-    assert_init(meter).get().remove()
+    #meter = ref_osm.getMeterCustomDecrementByName("Wired_Int_EQUIP")
+    #assert_init(meter).get().remove()
     #print(ppdir(ref_osm, 'meter'))
     return ref_osm
 

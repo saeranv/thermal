@@ -2,6 +2,8 @@
 # /thermal-mass/thermal.sh
 
 cd "$(dirname "$0")"
+echo "thermal.sh: $(pwd)"
+THERMWIN_DP="/mnt/c/users/admin/master/thermal"
 THERM_DP=$PWD
 
 # REF VARS
@@ -51,6 +53,7 @@ ACT_VARS=( \
     $ACT_SEED_EPW $ACT_EPW \
     "act")
 
+
 chk_fp_exist () {
     for i in $@; do
         FP=$i
@@ -67,6 +70,7 @@ python - << EOF
 # Rewrite .osm seed location in given .osw
 import json; from pprint import pprint
 osw_fp = '$1'
+osm_fp = '$2'
 filter_m = lambda m: 'OpenStudio Results' not in m['name'] 
 with open(osw_fp, 'r') as f:
     data = json.load(f)
@@ -77,7 +81,7 @@ with open(osw_fp, 'w') as f:
         data.pop('weather_file')
     data['weather_file'] = './in.epw'
     data['steps'] = list(filter(filter_m, data['steps']))
-    data['seed_file'] = '../$2.osm'
+    data['seed_file'] = f'../{osm_fp}.osm'
     json.dump(data, f, indent=4)
 pprint(data)
 EOF
@@ -130,6 +134,15 @@ cp_mod () {
     modify_osw $MOD_OSW "$MOD_NAME"
 }
 
+swap_cp () {
+    echo "Copy ./act/act_swap, ./ref/ref to windows dir."
+    [[ -d "$THERMWIN_DP/ref" ]] && rm -r "$THERMWIN_DP/ref"
+    [[ -d "$THERMWIN_DP/act_swap" ]] && rm -r "$THERMWIN_DP/act_swap"
+    cp -r "$THERM_DP/act/act_swap" "$THERMWIN_DP/"
+    cp -r "$THERM_DP/ref/ref" "$THERMWIN_DP/"
+    cp "$THERM_DP/ref/ref.osm" "$THERMWIN_DP/"
+    cp "$THERM_DP/act/act_swap.osm" "$THERMWIN_DP/"
+}
 #mk_hb_model_swap () {
 #    # Create HB_MODEL_DIR for future swap model 
 #    HB_SWAP_DP="${HB_MODEL_DP}_Swap" 
@@ -155,7 +168,7 @@ Example:
 if [[ "$1" != *"-"* ]]; then
     args=("${@:2}")
     if [[ -d "$THERM_DP/$1" ]]; then 
-        ACT_REF_VAR=$1 
+        STDIN_VAR=$1 
     else
         echo "Error, first arg must be 'ref' or 'act', got $1."
         exit 1
@@ -168,25 +181,49 @@ fi
 
 if [[ "$#" -eq 0 ]]; then
     echo -e "$helpcmd"
-else
-    # for arg must be alone on this line
-    for i in $@; do
-        [[ "$i" == "-h" ]] && \
-            echo -e "$helpcmd"
-        if [[ "$i" == "-cp" ]]; then
-            [[ $ACT_REF_VAR == "ref" ]] && \
-                cp_mod ${REF_VARS[@]} || \
-                cp_mod ${ACT_VARS[@]}
-        fi 
-        if [[ "$i" == "-rm" ]]; then 
-            [[ $ACT_REF_VAR == "ref" ]] && \
-                rm_mod "$REF_DP/ref" "$REF_OSM" 'ref' || \
-                rm_mod "$ACT_DP/act" "$ACT_OSM" 'act'
-        fi
-        if [[ "$i" == "-ls" ]]; then 
-            [[ $ACT_REF_VAR == "ref" ]] && \
-                ls "$THERM_DP/ref" || \
-                ls "$THERM_DP/act"
-        fi
-    done
+    exit 1
 fi
+
+if [[ "$1" == "-swap_sim" ]]; then
+    echo "Create ./act/act_swap dir"
+    ACT_SWAP_DP="$ACT_DP/act_swap"
+    [[ -d "$ACT_SWAP_DP" ]] && \
+        rm -rf "$ACT_SWAP_DP"
+    mkdir "$ACT_SWAP_DP"
+    cp "$ACT_OSW" "$ACT_SWAP_DP/workflow.osw"
+    cp "$ACT_EPW" "$ACT_SWAP_DP/in.epw"
+    modify_osw "$ACT_SWAP_DP/workflow.osw" "act_swap"
+    echo "Simulate ./act/act_swap"
+    openstudio run -w "$ACT_SWAP_DP/workflow.osw"
+    tail -3 "$ACT_SWAP_DP/run/eplusout.err"
+    swap_cp  
+    exit 1
+elif [[ "$1" == "-swap_cp" ]]; then
+    swap_cp
+    exit 1
+fi
+
+# for arg must be alone on this line
+for i in $@; do
+    [[ "$i" == "-h" ]] && \
+        echo -e "$helpcmd"
+    if [[ "$i" == "-cp" ]]; then
+        [[ $STDIN_VAR == "ref" ]] && \
+            cp_mod ${REF_VARS[@]} || \
+            cp_mod ${ACT_VARS[@]}
+    fi
+    if [[ "$i" == "-sim" ]]; then
+        echo "Simulating ref/ref" 
+        openstudio run -w "$REF_OSW"
+    fi
+    if [[ "$i" == "-rm" ]]; then 
+        [[ $STDIN_VAR == "ref" ]] && \
+            rm_mod "$REF_DP/ref" "$REF_OSM" 'ref' || \
+            rm_mod "$ACT_DP/act" "$ACT_OSM" 'act'
+    fi
+    if [[ "$i" == "-ls" ]]; then 
+        [[ $STDIN_VAR == "ref" ]] && \
+            ls "$THERM_DP/ref" || \
+            ls "$THERM_DP/act"
+    fi
+done
