@@ -3348,7 +3348,7 @@ OS:Surface,
   {dddc0072-15f2-45a3-ab7f-e386ff652813}, !- Handle
   Perimeter_bot_ZN_2_e6662cae..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {e567e753-3865-47fe-95da-01f35221973e}, !- Construction Name
+  {f4738258-5e5f-4122-8514-4160042f434a}, !- Construction Name
   {966cfda5-c7db-45a5-89ba-4635098dcdc4}, !- Space Name
   GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
@@ -3685,7 +3685,7 @@ OS:Surface,
   {980d65f1-83a5-4887-acf9-3b77a67cf362}, !- Handle
   Perimeter_bot_ZN_3_d1f4c906..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {55341f35-c26c-4ad3-9701-31e3e0123ea7}, !- Construction Name
+  {f9a572b5-6ca9-4313-91e3-7d5639b5720b}, !- Construction Name
   {0756bb7e-dfb0-4513-b869-d919f45ddb64}, !- Space Name
   GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
@@ -4054,7 +4054,7 @@ OS:Surface,
   {71561544-12cf-4d2a-9cce-3a083c0ec715}, !- Handle
   Perimeter_bot_ZN_4_d2dd3ca7..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {aeb207ae-758c-4e96-b228-f8578e69f9fa}, !- Construction Name
+  {f9603093-64a1-4830-a399-ffb728e00e16}, !- Construction Name
   {375837f7-f536-416f-bc7f-1eab7aa7b236}, !- Space Name
   GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
@@ -4391,7 +4391,7 @@ OS:Surface,
   {9c6a0fcd-2b9d-4c2f-9c56-6daa81272138}, !- Handle
   Perimeter_bot_ZN_1_1fb78bff..Face0,     !- Name
   Floor,                                  !- Surface Type
-  {5f2af000-5d63-459b-bd78-bdf9a9eb0992}, !- Construction Name
+  {d75c8c90-2af9-4f84-8bfc-7cf24adca5c5}, !- Construction Name
   {39f645b5-8317-40cb-b13f-004e7dbdf0f5}, !- Space Name
   GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
@@ -4760,7 +4760,7 @@ OS:Surface,
   {d465a192-cbf6-447f-88fe-e72c59872a55}, !- Handle
   Core_bottom_332ce0fc..Face0,            !- Name
   Floor,                                  !- Surface Type
-  {fa10c41a-c662-4338-8e26-b45c0a46a895}, !- Construction Name
+  {02c07cf7-8c05-423f-ade6-4c24202249de}, !- Construction Name
   {a0e252eb-64eb-4061-a57b-2b5acd4173dd}, !- Space Name
   GroundFCfactorMethod,                   !- Outside Boundary Condition
   ,                                       !- Outside Boundary Condition Object
@@ -10374,87 +10374,87 @@ OS:Connection,
   2;                                      !- Inlet Port
 
 OS:Construction:FfactorGroundFloor,
-  {5f2af000-5d63-459b-bd78-bdf9a9eb0992}, !- Handle
+  {d75c8c90-2af9-4f84-8bfc-7cf24adca5c5}, !- Handle
   Foundation F 126 Perim 4991 Area 20734, !- Name
   1.26343630645112,                       !- F-Factor {W/m-K}
   207.33814098,                           !- Area {m2}
   49.911;                                 !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {5fa5645d-b31f-4f8f-a369-9f45866865d4}, !- Handle
+  {11bead95-bf79-41f9-bbf8-78347575d3ae}, !- Handle
   Component Data 1,                       !- Name
-  {d5449275-1453-4bb9-9a9e-2b9adb683562}, !- UUID
-  {aa4f4353-cdf7-4ec5-b4c7-4db8b97a15b0}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {5f2af000-5d63-459b-bd78-bdf9a9eb0992}; !- Name of Object 1
+  {2d7bf3da-d522-422d-95d3-5c43cf19a827}, !- UUID
+  {440096a0-52a6-4031-a08e-9a29a81ac652}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {d75c8c90-2af9-4f84-8bfc-7cf24adca5c5}; !- Name of Object 1
 
 OS:Construction:FfactorGroundFloor,
-  {aeb207ae-758c-4e96-b228-f8578e69f9fa}, !- Handle
+  {f9603093-64a1-4830-a399-ffb728e00e16}, !- Handle
   Foundation F 126 Perim 3327 Area 13125, !- Name
   1.26343630645112,                       !- F-Factor {W/m-K}
   131.25358392,                           !- Area {m2}
   33.2738;                                !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {eaa71a4e-4aed-4199-9432-c4ee0e379cc0}, !- Handle
+  {e6fcfd49-2912-4939-a223-bacac93c8255}, !- Handle
   Component Data 2,                       !- Name
-  {b49b592d-2375-4507-a41a-6b1dc1ed34f4}, !- UUID
-  {631c22fa-2989-4d7f-a7aa-7f38228ba4ca}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {aeb207ae-758c-4e96-b228-f8578e69f9fa}; !- Name of Object 1
+  {893934ee-ab9d-41dd-8e7c-509c9112fec6}, !- UUID
+  {3c2a8287-a6e3-4d3e-8332-8664bc7c6ffe}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {f9603093-64a1-4830-a399-ffb728e00e16}; !- Name of Object 1
 
 OS:Construction:FfactorGroundFloor,
-  {55341f35-c26c-4ad3-9701-31e3e0123ea7}, !- Handle
+  {f9a572b5-6ca9-4313-91e3-7d5639b5720b}, !- Handle
   Foundation F 126 Perim 4991 Area 20735, !- Name
   1.26343630645112,                       !- F-Factor {W/m-K}
   207.33814098,                           !- Area {m2}
   49.911;                                 !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {a580cac5-d4b5-468b-83d6-bc0aa92a535d}, !- Handle
+  {2bf0606d-b66a-4993-8d4c-dfb9337151da}, !- Handle
   Component Data 3,                       !- Name
-  {98fc4faf-77b8-43b2-b867-92c91d133f92}, !- UUID
-  {ca091b9d-2010-41a8-835b-e7c4efef1586}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {55341f35-c26c-4ad3-9701-31e3e0123ea7}; !- Name of Object 1
+  {f6390a7d-0d91-4084-9f43-6406db61634f}, !- UUID
+  {d94c16bb-d5db-4b9b-bc7e-ab82ef3b27e4}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {f9a572b5-6ca9-4313-91e3-7d5639b5720b}; !- Name of Object 1
 
 OS:Construction:FfactorGroundFloor,
-  {fa10c41a-c662-4338-8e26-b45c0a46a895}, !- Handle
+  {02c07cf7-8c05-423f-ade6-4c24202249de}, !- Handle
   Foundation F 126 Perim 0 Area 98354,    !- Name
   1.26343630645112,                       !- F-Factor {W/m-K}
   983.53657182,                           !- Area {m2}
   0;                                      !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {e9c2f45b-163d-441e-b4c1-eb1aae235ba1}, !- Handle
+  {ba77aeba-e680-4d48-803e-eeda3945f766}, !- Handle
   Component Data 4,                       !- Name
-  {60ad56cd-8ac0-43fc-90be-8f465824f9d4}, !- UUID
-  {00bc866e-8462-4753-8dab-13040ceef4c0}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {fa10c41a-c662-4338-8e26-b45c0a46a895}; !- Name of Object 1
+  {55930012-cc28-4146-9a63-01ea67433a16}, !- UUID
+  {a9eefe11-8ab9-4664-be1c-e82cdea5b204}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {02c07cf7-8c05-423f-ade6-4c24202249de}; !- Name of Object 1
 
 OS:Construction:FfactorGroundFloor,
-  {e567e753-3865-47fe-95da-01f35221973e}, !- Handle
+  {f4738258-5e5f-4122-8514-4160042f434a}, !- Handle
   Foundation F 126 Perim 3327 Area 13126, !- Name
   1.26343630645112,                       !- F-Factor {W/m-K}
   131.25358392,                           !- Area {m2}
   33.2738;                                !- PerimeterExposed {m}
 
 OS:ComponentData,
-  {14821dd0-48f2-4a26-bd55-447fe6e91f43}, !- Handle
+  {ec50ec74-f305-4124-9467-9c7cda466bc9}, !- Handle
   Component Data 5,                       !- Name
-  {a8063f94-bb10-4ab2-ba20-c0aec6e09348}, !- UUID
-  {d0efb505-349f-4aaa-b5ed-f4a4aa19743c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e567e753-3865-47fe-95da-01f35221973e}; !- Name of Object 1
+  {6d8c14cd-cb08-4778-be44-459933352920}, !- UUID
+  {be9d1b74-944c-43d9-92c6-dea18b6c9ded}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {f4738258-5e5f-4122-8514-4160042f434a}; !- Name of Object 1
 
 OS:SizingPeriod:DesignDay,
-  {ff744731-25c6-4998-867d-6de4f7c4c012}, !- Handle
+  {93831497-02a9-4bed-97ff-a469353bf3b6}, !- Handle
   Tucson-Davis-Monthan.AFB_AZ_USA Ann Htg 99.6% Condns DB, !- Name
   0.5,                                    !- Maximum Dry-Bulb Temperature {C}
   0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
@@ -10478,16 +10478,16 @@ OS:SizingPeriod:DesignDay,
   ASHRAEClearSky;                         !- Solar Model Indicator
 
 OS:ComponentData,
-  {4ca7bbdb-85ad-4c6d-b348-506ce57d91cc}, !- Handle
+  {ce39129d-a656-46db-8c49-963d8896b45d}, !- Handle
   Component Data 6,                       !- Name
-  {84b74b84-8a8c-460a-a267-501e7dc66b5a}, !- UUID
-  {f3404add-9ab5-414d-80db-5b46da47586d}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {ff744731-25c6-4998-867d-6de4f7c4c012}; !- Name of Object 1
+  {0e1f74f8-a2c1-4815-9ae2-c2d8735d06a9}, !- UUID
+  {ae1f5cd6-c81e-4ed6-bb32-a9dcbf21ee53}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {93831497-02a9-4bed-97ff-a469353bf3b6}; !- Name of Object 1
 
 OS:SizingPeriod:DesignDay,
-  {f3312862-f8a2-4000-8423-e879c2e69d50}, !- Handle
+  {c5b293c7-93fc-4ca5-919f-ac7ce5f29c4c}, !- Handle
   Tucson-Davis-Monthan.AFB_AZ_USA Ann Clg .4% Condns DB=>MWB, !- Name
   40.8,                                   !- Maximum Dry-Bulb Temperature {C}
   13.3,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
@@ -10515,25 +10515,25 @@ OS:SizingPeriod:DesignDay,
   1.729;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
 
 OS:ComponentData,
-  {d8282d1b-c4be-4a11-a244-422a76e4d6fd}, !- Handle
+  {f1ae60a4-2195-4ba0-b05e-107c03fdd331}, !- Handle
   Component Data 7,                       !- Name
-  {028812ac-aa32-4062-aa6d-633a87fddac4}, !- UUID
-  {f7b03456-f1dd-4083-b4a0-eaafe6867094}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {f3312862-f8a2-4000-8423-e879c2e69d50}; !- Name of Object 1
+  {040ccb89-0c38-49a5-81fe-b1a044697cb1}, !- UUID
+  {5b0eac39-2158-4a37-8037-3a6c10bdfdef}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {c5b293c7-93fc-4ca5-919f-ac7ce5f29c4c}; !- Name of Object 1
 
 OS:ScheduleTypeLimits,
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Handle
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Handle
   Fractional 1,                           !- Name
   0,                                      !- Lower Limit Value
   1,                                      !- Upper Limit Value
   Continuous;                             !- Numeric Type
 
 OS:Schedule:Day,
-  {6db3c168-c02b-417c-a1d5-d2addc01c9ea}, !- Handle
+  {9e37d185-ce4f-4e3b-95a3-7fcae3bf4e57}, !- Handle
   OfficeMedium BLDG_ELEVATORS Sat Day,    !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   7,                                      !- Hour 1
   0,                                      !- Minute 1
@@ -10576,18 +10576,18 @@ OS:Schedule:Day,
   0;                                      !- Value Until Time 13
 
 OS:Schedule:Day,
-  {4dacd9de-497c-430c-bc66-69bad3002fac}, !- Handle
+  {fa3e439b-87d5-470e-8037-4c27b5ae6879}, !- Handle
   OfficeMedium BLDG_ELEVATORS Sun|WntrDsn Day, !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Day,
-  {1eed6aa8-72a1-4559-87c6-8a9734c12eb2}, !- Handle
+  {65a8e2ae-758f-44c8-8122-d3c7b848a559}, !- Handle
   OfficeMedium BLDG_ELEVATORS Wkdy Day,   !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   7,                                      !- Hour 1
   0,                                      !- Minute 1
@@ -10633,11 +10633,11 @@ OS:Schedule:Day,
   0;                                      !- Value Until Time 14
 
 OS:Schedule:Rule,
-  {269f1953-8693-4d8e-aaf9-e385f8ad8a77}, !- Handle
+  {5983918f-002e-4df8-a38b-9cd4c9d2b3eb}, !- Handle
   Schedule Rule 20,                       !- Name
-  {93bbb905-3ece-4a81-8d9e-2266127c2462}, !- Schedule Ruleset Name
+  {661051b2-64e2-43f6-931f-b209b8576a76}, !- Schedule Ruleset Name
   2,                                      !- Rule Order
-  {6db3c168-c02b-417c-a1d5-d2addc01c9ea}, !- Day Schedule Name
+  {9e37d185-ce4f-4e3b-95a3-7fcae3bf4e57}, !- Day Schedule Name
   ,                                       !- Apply Sunday
   ,                                       !- Apply Monday
   ,                                       !- Apply Tuesday
@@ -10652,11 +10652,11 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Rule,
-  {0edb052d-f29f-4aff-895e-e52795fa8e9c}, !- Handle
+  {9e7da5f7-d7dd-4b77-84ad-cf3255a0d17e}, !- Handle
   Schedule Rule 21,                       !- Name
-  {93bbb905-3ece-4a81-8d9e-2266127c2462}, !- Schedule Ruleset Name
+  {661051b2-64e2-43f6-931f-b209b8576a76}, !- Schedule Ruleset Name
   1,                                      !- Rule Order
-  {4dacd9de-497c-430c-bc66-69bad3002fac}, !- Day Schedule Name
+  {fa3e439b-87d5-470e-8037-4c27b5ae6879}, !- Day Schedule Name
   Yes,                                    !- Apply Sunday
   ,                                       !- Apply Monday
   ,                                       !- Apply Tuesday
@@ -10671,11 +10671,11 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Rule,
-  {ed86da84-f8a2-48ee-b2f5-c84a57036de1}, !- Handle
+  {e180f226-5d99-4ba2-8421-04b140e8d5ab}, !- Handle
   Schedule Rule 22,                       !- Name
-  {93bbb905-3ece-4a81-8d9e-2266127c2462}, !- Schedule Ruleset Name
+  {661051b2-64e2-43f6-931f-b209b8576a76}, !- Schedule Ruleset Name
   0,                                      !- Rule Order
-  {1eed6aa8-72a1-4559-87c6-8a9734c12eb2}, !- Day Schedule Name
+  {65a8e2ae-758f-44c8-8122-d3c7b848a559}, !- Day Schedule Name
   ,                                       !- Apply Sunday
   Yes,                                    !- Apply Monday
   Yes,                                    !- Apply Tuesday
@@ -10690,42 +10690,42 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Day,
-  {617f164f-293c-4f8c-a128-f2d642971bfe}, !- Handle
+  {4382d340-2578-4404-8bb6-97730f28b764}, !- Handle
   OfficeMedium BLDG_ELEVATORS Winter Design Day, !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Day,
-  {d3ec3a9b-488e-466f-b93e-9b662c8123f0}, !- Handle
+  {c25086fa-f1fd-4761-974b-5127333a89cb}, !- Handle
   OfficeMedium BLDG_ELEVATORS Summer Design Day, !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0.69;                                   !- Value Until Time 1
 
 OS:Schedule:Day,
-  {e88562f1-0e74-4ea0-b3a1-413723bfcd48}, !- Handle
+  {272a6a26-8c08-473c-a7ea-04eacbfe65c1}, !- Handle
   Schedule Day 21,                        !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Ruleset,
-  {93bbb905-3ece-4a81-8d9e-2266127c2462}, !- Handle
+  {661051b2-64e2-43f6-931f-b209b8576a76}, !- Handle
   OfficeMedium BLDG_ELEVATORS,            !- Name
-  {de851d67-ced7-4978-ba67-8848f28f0735}, !- Schedule Type Limits Name
-  {e88562f1-0e74-4ea0-b3a1-413723bfcd48}, !- Default Day Schedule Name
-  {d3ec3a9b-488e-466f-b93e-9b662c8123f0}, !- Summer Design Day Schedule Name
-  {617f164f-293c-4f8c-a128-f2d642971bfe}; !- Winter Design Day Schedule Name
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}, !- Schedule Type Limits Name
+  {272a6a26-8c08-473c-a7ea-04eacbfe65c1}, !- Default Day Schedule Name
+  {c25086fa-f1fd-4761-974b-5127333a89cb}, !- Summer Design Day Schedule Name
+  {4382d340-2578-4404-8bb6-97730f28b764}; !- Winter Design Day Schedule Name
 
 OS:ElectricEquipment:Definition,
-  {b2efd723-9a4d-439f-9254-010540794ae5}, !- Handle
+  {54e15800-155f-49c5-b392-429e2084d592}, !- Handle
   Elevator Lift Motor,                    !- Name
   EquipmentLevel,                         !- Design Level Calculation Method
   16055,                                  !- Design Level {W}
@@ -10735,46 +10735,46 @@ OS:ElectricEquipment:Definition,
   0.5;                                    !- Fraction Radiant
 
 OS:ElectricEquipment,
-  {c0822446-f1a9-4a8a-ae31-d9a839e7352c}, !- Handle
+  {d9dcfca0-ba72-43c9-a141-dbf6e9a37d90}, !- Handle
   2 Elevator Lift Motors,                 !- Name
-  {b2efd723-9a4d-439f-9254-010540794ae5}, !- Electric Equipment Definition Name
+  {54e15800-155f-49c5-b392-429e2084d592}, !- Electric Equipment Definition Name
   {a0e252eb-64eb-4061-a57b-2b5acd4173dd}, !- Space or SpaceType Name
-  {93bbb905-3ece-4a81-8d9e-2266127c2462}, !- Schedule Name
+  {661051b2-64e2-43f6-931f-b209b8576a76}, !- Schedule Name
   2,                                      !- Multiplier
   Elevators;                              !- End-Use Subcategory
 
 OS:ComponentData,
-  {d6c235ad-923b-4a4a-af35-5902cf8d6299}, !- Handle
+  {047f065c-1723-4d92-838f-6f766200755c}, !- Handle
   Component Data 8,                       !- Name
-  {4f84a45d-c7ff-4656-b607-1f3c8423d85e}, !- UUID
-  {3e79611b-c2b2-41f5-8cd5-7e3586936b91}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c0822446-f1a9-4a8a-ae31-d9a839e7352c}, !- Name of Object 1
-  {b2efd723-9a4d-439f-9254-010540794ae5}, !- Name of Object 2
-  {93bbb905-3ece-4a81-8d9e-2266127c2462}, !- Name of Object 3
-  {e88562f1-0e74-4ea0-b3a1-413723bfcd48}, !- Name of Object 4
-  {d3ec3a9b-488e-466f-b93e-9b662c8123f0}, !- Name of Object 5
-  {617f164f-293c-4f8c-a128-f2d642971bfe}, !- Name of Object 6
-  {ed86da84-f8a2-48ee-b2f5-c84a57036de1}, !- Name of Object 7
-  {0edb052d-f29f-4aff-895e-e52795fa8e9c}, !- Name of Object 8
-  {269f1953-8693-4d8e-aaf9-e385f8ad8a77}, !- Name of Object 9
-  {1eed6aa8-72a1-4559-87c6-8a9734c12eb2}, !- Name of Object 10
-  {4dacd9de-497c-430c-bc66-69bad3002fac}, !- Name of Object 11
-  {6db3c168-c02b-417c-a1d5-d2addc01c9ea}, !- Name of Object 12
-  {de851d67-ced7-4978-ba67-8848f28f0735}; !- Name of Object 13
+  {c8f43681-b6dd-42fe-b796-b7028113eb06}, !- UUID
+  {40de1d0a-4436-4bf2-a216-88de499a1b43}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {d9dcfca0-ba72-43c9-a141-dbf6e9a37d90}, !- Name of Object 1
+  {54e15800-155f-49c5-b392-429e2084d592}, !- Name of Object 2
+  {661051b2-64e2-43f6-931f-b209b8576a76}, !- Name of Object 3
+  {272a6a26-8c08-473c-a7ea-04eacbfe65c1}, !- Name of Object 4
+  {c25086fa-f1fd-4761-974b-5127333a89cb}, !- Name of Object 5
+  {4382d340-2578-4404-8bb6-97730f28b764}, !- Name of Object 6
+  {e180f226-5d99-4ba2-8421-04b140e8d5ab}, !- Name of Object 7
+  {9e7da5f7-d7dd-4b77-84ad-cf3255a0d17e}, !- Name of Object 8
+  {5983918f-002e-4df8-a38b-9cd4c9d2b3eb}, !- Name of Object 9
+  {65a8e2ae-758f-44c8-8122-d3c7b848a559}, !- Name of Object 10
+  {fa3e439b-87d5-470e-8037-4c27b5ae6879}, !- Name of Object 11
+  {9e37d185-ce4f-4e3b-95a3-7fcae3bf4e57}, !- Name of Object 12
+  {f2887d8d-27e3-4b00-b03a-049322acb9c7}; !- Name of Object 13
 
 OS:ScheduleTypeLimits,
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Handle
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Handle
   Fractional 2,                           !- Name
   0,                                      !- Lower Limit Value
   1,                                      !- Upper Limit Value
   Continuous;                             !- Numeric Type
 
 OS:Schedule:Day,
-  {d8566a5e-cbbf-4d7f-9389-32811196890a}, !- Handle
+  {8693c9dd-313e-4016-a625-3999050aaabe}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Sat Day, !- Name
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Schedule Type Limits Name
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   7,                                      !- Hour 1
   0,                                      !- Minute 1
@@ -10817,9 +10817,9 @@ OS:Schedule:Day,
   0;                                      !- Value Until Time 13
 
 OS:Schedule:Day,
-  {7f4cd7e1-1778-4d8c-b349-a4a5036b072d}, !- Handle
+  {d5d7d506-4bd2-42ea-839f-3d6f38a4e158}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Wkdy Day, !- Name
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Schedule Type Limits Name
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   7,                                      !- Hour 1
   0,                                      !- Minute 1
@@ -10865,11 +10865,11 @@ OS:Schedule:Day,
   0;                                      !- Value Until Time 14
 
 OS:Schedule:Rule,
-  {34d0c35d-c759-4b61-b9de-1155f561dcdc}, !- Handle
+  {b5a9c7e4-f3a5-42b0-a709-2cac3d38be59}, !- Handle
   Schedule Rule 23,                       !- Name
-  {98aa6e39-3ecb-4d9b-bdfd-678825fc65f3}, !- Schedule Ruleset Name
+  {f212039c-c3c1-4bc7-b462-126e91fdaeb3}, !- Schedule Ruleset Name
   1,                                      !- Rule Order
-  {d8566a5e-cbbf-4d7f-9389-32811196890a}, !- Day Schedule Name
+  {8693c9dd-313e-4016-a625-3999050aaabe}, !- Day Schedule Name
   ,                                       !- Apply Sunday
   ,                                       !- Apply Monday
   ,                                       !- Apply Tuesday
@@ -10884,11 +10884,11 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Rule,
-  {b08bdcef-30e1-40d4-b1ec-ba1af39a23d7}, !- Handle
+  {94dacc48-e4b2-47b9-9aa6-e830281f4dd3}, !- Handle
   Schedule Rule 24,                       !- Name
-  {98aa6e39-3ecb-4d9b-bdfd-678825fc65f3}, !- Schedule Ruleset Name
+  {f212039c-c3c1-4bc7-b462-126e91fdaeb3}, !- Schedule Ruleset Name
   0,                                      !- Rule Order
-  {7f4cd7e1-1778-4d8c-b349-a4a5036b072d}, !- Day Schedule Name
+  {d5d7d506-4bd2-42ea-839f-3d6f38a4e158}, !- Day Schedule Name
   ,                                       !- Apply Sunday
   Yes,                                    !- Apply Monday
   Yes,                                    !- Apply Tuesday
@@ -10903,42 +10903,42 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Day,
-  {d8ddb16c-a7fd-4eb5-b23f-4ff3bc02afcd}, !- Handle
+  {ec84b6ee-5609-4c03-bf29-5c9d8ef1ad12}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Winter Design Day, !- Name
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Schedule Type Limits Name
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Day,
-  {0efdf680-e8f8-46cc-8aac-004a2f6bcd28}, !- Handle
+  {d10041d0-07e6-4cda-9a23-62542571bd68}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Summer Design Day, !- Name
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Schedule Type Limits Name
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0.69;                                   !- Value Until Time 1
 
 OS:Schedule:Day,
-  {4179e833-c707-4508-a0a9-85e8ede0faac}, !- Handle
+  {2a1c6569-43bf-43b9-99e7-00a31475002d}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Default, !- Name
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Schedule Type Limits Name
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Ruleset,
-  {98aa6e39-3ecb-4d9b-bdfd-678825fc65f3}, !- Handle
+  {f212039c-c3c1-4bc7-b462-126e91fdaeb3}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF, !- Name
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}, !- Schedule Type Limits Name
-  {4179e833-c707-4508-a0a9-85e8ede0faac}, !- Default Day Schedule Name
-  {0efdf680-e8f8-46cc-8aac-004a2f6bcd28}, !- Summer Design Day Schedule Name
-  {d8ddb16c-a7fd-4eb5-b23f-4ff3bc02afcd}; !- Winter Design Day Schedule Name
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}, !- Schedule Type Limits Name
+  {2a1c6569-43bf-43b9-99e7-00a31475002d}, !- Default Day Schedule Name
+  {d10041d0-07e6-4cda-9a23-62542571bd68}, !- Summer Design Day Schedule Name
+  {ec84b6ee-5609-4c03-bf29-5c9d8ef1ad12}; !- Winter Design Day Schedule Name
 
 OS:ElectricEquipment:Definition,
-  {5c7aae3d-2680-4999-8119-03d5f6337fab}, !- Handle
+  {f1823f58-7916-47d4-9baa-492c95717052}, !- Handle
   Elevator Fan,                           !- Name
   EquipmentLevel,                         !- Design Level Calculation Method
   30.9575828571429,                       !- Design Level {W}
@@ -10948,44 +10948,44 @@ OS:ElectricEquipment:Definition,
   0.5;                                    !- Fraction Radiant
 
 OS:ElectricEquipment,
-  {bed11b31-8080-4023-9d16-a5847ef0fc89}, !- Handle
+  {ef451d44-dd9a-4b65-8636-2c7c9e9813f0}, !- Handle
   2 Elevator Fans,                        !- Name
-  {5c7aae3d-2680-4999-8119-03d5f6337fab}, !- Electric Equipment Definition Name
+  {f1823f58-7916-47d4-9baa-492c95717052}, !- Electric Equipment Definition Name
   {a0e252eb-64eb-4061-a57b-2b5acd4173dd}, !- Space or SpaceType Name
-  {98aa6e39-3ecb-4d9b-bdfd-678825fc65f3}, !- Schedule Name
+  {f212039c-c3c1-4bc7-b462-126e91fdaeb3}, !- Schedule Name
   2,                                      !- Multiplier
   Elevators;                              !- End-Use Subcategory
 
 OS:ComponentData,
-  {d4340d57-8f0e-43ee-a1b2-2513a7ddd350}, !- Handle
+  {b68201ee-da22-4d86-abd9-d65fee5c5ca4}, !- Handle
   Component Data 9,                       !- Name
-  {b9eeeaa2-1b84-4317-93b3-aa2fc73d5ed9}, !- UUID
-  {816a2839-e132-48a8-ae7c-4e30081bad90}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {bed11b31-8080-4023-9d16-a5847ef0fc89}, !- Name of Object 1
-  {5c7aae3d-2680-4999-8119-03d5f6337fab}, !- Name of Object 2
-  {98aa6e39-3ecb-4d9b-bdfd-678825fc65f3}, !- Name of Object 3
-  {4179e833-c707-4508-a0a9-85e8ede0faac}, !- Name of Object 4
-  {0efdf680-e8f8-46cc-8aac-004a2f6bcd28}, !- Name of Object 5
-  {d8ddb16c-a7fd-4eb5-b23f-4ff3bc02afcd}, !- Name of Object 6
-  {b08bdcef-30e1-40d4-b1ec-ba1af39a23d7}, !- Name of Object 7
-  {34d0c35d-c759-4b61-b9de-1155f561dcdc}, !- Name of Object 8
-  {7f4cd7e1-1778-4d8c-b349-a4a5036b072d}, !- Name of Object 9
-  {d8566a5e-cbbf-4d7f-9389-32811196890a}, !- Name of Object 10
-  {3e2dbe7d-d180-4342-82a2-f3269a0a0914}; !- Name of Object 11
+  {3115816b-c2eb-406f-af94-1fb3bd47aa93}, !- UUID
+  {a09e461e-91b8-4c62-a5c3-ccd57f994657}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {ef451d44-dd9a-4b65-8636-2c7c9e9813f0}, !- Name of Object 1
+  {f1823f58-7916-47d4-9baa-492c95717052}, !- Name of Object 2
+  {f212039c-c3c1-4bc7-b462-126e91fdaeb3}, !- Name of Object 3
+  {2a1c6569-43bf-43b9-99e7-00a31475002d}, !- Name of Object 4
+  {d10041d0-07e6-4cda-9a23-62542571bd68}, !- Name of Object 5
+  {ec84b6ee-5609-4c03-bf29-5c9d8ef1ad12}, !- Name of Object 6
+  {94dacc48-e4b2-47b9-9aa6-e830281f4dd3}, !- Name of Object 7
+  {b5a9c7e4-f3a5-42b0-a709-2cac3d38be59}, !- Name of Object 8
+  {d5d7d506-4bd2-42ea-839f-3d6f38a4e158}, !- Name of Object 9
+  {8693c9dd-313e-4016-a625-3999050aaabe}, !- Name of Object 10
+  {8dc65343-c3dd-4403-bfb7-da4de4f9d3b7}; !- Name of Object 11
 
 OS:ScheduleTypeLimits,
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Handle
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Handle
   Fractional 3,                           !- Name
   0,                                      !- Lower Limit Value
   1,                                      !- Upper Limit Value
   Continuous;                             !- Numeric Type
 
 OS:Schedule:Day,
-  {a1330f31-3e33-4ae2-be58-86770996a77a}, !- Handle
+  {7d319395-be0d-4480-a664-b77b5a9b4fba}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Sat Day 1, !- Name
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Schedule Type Limits Name
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   7,                                      !- Hour 1
   0,                                      !- Minute 1
@@ -11028,9 +11028,9 @@ OS:Schedule:Day,
   0;                                      !- Value Until Time 13
 
 OS:Schedule:Day,
-  {d632791c-440f-4993-a3f3-eb28b477a781}, !- Handle
+  {2483e393-f467-4148-889c-5fd73c7d93db}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Wkdy Day 1, !- Name
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Schedule Type Limits Name
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   7,                                      !- Hour 1
   0,                                      !- Minute 1
@@ -11076,11 +11076,11 @@ OS:Schedule:Day,
   0;                                      !- Value Until Time 14
 
 OS:Schedule:Rule,
-  {0c99837e-a011-4bf8-97aa-8645f2086ae6}, !- Handle
+  {763ef9a7-9105-4574-a69c-5724c0007974}, !- Handle
   Schedule Rule 26,                       !- Name
-  {e8d7701f-0595-4687-b622-3856228eae56}, !- Schedule Ruleset Name
+  {65760ea1-2626-47b2-86d4-dab76d62672d}, !- Schedule Ruleset Name
   1,                                      !- Rule Order
-  {a1330f31-3e33-4ae2-be58-86770996a77a}, !- Day Schedule Name
+  {7d319395-be0d-4480-a664-b77b5a9b4fba}, !- Day Schedule Name
   ,                                       !- Apply Sunday
   ,                                       !- Apply Monday
   ,                                       !- Apply Tuesday
@@ -11095,11 +11095,11 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Rule,
-  {c314a72c-4cfe-4a99-a48a-9324c573c27b}, !- Handle
+  {1bb76ed4-8ea2-4f09-ace2-b38d3f8d8e20}, !- Handle
   Schedule Rule 25,                       !- Name
-  {e8d7701f-0595-4687-b622-3856228eae56}, !- Schedule Ruleset Name
+  {65760ea1-2626-47b2-86d4-dab76d62672d}, !- Schedule Ruleset Name
   0,                                      !- Rule Order
-  {d632791c-440f-4993-a3f3-eb28b477a781}, !- Day Schedule Name
+  {2483e393-f467-4148-889c-5fd73c7d93db}, !- Day Schedule Name
   ,                                       !- Apply Sunday
   Yes,                                    !- Apply Monday
   Yes,                                    !- Apply Tuesday
@@ -11114,42 +11114,42 @@ OS:Schedule:Rule,
   31;                                     !- End Day
 
 OS:Schedule:Day,
-  {52cf1842-8c76-4ae1-aab5-4cd482851f84}, !- Handle
+  {366324cf-37e7-46bc-b235-8b9afc731d15}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Winter Design Day 1, !- Name
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Schedule Type Limits Name
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Day,
-  {36d88b30-22d5-4f06-ab8f-a86d862999b6}, !- Handle
+  {3fab2023-e17a-4241-8ca6-3a6cd14aaba6}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Summer Design Day 1, !- Name
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Schedule Type Limits Name
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0.69;                                   !- Value Until Time 1
 
 OS:Schedule:Day,
-  {c624eb35-1ec7-4ce9-ac3f-58da5fb26ce0}, !- Handle
+  {cc472611-e8ed-448b-93fd-5f1f1c2b5e8a}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF Default 1, !- Name
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Schedule Type Limits Name
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Schedule Type Limits Name
   ,                                       !- Interpolate to Timestep
   24,                                     !- Hour 1
   0,                                      !- Minute 1
   0;                                      !- Value Until Time 1
 
 OS:Schedule:Ruleset,
-  {e8d7701f-0595-4687-b622-3856228eae56}, !- Handle
+  {65760ea1-2626-47b2-86d4-dab76d62672d}, !- Handle
   OfficeMedium ELEV_LIGHT_FAN_SCH_ADD_DF 1, !- Name
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}, !- Schedule Type Limits Name
-  {c624eb35-1ec7-4ce9-ac3f-58da5fb26ce0}, !- Default Day Schedule Name
-  {36d88b30-22d5-4f06-ab8f-a86d862999b6}, !- Summer Design Day Schedule Name
-  {52cf1842-8c76-4ae1-aab5-4cd482851f84}; !- Winter Design Day Schedule Name
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}, !- Schedule Type Limits Name
+  {cc472611-e8ed-448b-93fd-5f1f1c2b5e8a}, !- Default Day Schedule Name
+  {3fab2023-e17a-4241-8ca6-3a6cd14aaba6}, !- Summer Design Day Schedule Name
+  {366324cf-37e7-46bc-b235-8b9afc731d15}; !- Winter Design Day Schedule Name
 
 OS:ElectricEquipment:Definition,
-  {8be6cdc6-5cb1-4794-ade3-39d7322a52a4}, !- Handle
+  {91cc734b-b11a-4564-bdf3-b7ca8b685ac2}, !- Handle
   Elevator Lights,                        !- Name
   EquipmentLevel,                         !- Design Level Calculation Method
   32.3485714285714,                       !- Design Level {W}
@@ -11159,2398 +11159,30 @@ OS:ElectricEquipment:Definition,
   0.5;                                    !- Fraction Radiant
 
 OS:ElectricEquipment,
-  {c2e0eead-9150-4cb7-8437-6330cb7b37b5}, !- Handle
+  {e5722d93-a06f-477e-9111-65ab2bf07336}, !- Handle
   2 Elevator Lights,                      !- Name
-  {8be6cdc6-5cb1-4794-ade3-39d7322a52a4}, !- Electric Equipment Definition Name
+  {91cc734b-b11a-4564-bdf3-b7ca8b685ac2}, !- Electric Equipment Definition Name
   {a0e252eb-64eb-4061-a57b-2b5acd4173dd}, !- Space or SpaceType Name
-  {e8d7701f-0595-4687-b622-3856228eae56}, !- Schedule Name
+  {65760ea1-2626-47b2-86d4-dab76d62672d}, !- Schedule Name
   2,                                      !- Multiplier
   Elevators;                              !- End-Use Subcategory
 
 OS:ComponentData,
-  {4f20c5db-5ff9-4d1c-bf90-6d047965b92f}, !- Handle
+  {1f5064bf-7b66-45ed-aa42-a76f570db861}, !- Handle
   Component Data 10,                      !- Name
-  {ddbc6c33-9159-4e8c-bd94-9ddf2a5c6bb8}, !- UUID
-  {ee84fc86-9691-453b-a1a0-6e322d885616}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c2e0eead-9150-4cb7-8437-6330cb7b37b5}, !- Name of Object 1
-  {8be6cdc6-5cb1-4794-ade3-39d7322a52a4}, !- Name of Object 2
-  {e8d7701f-0595-4687-b622-3856228eae56}, !- Name of Object 3
-  {c624eb35-1ec7-4ce9-ac3f-58da5fb26ce0}, !- Name of Object 4
-  {36d88b30-22d5-4f06-ab8f-a86d862999b6}, !- Name of Object 5
-  {52cf1842-8c76-4ae1-aab5-4cd482851f84}, !- Name of Object 6
-  {c314a72c-4cfe-4a99-a48a-9324c573c27b}, !- Name of Object 7
-  {0c99837e-a011-4bf8-97aa-8645f2086ae6}, !- Name of Object 8
-  {d632791c-440f-4993-a3f3-eb28b477a781}, !- Name of Object 9
-  {a1330f31-3e33-4ae2-be58-86770996a77a}, !- Name of Object 10
-  {cf21087b-b4dd-4bfa-9e78-7c9187c16c1a}; !- Name of Object 11
-
-OS:AdditionalProperties,
-  {85d01997-7483-49ee-a293-1f075a7ab273}, !- Handle
-  {54821ac9-c670-437c-93aa-1c759da9a07f}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {54821ac9-c670-437c-93aa-1c759da9a07f}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {72103f0d-c2fe-471e-a708-42d9a0d0cdc6}, !- Handle
-  Office WholeBuilding - Md Office Lights, !- Name
-  {54821ac9-c670-437c-93aa-1c759da9a07f}, !- Lights Definition Name
-  {39f645b5-8317-40cb-b13f-004e7dbdf0f5}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {ae18257c-cc70-441a-8627-13bca4eb0e86}, !- Handle
-  Component Data 11,                      !- Name
-  {b6fe8ae7-804e-46d3-840a-9481258da802}, !- UUID
-  {bef5882b-226d-42ed-aefc-4e4d3b593f7c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {72103f0d-c2fe-471e-a708-42d9a0d0cdc6}, !- Name of Object 1
-  {54821ac9-c670-437c-93aa-1c759da9a07f}, !- Name of Object 2
-  {85d01997-7483-49ee-a293-1f075a7ab273}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {774b287c-3da2-4016-abab-aad04755abb3}, !- Handle
-  Perimeter_bot_ZN_1 Daylt Sensor 1,      !- Name
-  {39f645b5-8317-40cb-b13f-004e7dbdf0f5}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  1.537338,                               !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {c2f0f994-0a04-43ba-8d0d-00e5e3e50d09}, !- Handle
-  Component Data 12,                      !- Name
-  {0051a350-45a8-4ed9-b2b5-298f5658c674}, !- UUID
-  {e4c3904d-1470-4960-b3b9-28799757303e}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {774b287c-3da2-4016-abab-aad04755abb3}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {16ea86f5-7dd8-4e4c-8a8d-85391442540f}, !- Handle
-  Perimeter_bot_ZN_1 Daylt Sensor 2,      !- Name
-  {39f645b5-8317-40cb-b13f-004e7dbdf0f5}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  3.097969,                               !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {d3bfedf4-a518-4f94-89d7-75d54d3cd15b}, !- Handle
-  Component Data 13,                      !- Name
-  {19c4a0c5-c4fb-4bbb-9ef3-07be2ff48685}, !- UUID
-  {f89f6db4-d789-456a-85bc-f2894cf737ce}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {16ea86f5-7dd8-4e4c-8a8d-85391442540f}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {2782263d-b395-41bc-a4aa-bce59759dbad}, !- Handle
-  {e02728df-580f-4f36-b636-6399e3b502eb}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {e02728df-580f-4f36-b636-6399e3b502eb}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 1, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {1fbc0b5d-1932-453a-8d16-443aace0456b}, !- Handle
-  Office WholeBuilding - Md Office Lights 1, !- Name
-  {e02728df-580f-4f36-b636-6399e3b502eb}, !- Lights Definition Name
-  {966cfda5-c7db-45a5-89ba-4635098dcdc4}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {597aa21d-6fff-4ff9-8a28-8d04f27d5528}, !- Handle
-  Component Data 14,                      !- Name
-  {547b0e62-1564-4eb1-8a34-5dbc3915e3c0}, !- UUID
-  {b9c0ae95-fd7e-44b3-9fd2-c48ad84deb1a}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {1fbc0b5d-1932-453a-8d16-443aace0456b}, !- Name of Object 1
-  {e02728df-580f-4f36-b636-6399e3b502eb}, !- Name of Object 2
-  {2782263d-b395-41bc-a4aa-bce59759dbad}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {21cddc2a-144e-40e7-b87f-7c537a2eb064}, !- Handle
-  Perimeter_bot_ZN_2 Daylt Sensor 1,      !- Name
-  {966cfda5-c7db-45a5-89ba-4635098dcdc4}, !- Space Name
-  48.373662,                              !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {df4c2e7e-9d91-44c2-a161-43538d6adc20}, !- Handle
-  Component Data 15,                      !- Name
-  {ee6ffbdd-7dc7-4e5e-b38b-db2541dd69e7}, !- UUID
-  {12d76e09-387e-4c65-b12d-d28869aa6a3d}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {21cddc2a-144e-40e7-b87f-7c537a2eb064}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {52e1cb18-4955-4748-8932-3ea949e2e155}, !- Handle
-  Perimeter_bot_ZN_2 Daylt Sensor 2,      !- Name
-  {966cfda5-c7db-45a5-89ba-4635098dcdc4}, !- Space Name
-  46.813031,                              !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {4f111b25-9f4e-4dba-8cd7-b1af856ef8ab}, !- Handle
-  Component Data 16,                      !- Name
-  {14da9817-7288-46bd-88f3-8621373d4f2d}, !- UUID
-  {ea47abab-857d-4bbd-8cd6-b1de08b675af}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {52e1cb18-4955-4748-8932-3ea949e2e155}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {d9703724-07ac-4aa3-be80-8b36a7996775}, !- Handle
-  {6b70091a-99bc-4332-9663-288cc94cb843}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {6b70091a-99bc-4332-9663-288cc94cb843}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 2, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {c83c4df2-0883-4e85-9ea8-9d17132aa100}, !- Handle
-  Office WholeBuilding - Md Office Lights 2, !- Name
-  {6b70091a-99bc-4332-9663-288cc94cb843}, !- Lights Definition Name
-  {0756bb7e-dfb0-4513-b869-d919f45ddb64}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {f69786a6-a5ca-4a0a-8fd0-9d38366959a1}, !- Handle
-  Component Data 17,                      !- Name
-  {e9e4ace8-7f69-47ba-a807-421fe4fcbb48}, !- UUID
-  {0c30b24b-8c19-461a-8998-738538e7ad14}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c83c4df2-0883-4e85-9ea8-9d17132aa100}, !- Name of Object 1
-  {6b70091a-99bc-4332-9663-288cc94cb843}, !- Name of Object 2
-  {d9703724-07ac-4aa3-be80-8b36a7996775}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {e49e35c7-6292-41bc-8f06-609412367f68}, !- Handle
-  Perimeter_bot_ZN_3 Daylt Sensor 1,      !- Name
-  {0756bb7e-dfb0-4513-b869-d919f45ddb64}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  31.736462,                              !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {32f302c4-adac-4c4e-a2de-e28917f3a615}, !- Handle
-  Component Data 18,                      !- Name
-  {9a88c660-5475-4392-b6ab-24e53168b508}, !- UUID
-  {6a38f3c7-235d-4a05-ac36-24d5c764da25}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e49e35c7-6292-41bc-8f06-609412367f68}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {1fb11ab3-4364-4c56-b702-2ae95ee44275}, !- Handle
-  Perimeter_bot_ZN_3 Daylt Sensor 2,      !- Name
-  {0756bb7e-dfb0-4513-b869-d919f45ddb64}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  30.175831,                              !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {2f8b43d6-2569-4cf8-b96d-2c9050f9162e}, !- Handle
-  Component Data 19,                      !- Name
-  {57f6b702-104f-49c1-aa93-eea6baea3d26}, !- UUID
-  {bd5a7b66-3181-4648-b027-c98eb6a24426}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {1fb11ab3-4364-4c56-b702-2ae95ee44275}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {22f7f063-d0a5-4cef-b888-7e3227b43f8c}, !- Handle
-  {aa7e05a9-6515-4cf8-8edf-3c69caa7b5bf}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {aa7e05a9-6515-4cf8-8edf-3c69caa7b5bf}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 3, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {aadd21c7-3c8a-499f-8241-9e1f9e78b750}, !- Handle
-  Office WholeBuilding - Md Office Lights 3, !- Name
-  {aa7e05a9-6515-4cf8-8edf-3c69caa7b5bf}, !- Lights Definition Name
-  {375837f7-f536-416f-bc7f-1eab7aa7b236}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {75f3b37b-0cb5-4345-add2-c8acbf1b2c1d}, !- Handle
-  Component Data 20,                      !- Name
-  {ef6b55be-72f5-4cc4-b028-3b61b24933d5}, !- UUID
-  {40dde2f7-227f-465f-b55d-5b9a794b0285}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {aadd21c7-3c8a-499f-8241-9e1f9e78b750}, !- Name of Object 1
-  {aa7e05a9-6515-4cf8-8edf-3c69caa7b5bf}, !- Name of Object 2
-  {22f7f063-d0a5-4cef-b888-7e3227b43f8c}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {2316312c-ec71-450e-aa27-465f834f3823}, !- Handle
-  Perimeter_bot_ZN_4 Daylt Sensor 1,      !- Name
-  {375837f7-f536-416f-bc7f-1eab7aa7b236}, !- Space Name
-  1.537338,                               !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {76afa666-0dcd-4dfa-80f7-0ecacad3abad}, !- Handle
-  Component Data 21,                      !- Name
-  {defa476d-cf83-49eb-aca8-8a1b4d3d7195}, !- UUID
-  {99e61877-54a9-4dcd-b0ed-ab2d3fd8c9ad}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {2316312c-ec71-450e-aa27-465f834f3823}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {9e5cd050-a024-4e00-a1ec-13703f7f5c5f}, !- Handle
-  Perimeter_bot_ZN_4 Daylt Sensor 2,      !- Name
-  {375837f7-f536-416f-bc7f-1eab7aa7b236}, !- Space Name
-  3.097969,                               !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  0.762,                                  !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {9dc1b182-66a6-4aa4-90ca-6a7254cd8692}, !- Handle
-  Component Data 22,                      !- Name
-  {233e2cf2-bd54-4a99-9076-ca3784107c21}, !- UUID
-  {f4c0082f-10d8-44fd-ac3a-13fc828ada66}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9e5cd050-a024-4e00-a1ec-13703f7f5c5f}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {9037d16f-0a57-4b56-bd41-5068c3f5c740}, !- Handle
-  {6d98371f-a2be-41e0-991e-2e0a4fb6ce5e}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {6d98371f-a2be-41e0-991e-2e0a4fb6ce5e}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 4, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {57098d70-a736-460b-b18f-8bf8f4449081}, !- Handle
-  Office WholeBuilding - Md Office Lights 4, !- Name
-  {6d98371f-a2be-41e0-991e-2e0a4fb6ce5e}, !- Lights Definition Name
-  {874b646c-6a11-4b11-ae78-d186fd3733d5}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {368d4d56-49ad-47e4-afe8-210a543bbd6b}, !- Handle
-  Component Data 23,                      !- Name
-  {fb518d96-2c64-4be6-979e-33f519f9611b}, !- UUID
-  {6a5000e7-05df-48ec-8ac6-0f9fe1086c29}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {57098d70-a736-460b-b18f-8bf8f4449081}, !- Name of Object 1
-  {6d98371f-a2be-41e0-991e-2e0a4fb6ce5e}, !- Name of Object 2
-  {9037d16f-0a57-4b56-bd41-5068c3f5c740}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {b1c1b499-09c5-424d-8047-68572d280970}, !- Handle
-  Perimeter_mid_ZN_1 Daylt Sensor 1,      !- Name
-  {874b646c-6a11-4b11-ae78-d186fd3733d5}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  1.537338,                               !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {b8b86f58-708b-4cdd-a72f-901fe791df39}, !- Handle
-  Component Data 24,                      !- Name
-  {1e4a05b5-84f5-47b8-be54-d44888863b47}, !- UUID
-  {2ac5601b-fbf3-447f-9671-403495eb8f3b}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {b1c1b499-09c5-424d-8047-68572d280970}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {fe3f00b7-9cd2-4b2b-bf8b-636b88ab2126}, !- Handle
-  Perimeter_mid_ZN_1 Daylt Sensor 2,      !- Name
-  {874b646c-6a11-4b11-ae78-d186fd3733d5}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  3.097969,                               !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {07947d15-cc4f-4ca0-a891-ed358222b3c2}, !- Handle
-  Component Data 25,                      !- Name
-  {cbce5e50-c327-4993-92e3-4da7ad249a63}, !- UUID
-  {d019dbcd-d270-4eb1-9522-eb143d073b6b}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {fe3f00b7-9cd2-4b2b-bf8b-636b88ab2126}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {bf98c08f-4cfd-4447-9da8-7ec40fbfae77}, !- Handle
-  {97ada00d-0233-407b-b409-9d6dfcf8a4a0}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {97ada00d-0233-407b-b409-9d6dfcf8a4a0}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 5, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {047d7a19-ad89-49e8-9b5c-ece9b4cef2fc}, !- Handle
-  Office WholeBuilding - Md Office Lights 5, !- Name
-  {97ada00d-0233-407b-b409-9d6dfcf8a4a0}, !- Lights Definition Name
-  {6d881c8c-923a-456b-bd23-86744af603e7}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {439aeb67-336b-49cd-b6eb-4ed7f19dd6b5}, !- Handle
-  Component Data 26,                      !- Name
-  {3de706bb-7a23-4468-9bf4-145cbe8fd2b7}, !- UUID
-  {abf534cf-46e7-46b7-9f3a-951a9407f81b}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {047d7a19-ad89-49e8-9b5c-ece9b4cef2fc}, !- Name of Object 1
-  {97ada00d-0233-407b-b409-9d6dfcf8a4a0}, !- Name of Object 2
-  {bf98c08f-4cfd-4447-9da8-7ec40fbfae77}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {7a5f16a1-2190-41bb-bf08-7e65a544d399}, !- Handle
-  Perimeter_mid_ZN_2 Daylt Sensor 1,      !- Name
-  {6d881c8c-923a-456b-bd23-86744af603e7}, !- Space Name
-  48.373662,                              !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {ab61e804-8ba2-4f8d-a69b-f5b3e4a2b874}, !- Handle
-  Component Data 27,                      !- Name
-  {4cca1e33-db99-4c2f-aded-2ddd2fbb43f3}, !- UUID
-  {82064540-edc4-45a9-864f-088ede402045}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7a5f16a1-2190-41bb-bf08-7e65a544d399}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {0a8780e6-3327-43b6-a70c-e780611e0e18}, !- Handle
-  Perimeter_mid_ZN_2 Daylt Sensor 2,      !- Name
-  {6d881c8c-923a-456b-bd23-86744af603e7}, !- Space Name
-  46.813031,                              !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {764b5eff-9eff-4199-87a4-f2ce77fbe07a}, !- Handle
-  Component Data 28,                      !- Name
-  {bca9b714-5737-4e88-9c2b-86df4708a0bf}, !- UUID
-  {9c9c446a-9b5b-4000-a261-521ff02307d1}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {0a8780e6-3327-43b6-a70c-e780611e0e18}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {4d440051-cf45-42b6-bfa2-55cfa70af854}, !- Handle
-  {0f21cd20-a9b8-41a5-9075-16aebe384ece}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {0f21cd20-a9b8-41a5-9075-16aebe384ece}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 6, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {fc33e30e-6e76-463c-91fd-0e90de82d438}, !- Handle
-  Office WholeBuilding - Md Office Lights 6, !- Name
-  {0f21cd20-a9b8-41a5-9075-16aebe384ece}, !- Lights Definition Name
-  {099a2a55-0ff6-403d-a26c-d90ffa2170de}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {fcc616d2-104f-4fc0-93c9-72449ebcdf34}, !- Handle
-  Component Data 29,                      !- Name
-  {a575a79a-b294-4f9a-9ef4-be31aa2c6807}, !- UUID
-  {50f6461b-efa2-485c-a034-ff31b72b51c5}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {fc33e30e-6e76-463c-91fd-0e90de82d438}, !- Name of Object 1
-  {0f21cd20-a9b8-41a5-9075-16aebe384ece}, !- Name of Object 2
-  {4d440051-cf45-42b6-bfa2-55cfa70af854}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {f355c844-77ff-4f56-8657-062809f4a035}, !- Handle
-  Perimeter_mid_ZN_3 Daylt Sensor 1,      !- Name
-  {099a2a55-0ff6-403d-a26c-d90ffa2170de}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  31.736462,                              !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {437556ac-c550-461d-a166-d400ef612282}, !- Handle
-  Component Data 30,                      !- Name
-  {dbf8526b-4f0d-428f-9ade-9a61dda6357f}, !- UUID
-  {03320655-92de-40c6-afa5-dc5c50395071}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {f355c844-77ff-4f56-8657-062809f4a035}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {76ddb302-95df-4898-847c-bede1f529412}, !- Handle
-  Perimeter_mid_ZN_3 Daylt Sensor 2,      !- Name
-  {099a2a55-0ff6-403d-a26c-d90ffa2170de}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  30.175831,                              !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {2ecaa31c-712e-4d85-abe7-f2e15c560df9}, !- Handle
-  Component Data 31,                      !- Name
-  {19f04bc5-8a65-44fb-a9a4-e4131c8fa2a3}, !- UUID
-  {d4a54fd6-7fb9-4f58-b7f8-c3476e7faa11}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {76ddb302-95df-4898-847c-bede1f529412}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {7f465959-c0a7-4659-8243-9dde17fc0456}, !- Handle
-  {df04686e-b816-4b8c-890e-50c609690b9b}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {df04686e-b816-4b8c-890e-50c609690b9b}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 7, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {c2eb696d-ea40-4dfb-bc17-5260b217113f}, !- Handle
-  Office WholeBuilding - Md Office Lights 7, !- Name
-  {df04686e-b816-4b8c-890e-50c609690b9b}, !- Lights Definition Name
-  {520db08d-77f8-49d4-afaf-747fb69effb8}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {1fa0380f-570a-4991-9a11-ad817d139f35}, !- Handle
-  Component Data 32,                      !- Name
-  {9ea94b61-5de4-488f-b34d-f608641e152b}, !- UUID
-  {d2a8a3de-e479-47f4-baf9-1e033b32bb4f}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c2eb696d-ea40-4dfb-bc17-5260b217113f}, !- Name of Object 1
-  {df04686e-b816-4b8c-890e-50c609690b9b}, !- Name of Object 2
-  {7f465959-c0a7-4659-8243-9dde17fc0456}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {2531e4a2-a120-4d3f-97a4-6d44b02ccd9c}, !- Handle
-  Perimeter_mid_ZN_4 Daylt Sensor 1,      !- Name
-  {520db08d-77f8-49d4-afaf-747fb69effb8}, !- Space Name
-  1.537338,                               !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {c163ef22-7120-43c4-8285-54af947b24ac}, !- Handle
-  Component Data 33,                      !- Name
-  {0c213a5a-8eeb-4681-b06d-7166f71f76fb}, !- UUID
-  {97597d8d-f2b9-4758-b405-b0d62a9d1378}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {2531e4a2-a120-4d3f-97a4-6d44b02ccd9c}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {d0ca3057-cf3b-457d-8507-e2a5f6d8f286}, !- Handle
-  Perimeter_mid_ZN_4 Daylt Sensor 2,      !- Name
-  {520db08d-77f8-49d4-afaf-747fb69effb8}, !- Space Name
-  3.097969,                               !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  4.7244,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {72992854-7121-4521-b479-9f96b5499897}, !- Handle
-  Component Data 34,                      !- Name
-  {19367bd2-a688-4153-a3ad-54f760878100}, !- UUID
-  {628ca8ed-a506-4d73-8268-469921b64098}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {d0ca3057-cf3b-457d-8507-e2a5f6d8f286}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {d2e947eb-609f-4cfc-b693-ed2911ec4552}, !- Handle
-  {9feb98da-e87c-47c3-826a-4505610fafa7}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {9feb98da-e87c-47c3-826a-4505610fafa7}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 8, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {83ae6bc3-b396-4945-b6af-1de539ce4969}, !- Handle
-  Office WholeBuilding - Md Office Lights 8, !- Name
-  {9feb98da-e87c-47c3-826a-4505610fafa7}, !- Lights Definition Name
-  {f8b360d8-97e4-4800-b4c7-387049d69199}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {5be17469-0e00-4eb4-8ee4-c2ca022688db}, !- Handle
-  Component Data 35,                      !- Name
-  {a195d86b-ff41-4d64-8311-ce59d6fffd09}, !- UUID
-  {6b2543c5-f808-4643-b086-efbb8c7ab2b9}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {83ae6bc3-b396-4945-b6af-1de539ce4969}, !- Name of Object 1
-  {9feb98da-e87c-47c3-826a-4505610fafa7}, !- Name of Object 2
-  {d2e947eb-609f-4cfc-b693-ed2911ec4552}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {90787976-442c-42b7-83af-19c63c9e0b24}, !- Handle
-  Perimeter_top_ZN_1 Daylt Sensor 1,      !- Name
-  {f8b360d8-97e4-4800-b4c7-387049d69199}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  1.537338,                               !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {0846b3d0-595c-4dfd-91f4-d6c17371b322}, !- Handle
-  Component Data 36,                      !- Name
-  {a8ad8ffb-4e74-484e-b598-c005a2f70541}, !- UUID
-  {df9b0f10-1ca4-4c28-9095-d2dcbfe0e35e}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {90787976-442c-42b7-83af-19c63c9e0b24}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {27f058e1-a999-4bec-bcbc-565d97d6304f}, !- Handle
-  Perimeter_top_ZN_1 Daylt Sensor 2,      !- Name
-  {f8b360d8-97e4-4800-b4c7-387049d69199}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  3.097969,                               !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {b73b4b4c-dd13-42fc-bedd-28e91246068d}, !- Handle
-  Component Data 37,                      !- Name
-  {75e44b8c-5966-4dc7-9250-0ea54f350de0}, !- UUID
-  {299d6398-3444-4e7e-9890-b3717ccdd1e0}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {27f058e1-a999-4bec-bcbc-565d97d6304f}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {5fb154a2-b7c6-47b1-a3dc-ed3b7c36ff50}, !- Handle
-  {e3700424-d881-49dc-a343-ef8552e66022}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {e3700424-d881-49dc-a343-ef8552e66022}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 9, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {9dc25a3c-7052-4762-829c-1982915e71e8}, !- Handle
-  Office WholeBuilding - Md Office Lights 9, !- Name
-  {e3700424-d881-49dc-a343-ef8552e66022}, !- Lights Definition Name
-  {0440631a-244b-4a73-a3c3-e468a3dd5f6e}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {d2542fd1-e4d0-4344-b184-3ce042045162}, !- Handle
-  Component Data 38,                      !- Name
-  {135ef485-8ad3-4a5c-a114-5d4fad944d9b}, !- UUID
-  {fb500a61-a599-4eaa-abb7-34884e2b7092}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9dc25a3c-7052-4762-829c-1982915e71e8}, !- Name of Object 1
-  {e3700424-d881-49dc-a343-ef8552e66022}, !- Name of Object 2
-  {5fb154a2-b7c6-47b1-a3dc-ed3b7c36ff50}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {b98b385e-56da-4f49-9943-20390c335963}, !- Handle
-  Perimeter_top_ZN_2 Daylt Sensor 1,      !- Name
-  {0440631a-244b-4a73-a3c3-e468a3dd5f6e}, !- Space Name
-  48.373662,                              !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {96b31b88-bba6-4cc9-9338-8771d1b1625c}, !- Handle
-  Component Data 39,                      !- Name
-  {43b2b0d4-f8f0-4bd7-b314-5d96daa38a3b}, !- UUID
-  {eed8cac0-90c0-45ce-8643-14218a2c1c69}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {b98b385e-56da-4f49-9943-20390c335963}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {8b870ec4-8518-449d-a9f4-7886ea9c6701}, !- Handle
-  Perimeter_top_ZN_2 Daylt Sensor 2,      !- Name
-  {0440631a-244b-4a73-a3c3-e468a3dd5f6e}, !- Space Name
-  46.813031,                              !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {df3a85f6-0ae0-4993-b21e-6659b6469361}, !- Handle
-  Component Data 40,                      !- Name
-  {fe619832-dcd7-4289-b72b-d3e557046639}, !- UUID
-  {2aae9ced-2a33-4256-9e79-421d0eb5f1b9}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {8b870ec4-8518-449d-a9f4-7886ea9c6701}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {c778c751-8b7c-49d4-bb5b-ab64054ee894}, !- Handle
-  {30726536-1039-4102-b4ea-83e12e952f2c}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {30726536-1039-4102-b4ea-83e12e952f2c}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 10, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {ef3d19c1-7b78-40e3-b3a0-43e4a3c54adc}, !- Handle
-  Office WholeBuilding - Md Office Lights 10, !- Name
-  {30726536-1039-4102-b4ea-83e12e952f2c}, !- Lights Definition Name
-  {2902fe93-62ce-461c-b26e-e8db4ee44a82}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {a4ce1251-2b9c-4136-9436-de57219aefe9}, !- Handle
-  Component Data 41,                      !- Name
-  {efdf7552-0b04-4e08-8347-4ad27720cc4e}, !- UUID
-  {d31809f0-a83d-4be8-bd5a-3e85774ef398}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {ef3d19c1-7b78-40e3-b3a0-43e4a3c54adc}, !- Name of Object 1
-  {30726536-1039-4102-b4ea-83e12e952f2c}, !- Name of Object 2
-  {c778c751-8b7c-49d4-bb5b-ab64054ee894}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {9d768e20-b86d-4a6a-a895-d3b042519fa3}, !- Handle
-  Perimeter_top_ZN_3 Daylt Sensor 1,      !- Name
-  {2902fe93-62ce-461c-b26e-e8db4ee44a82}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  31.736462,                              !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {142f0570-4915-483a-b55a-b31af86fd9d2}, !- Handle
-  Component Data 42,                      !- Name
-  {34cb31f2-7afd-44ee-a350-8733e04da507}, !- UUID
-  {529fa5bb-4986-4a8b-9626-1cc1727a96cc}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9d768e20-b86d-4a6a-a895-d3b042519fa3}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {8eafb6fe-5117-4328-9a14-bd64b0240102}, !- Handle
-  Perimeter_top_ZN_3 Daylt Sensor 2,      !- Name
-  {2902fe93-62ce-461c-b26e-e8db4ee44a82}, !- Space Name
-  24.955,                                 !- Position X-Coordinate {m}
-  30.175831,                              !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {54901620-98b1-4b40-a2a7-ed93a6c29c0e}, !- Handle
-  Component Data 43,                      !- Name
-  {f16190f9-2f29-41ee-ab08-919d44edd90e}, !- UUID
-  {83943619-140f-4b8c-9d62-4532579ee77c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {8eafb6fe-5117-4328-9a14-bd64b0240102}; !- Name of Object 1
-
-OS:AdditionalProperties,
-  {b9041f84-63f5-4d7c-8b1e-c5d0d98240d7}, !- Handle
-  {389e135e-02e8-454e-976f-d267a31360c7}, !- Object Name
-  lpd_fraction_linear_fluorescent,        !- Feature Name 1
-  Double,                                 !- Feature Data Type 1
-  1;                                      !- Feature Value 1
-
-OS:Lights:Definition,
-  {389e135e-02e8-454e-976f-d267a31360c7}, !- Handle
-  Office WholeBuilding - Md Office Lights Definition 11, !- Name
-  Watts/Area,                             !- Design Level Calculation Method
-  ,                                       !- Lighting Level {W}
-  8.50348922920068,                       !- Watts per Space Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  0.7,                                    !- Fraction Radiant
-  0.2,                                    !- Fraction Visible
-  0;                                      !- Return Air Fraction
-
-OS:Lights,
-  {a9947449-360d-4857-87df-94917bc95ca6}, !- Handle
-  Office WholeBuilding - Md Office Lights 11, !- Name
-  {389e135e-02e8-454e-976f-d267a31360c7}, !- Lights Definition Name
-  {353c9c9b-d240-47a1-8193-edacc7b33f64}, !- Space or SpaceType Name
-  {ac26bbe5-90a3-4d17-960d-57c4828d7768}, !- Schedule Name
-  1,                                      !- Fraction Replaceable
-  ,                                       !- Multiplier
-  General;                                !- End-Use Subcategory
-
-OS:ComponentData,
-  {7d6e542a-2299-4209-93ec-28d806476350}, !- Handle
-  Component Data 44,                      !- Name
-  {4e6f0585-7c34-42e5-b8ff-b91bbb1621b5}, !- UUID
-  {e95aa71d-b7e1-4ede-baff-18ca6b82ef3a}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {a9947449-360d-4857-87df-94917bc95ca6}, !- Name of Object 1
-  {389e135e-02e8-454e-976f-d267a31360c7}, !- Name of Object 2
-  {b9041f84-63f5-4d7c-8b1e-c5d0d98240d7}; !- Name of Object 3
-
-OS:Daylighting:Control,
-  {a205d8cb-4043-4873-afb6-92fd396b035f}, !- Handle
-  Perimeter_top_ZN_4 Daylt Sensor 1,      !- Name
-  {353c9c9b-d240-47a1-8193-edacc7b33f64}, !- Space Name
-  1.537338,                               !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {bfae66b8-0e62-423e-b96f-92b7c1e54b6c}, !- Handle
-  Component Data 45,                      !- Name
-  {3768396d-a439-4375-beeb-2b78a8c3d9d3}, !- UUID
-  {9a433a82-d0db-44f9-8519-46372a60da69}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {a205d8cb-4043-4873-afb6-92fd396b035f}; !- Name of Object 1
-
-OS:Daylighting:Control,
-  {34d6f420-02e7-466c-8bd0-2c9e60106935}, !- Handle
-  Perimeter_top_ZN_4 Daylt Sensor 2,      !- Name
-  {353c9c9b-d240-47a1-8193-edacc7b33f64}, !- Space Name
-  3.097969,                               !- Position X-Coordinate {m}
-  16.63685,                               !- Position Y-Coordinate {m}
-  8.6868,                                 !- Position Z-Coordinate {m}
-  ,                                       !- Psi Rotation Around X-Axis {deg}
-  ,                                       !- Theta Rotation Around Y-Axis {deg}
-  ,                                       !- Phi Rotation Around Z-Axis {deg}
-  377,                                    !- Illuminance Setpoint {lux}
-  Stepped,                                !- Lighting Control Type
-  0.3,                                    !- Minimum Input Power Fraction for Continuous Dimming Control
-  0.2,                                    !- Minimum Light Output Fraction for Continuous Dimming Control
-  3,                                      !- Number of Stepped Control Steps
-  1,                                      !- Probability Lighting will be Reset When Needed in Manual Stepped Control
-  ,                                       !- Number of Daylighting Views
-  22;                                     !- Maximum Allowable Discomfort Glare Index
-
-OS:ComponentData,
-  {21f844b5-0b1c-4d86-a37f-87534f0bc27b}, !- Handle
-  Component Data 46,                      !- Name
-  {5a5453fd-c2c6-4b70-92ab-0a86195d79d1}, !- UUID
-  {81c037b2-8cc2-497e-9f24-3720d52ded2e}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {34d6f420-02e7-466c-8bd0-2c9e60106935}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {47f04e27-8f34-4087-b4f0-fd2f97302b08}, !- Handle
-  Perimeter_top_ZN_3ZN_LSr,               !- Name
-  Perimeter_top_ZN_3 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {56fcb965-561c-4dd2-9401-3f6bcc0cde40}, !- Handle
-  Component Data 47,                      !- Name
-  {b137e244-aa27-4b10-8931-d5e0776b7a44}, !- UUID
-  {319dfd64-b983-434e-84e1-72aa574f1568}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {47f04e27-8f34-4087-b4f0-fd2f97302b08}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {cafb2610-43be-420c-b25f-258ce39bdf34}, !- Handle
-  Perimeter_top_ZN_1ZN_LSr,               !- Name
-  Perimeter_top_ZN_1 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {dbe2fecc-5346-4c21-b378-0a9645e62204}, !- Handle
-  Component Data 48,                      !- Name
-  {88c9247e-5ae6-4c16-b4c1-9fa5eeff4ca1}, !- UUID
-  {cfb6bf87-c3ce-4671-859b-f4300b907fdb}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {cafb2610-43be-420c-b25f-258ce39bdf34}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {8185d6f5-c971-46c6-a0f9-89260da635b2}, !- Handle
-  Perimeter_top_ZN_2ZN_LSr,               !- Name
-  Perimeter_top_ZN_2 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {cafd4f50-9609-4215-8f16-5b690330b092}, !- Handle
-  Component Data 49,                      !- Name
-  {34b2a9b2-8ec1-4540-8480-c9c35b797a18}, !- UUID
-  {4a3392f0-1915-4c28-83c9-afece6462427}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {8185d6f5-c971-46c6-a0f9-89260da635b2}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {94494f30-bc21-4d38-bb40-e2919dd034fe}, !- Handle
-  Facility_Int_LTG,                       !- Name
-  ,                                       !- Output Variable or Output Meter Index Key Name
-  InteriorLights:Electricity;             !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {c2d543c8-98d5-4336-835b-d41ee3150415}, !- Handle
-  Component Data 50,                      !- Name
-  {d5fcb2a8-c94b-4671-a92e-512b0076d728}, !- UUID
-  {f50bea92-deef-4052-a6af-fa96a6d1967b}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {94494f30-bc21-4d38-bb40-e2919dd034fe}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {7a8d22d6-6ccd-4c19-902a-ebe15383d69d}, !- Handle
-  Core_bottomZN_LSr,                      !- Name
-  Core_bottom ZN,                         !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {34bae77f-88ed-4e1b-9aec-33b8d2b4212a}, !- Handle
-  Component Data 51,                      !- Name
-  {50118ecd-3afe-4141-887e-a110af7a3af8}, !- UUID
-  {63ad6e61-aa07-4c10-aa7d-2287e2b005b3}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7a8d22d6-6ccd-4c19-902a-ebe15383d69d}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {5c6cca3a-cf74-4c59-921a-34160529834f}, !- Handle
-  Perimeter_top_ZN_4ZN_LSr,               !- Name
-  Perimeter_top_ZN_4 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {1207760f-b07a-4b50-a172-28459e7b680c}, !- Handle
-  Component Data 52,                      !- Name
-  {29bbbe1c-c838-4af9-a7d8-1586c164a3eb}, !- UUID
-  {48d8d89d-c339-46e9-9907-5f0456aabe0c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {5c6cca3a-cf74-4c59-921a-34160529834f}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {ed0b2ace-af9e-4071-b887-d69bdddf259b}, !- Handle
-  Perimeter_bot_ZN_1ZN_LSr,               !- Name
-  Perimeter_bot_ZN_1 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {beb8f90d-d335-41d0-9e00-ed38e968cc2a}, !- Handle
-  Component Data 53,                      !- Name
-  {3bc44b49-246c-4480-bf66-20b5bf4171e1}, !- UUID
-  {02045a2b-2c47-4f54-88b4-33e4f7f30007}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {ed0b2ace-af9e-4071-b887-d69bdddf259b}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {3a10e1c2-ecee-4166-9039-7a29cc424aae}, !- Handle
-  Perimeter_mid_ZN_2ZN_LSr,               !- Name
-  Perimeter_mid_ZN_2 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {90506870-85d2-4710-a0e2-2a3ac56cd53a}, !- Handle
-  Component Data 54,                      !- Name
-  {c3719e43-6e7f-479c-8fed-042b31b15575}, !- UUID
-  {eaca5c89-3893-4a53-aeb9-0f94e44fe607}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3a10e1c2-ecee-4166-9039-7a29cc424aae}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {86cbd437-66cb-438f-bc33-055530d69d6e}, !- Handle
-  Perimeter_mid_ZN_3ZN_LSr,               !- Name
-  Perimeter_mid_ZN_3 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {4bdeba2b-4b0b-4653-8b64-f48c3fcf591c}, !- Handle
-  Component Data 55,                      !- Name
-  {8770f76a-5bb5-4c6a-b551-e04dea70612b}, !- UUID
-  {49023821-b782-49cc-b004-e39fa5d360e7}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {86cbd437-66cb-438f-bc33-055530d69d6e}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {69407677-4f44-48dc-a39a-6d21bd49fd02}, !- Handle
-  Core_midZN_LSr,                         !- Name
-  Core_mid ZN,                            !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {3f07586a-cae6-424e-ad49-a1c531a2ddf8}, !- Handle
-  Component Data 56,                      !- Name
-  {77a93293-605f-44e9-be09-705ecd99e6a0}, !- UUID
-  {0305b922-f9ce-4fbf-8493-8159cd265553}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {69407677-4f44-48dc-a39a-6d21bd49fd02}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {4abd0124-720b-4388-8f9f-456492cc26dc}, !- Handle
-  Perimeter_mid_ZN_1ZN_LSr,               !- Name
-  Perimeter_mid_ZN_1 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {08050a53-b2d9-49d4-b4ba-556cc4b7a9fc}, !- Handle
-  Component Data 57,                      !- Name
-  {5bf5709b-5a8a-49e7-99d6-d5928939c923}, !- UUID
-  {123da65c-922d-4ba9-a84d-d2f9f793c539}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {4abd0124-720b-4388-8f9f-456492cc26dc}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {c0c561bd-1e86-4434-be3e-9166cb0af820}, !- Handle
-  Core_topZN_LSr,                         !- Name
-  Core_top ZN,                            !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {d42b370a-18eb-43b6-bd53-caea0f7e97bd}, !- Handle
-  Component Data 58,                      !- Name
-  {dfc29be1-97ef-4178-8289-dd67415f8537}, !- UUID
-  {043024ed-41a4-4333-938c-5a40790fc5d5}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c0c561bd-1e86-4434-be3e-9166cb0af820}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {6eb85682-9859-4bfc-941d-4eb033ae4213}, !- Handle
-  Perimeter_bot_ZN_2ZN_LSr,               !- Name
-  Perimeter_bot_ZN_2 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {123f23e7-cc51-4ef8-ad0a-5f4685444e0c}, !- Handle
-  Component Data 59,                      !- Name
-  {eca50491-47e3-4e8d-8374-7a9c585d00bd}, !- UUID
-  {9fad6ed9-d095-4c44-88ee-151f820e78a5}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {6eb85682-9859-4bfc-941d-4eb033ae4213}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {d64eb402-4aad-4930-bdfc-49ddef53aa67}, !- Handle
-  Perimeter_bot_ZN_4ZN_LSr,               !- Name
-  Perimeter_bot_ZN_4 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {2fb871a7-87e3-4eda-a34b-65f3a3798636}, !- Handle
-  Component Data 60,                      !- Name
-  {e9d93f34-d3b5-4051-b7f0-19c63eb7dd5f}, !- UUID
-  {26cf1bc5-0e9f-4226-8640-f98a0fd33a69}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {d64eb402-4aad-4930-bdfc-49ddef53aa67}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {3caa0b38-b8b4-429b-a9c0-f6ba26d28603}, !- Handle
-  Perimeter_bot_ZN_3ZN_LSr,               !- Name
-  Perimeter_bot_ZN_3 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {9b540234-6698-45d4-907a-fbac094913da}, !- Handle
-  Component Data 61,                      !- Name
-  {22cf6beb-e89b-4b73-af1e-a0ce70428c8d}, !- UUID
-  {a6760123-9044-4d18-9756-6bb3193fc968}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3caa0b38-b8b4-429b-a9c0-f6ba26d28603}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Sensor,
-  {61f38b93-f923-437b-9e17-6402fb7ca85d}, !- Handle
-  Perimeter_mid_ZN_4ZN_LSr,               !- Name
-  Perimeter_mid_ZN_4 ZN,                  !- Output Variable or Output Meter Index Key Name
-  Zone Lights Electricity Rate;           !- Output Variable or Output Meter Name
-
-OS:ComponentData,
-  {187b3ca1-49e3-4ae1-96e3-d739bf93c57a}, !- Handle
-  Component Data 62,                      !- Name
-  {c7d1061b-2444-4f58-a83b-8d3dd7ef29b7}, !- UUID
-  {99dea42d-a506-4d6d-96cc-89d5b9d68f0a}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {61f38b93-f923-437b-9e17-6402fb7ca85d}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {c7e36852-88b8-4116-b7a1-07b8dcb0440c}, !- Handle
-  Perimeter_top_ZN_4ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {a4fce30b-7086-461a-9620-e7b594fdb0c6}, !- Handle
-  Component Data 63,                      !- Name
-  {222b2ecd-db52-4251-855b-b6dd1a795d27}, !- UUID
-  {5e414017-d66a-496c-b285-754fb99e7d41}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c7e36852-88b8-4116-b7a1-07b8dcb0440c}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {a7d0b494-d0c7-41ac-aacf-7ffca857b9ea}, !- Handle
-  Perimeter_top_ZN_3ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {dece51db-fd28-468f-bbe9-d53f27bcd292}, !- Handle
-  Component Data 64,                      !- Name
-  {2bc80280-ff85-4d42-a06a-e511d446d17f}, !- UUID
-  {09dda4cd-e754-4be8-8a51-3020577a7111}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {a7d0b494-d0c7-41ac-aacf-7ffca857b9ea}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {e4fc13b8-b011-4ad0-b931-891fe56c58d7}, !- Handle
-  Core_bottomZN_Light1_Actuator,          !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {d48b172c-ea94-498e-8b1d-d9d83bdbe2bf}, !- Handle
-  Component Data 65,                      !- Name
-  {1937741a-6046-4536-a443-62305bd8946e}, !- UUID
-  {50e2ecff-8ecc-4bde-bcda-529fdbbd3a09}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e4fc13b8-b011-4ad0-b931-891fe56c58d7}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {ed309d67-2bb2-49e2-9040-268b44f64e8d}, !- Handle
-  Perimeter_bot_ZN_2ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {982a9d18-24bc-4f9a-8b0a-dc69a4b922c7}, !- Handle
-  Component Data 66,                      !- Name
-  {1f52e22e-7ad7-4add-bc76-1a33b3e28adb}, !- UUID
-  {e179ea47-f6e4-4565-aa6e-5495e1d90048}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {ed309d67-2bb2-49e2-9040-268b44f64e8d}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {8cf96791-4079-4c91-ba1e-e760ba864516}, !- Handle
-  Perimeter_bot_ZN_4ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {ac5a8670-7b55-4614-96e0-ca72a367c252}, !- Handle
-  Component Data 67,                      !- Name
-  {de909226-2e33-4dc4-b24e-d3e52852417e}, !- UUID
-  {b4ceba54-bbcb-4346-a6ab-5a21a90813db}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {8cf96791-4079-4c91-ba1e-e760ba864516}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {d9e1b042-fa96-4605-9e3b-16df4d77e8ce}, !- Handle
-  Perimeter_mid_ZN_2ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {bf4c7dac-7843-4449-b435-55a3931c148f}, !- Handle
-  Component Data 68,                      !- Name
-  {6487929b-fe97-408e-bccd-64d726e5cff6}, !- UUID
-  {ad1acbf6-64c7-4d6d-b572-24d9f4d163e6}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {d9e1b042-fa96-4605-9e3b-16df4d77e8ce}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {636e16f4-858e-4c71-80ee-5956270c404f}, !- Handle
-  Core_midZN_Light1_Actuator,             !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {2353cbd8-83b2-419f-b17e-e5f4c2b69c44}, !- Handle
-  Component Data 69,                      !- Name
-  {7b22c77a-4ed9-40f9-a55b-fc455b7338d8}, !- UUID
-  {7608cad8-5e38-4b47-8ff8-b2a7824f0e10}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {636e16f4-858e-4c71-80ee-5956270c404f}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {2f1f209e-d44a-403e-aa38-2718b1d95d14}, !- Handle
-  Core_topZN_Light1_Actuator,             !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {b7b6d031-d202-49e9-9c2a-75fd196491e3}, !- Handle
-  Component Data 70,                      !- Name
-  {37aea051-de7c-49a8-952d-c8ddd09e1f3c}, !- UUID
-  {0d783274-abb7-4872-85ec-15286c5e1ebd}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {2f1f209e-d44a-403e-aa38-2718b1d95d14}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {9d7fabe6-b271-40d1-825f-44b673f004b9}, !- Handle
-  Perimeter_mid_ZN_1ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {ff5245c5-2990-4405-a241-398cacd68c11}, !- Handle
-  Component Data 71,                      !- Name
-  {be6371a5-1700-4da9-836e-609859e22ec7}, !- UUID
-  {84210663-e40b-416c-a096-245409c20512}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9d7fabe6-b271-40d1-825f-44b673f004b9}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {e471a3ed-2e86-4f5c-a2d6-cb86776aae24}, !- Handle
-  Perimeter_top_ZN_1ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {13856270-2173-409e-8da3-3b27f1e5626a}, !- Handle
-  Component Data 72,                      !- Name
-  {5c560d8d-6f25-4f9f-a7fb-dd530d63e010}, !- UUID
-  {f9efa85b-6bf0-4ad6-b11b-167e863c6644}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e471a3ed-2e86-4f5c-a2d6-cb86776aae24}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {9db59009-d1e0-41db-81de-de570aed9372}, !- Handle
-  Perimeter_bot_ZN_1ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {3afd5c9f-6774-44ce-b125-29fb4702e3da}, !- Handle
-  Component Data 73,                      !- Name
-  {4ab53e11-7f1c-44b0-bbbc-47a4d7b4825b}, !- UUID
-  {8459d5b1-49b2-4427-bf57-d4d9b4b38ec1}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9db59009-d1e0-41db-81de-de570aed9372}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {7169c908-ecc5-4da3-b4d0-ff170794d369}, !- Handle
-  Perimeter_bot_ZN_3ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {0c452d3c-2595-4e11-a7b8-324ed039fec8}, !- Handle
-  Component Data 74,                      !- Name
-  {a3b86518-ca48-4b58-a537-78fb0405b254}, !- UUID
-  {f7da28a2-75f1-422b-ba21-620ed22b0816}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7169c908-ecc5-4da3-b4d0-ff170794d369}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {0a509a12-c289-4b18-80a7-1ef011dce190}, !- Handle
-  Perimeter_mid_ZN_3ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {bf148f99-398e-49f5-8549-2813ae6fafd6}, !- Handle
-  Component Data 75,                      !- Name
-  {d5808bc1-01e8-4f2c-9e67-bd576a5f4120}, !- UUID
-  {ce00e974-bf64-4b9e-a991-226039d2dd7a}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {0a509a12-c289-4b18-80a7-1ef011dce190}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {e9846e26-cbc1-4675-b7a6-2dbbfed750cc}, !- Handle
-  Perimeter_mid_ZN_4ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {bfcd6c8b-53a4-4cd1-a3ca-513eb6f0839d}, !- Handle
-  Component Data 76,                      !- Name
-  {b6542e26-eb62-4eb4-aeb2-a3108d609282}, !- UUID
-  {f7085605-f412-4d9a-a279-32dc2d00f6fe}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e9846e26-cbc1-4675-b7a6-2dbbfed750cc}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Actuator,
-  {7d37c7cb-04fe-41c4-bf8c-e5dd88fbce03}, !- Handle
-  Perimeter_top_ZN_2ZN_Light1_Actuator,   !- Name
-  ,                                       !- Actuated Component Name
-  Lights,                                 !- Actuated Component Type
-  Electricity Rate;                       !- Actuated Component Control Type
-
-OS:ComponentData,
-  {edb9eca2-0a5e-43a6-9574-c84d26fbda09}, !- Handle
-  Component Data 77,                      !- Name
-  {7c72ebde-9408-4ba2-aac3-56775ec13b0c}, !- UUID
-  {e33166d5-7c97-4bc6-988b-8ae568a80f93}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7d37c7cb-04fe-41c4-bf8c-e5dd88fbce03}; !- Name of Object 1
-
-OS:EnergyManagementSystem:GlobalVariable,
-  {1a05ae91-1881-49b8-9b4b-5869889bd931}, !- Handle
-  Wired_LTG;                              !- Name
-
-OS:ComponentData,
-  {43a94e72-02fa-4956-8742-b2dd9bf5c750}, !- Handle
-  Component Data 78,                      !- Name
-  {c541aada-52c0-4fa1-87be-829c80518140}, !- UUID
-  {61914719-7ad7-4ec3-923d-b66147780b25}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {1a05ae91-1881-49b8-9b4b-5869889bd931}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {1b192258-c98f-4a2a-a7c8-58a99eb39e05}, !- Handle
-  Core_midZN_Area,                        !- Name
-  Core_mid ZN,                            !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {c2624841-467c-4c9c-84e5-a9289bb27434}, !- Handle
-  Component Data 79,                      !- Name
-  {37981312-9ddf-49f5-a385-ae5a8e36dc95}, !- UUID
-  {58668b58-b8e7-42ae-ab28-b6c57768cdfd}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {1b192258-c98f-4a2a-a7c8-58a99eb39e05}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {7feedcc5-6f4a-47ae-851e-d1e34fc6e1d8}, !- Handle
-  Core_topZN_Area,                        !- Name
-  Core_top ZN,                            !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {e6037c1a-5550-483f-92eb-c31aed089601}, !- Handle
-  Component Data 80,                      !- Name
-  {ab6dfef5-5b5a-4a1e-8c40-16148b1416d6}, !- UUID
-  {0d78e9f2-6193-42fe-b13d-4b6e3420bbcc}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7feedcc5-6f4a-47ae-851e-d1e34fc6e1d8}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {25251cf2-f3e2-469a-b443-a96f64f1aa86}, !- Handle
-  Perimeter_top_ZN_4ZN_Area,              !- Name
-  Perimeter_top_ZN_4 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {d710df14-f846-4188-8c4b-ce1023a9ccb4}, !- Handle
-  Component Data 81,                      !- Name
-  {b230f965-1fc3-4736-85b6-b6a314a6034f}, !- UUID
-  {be2f1336-dbb9-4693-9b52-2f798e3c8e9c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {25251cf2-f3e2-469a-b443-a96f64f1aa86}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {3317628f-a4db-41a4-8733-e0dfde0e2ccd}, !- Handle
-  Perimeter_bot_ZN_1ZN_Area,              !- Name
-  Perimeter_bot_ZN_1 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {f7c1d8d0-9554-410b-bf55-56099e68e11b}, !- Handle
-  Component Data 82,                      !- Name
-  {c8017281-82ed-4362-8b1b-65f8406a8fba}, !- UUID
-  {aedf1d1e-b0d8-42bb-81c7-c19401ce4ba6}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3317628f-a4db-41a4-8733-e0dfde0e2ccd}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {d945a6c2-ab7b-4140-88cf-b263509bdf0f}, !- Handle
-  Perimeter_bot_ZN_2ZN_Area,              !- Name
-  Perimeter_bot_ZN_2 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {3bba9e09-1519-4694-b915-15fe78b1e597}, !- Handle
-  Component Data 83,                      !- Name
-  {a7cbd83f-fc74-4f4f-b2cc-78ccc7260d0f}, !- UUID
-  {aa110bda-ca30-46e3-a5e4-b0f04c9bc2f2}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {d945a6c2-ab7b-4140-88cf-b263509bdf0f}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {644029b2-cdb4-4ee6-88c7-8fea2d455304}, !- Handle
-  Perimeter_top_ZN_1ZN_Area,              !- Name
-  Perimeter_top_ZN_1 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {1e1c252e-604f-4c46-9fda-650738f06f1c}, !- Handle
-  Component Data 84,                      !- Name
-  {16276f67-c56b-4288-8c35-86a7ec2a5b89}, !- UUID
-  {136c425c-9eae-474c-bbdd-a0b602e4911a}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {644029b2-cdb4-4ee6-88c7-8fea2d455304}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {2a7756cc-4f3d-45ec-8308-5ae10f5bd246}, !- Handle
-  Perimeter_top_ZN_3ZN_Area,              !- Name
-  Perimeter_top_ZN_3 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {ad17b894-3f09-404e-9292-b083546a8b5c}, !- Handle
-  Component Data 85,                      !- Name
-  {80cae343-be5d-4437-8cb3-652aadc73fce}, !- UUID
-  {bd6ee343-c631-4ac9-bab4-73bf64b6fc20}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {2a7756cc-4f3d-45ec-8308-5ae10f5bd246}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {04cf4e86-8925-438e-9ac5-70d486bb1450}, !- Handle
-  Perimeter_bot_ZN_3ZN_Area,              !- Name
-  Perimeter_bot_ZN_3 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {a31d88a3-2b3d-402f-86c7-041acc1955e0}, !- Handle
-  Component Data 86,                      !- Name
-  {62da871c-fad9-4ce7-b418-c7a6feb7123e}, !- UUID
-  {2b401f3b-4632-4b8e-9c60-f638b393ab50}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {04cf4e86-8925-438e-9ac5-70d486bb1450}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {e9529c19-42d9-4459-8571-e732f6a8b7f6}, !- Handle
-  Perimeter_mid_ZN_2ZN_Area,              !- Name
-  Perimeter_mid_ZN_2 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {5b62c607-4e41-473d-8ed2-0b709c0f16c5}, !- Handle
-  Component Data 87,                      !- Name
-  {cb005036-5bf4-40b5-8aac-f777a3cf171e}, !- UUID
-  {3cab8e29-2397-4c1f-b340-2efe24641670}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e9529c19-42d9-4459-8571-e732f6a8b7f6}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {59c182da-f1eb-42dd-8470-3ed054be0dc1}, !- Handle
-  Perimeter_mid_ZN_1ZN_Area,              !- Name
-  Perimeter_mid_ZN_1 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {a0e84b4f-e3d4-4db4-9be1-a1ce9d70eab8}, !- Handle
-  Component Data 88,                      !- Name
-  {9a9d3139-9c85-4f5b-ab28-673cfa77abd0}, !- UUID
-  {ae1b22ad-59de-43d7-b502-6a1e813a024d}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {59c182da-f1eb-42dd-8470-3ed054be0dc1}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {08e43923-7e4a-4da8-8670-54d462a769c0}, !- Handle
-  Perimeter_mid_ZN_4ZN_Area,              !- Name
-  Perimeter_mid_ZN_4 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {202c8b1d-60c7-4833-ab4c-09f78e1cd8bc}, !- Handle
-  Component Data 89,                      !- Name
-  {f2ea3337-b4cf-46d7-93f4-361ac1b0cf63}, !- UUID
-  {914c3b22-b0b8-4e89-8638-96615a1e964f}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {08e43923-7e4a-4da8-8670-54d462a769c0}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {84e3110c-f86d-4659-8eb4-36da57eb6850}, !- Handle
-  Core_bottomZN_Area,                     !- Name
-  Core_bottom ZN,                         !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {8ceb5f8c-3919-4859-b32b-cab3aab426ea}, !- Handle
-  Component Data 90,                      !- Name
-  {58e7a712-e322-43db-9c2b-4fa1e8a4beb3}, !- UUID
-  {f0544983-8556-4740-b0c7-9372afad6a58}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {84e3110c-f86d-4659-8eb4-36da57eb6850}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {21439e4d-3c93-4e97-9a53-17337075e5b3}, !- Handle
-  Perimeter_mid_ZN_3ZN_Area,              !- Name
-  Perimeter_mid_ZN_3 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {1c981afe-cd10-4236-aae0-879598e27da6}, !- Handle
-  Component Data 91,                      !- Name
-  {cd06e8b5-44bf-4d61-b69c-d38c00c80eaa}, !- UUID
-  {6cc2bd35-7c2f-47d6-b59c-c3c17fa88265}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {21439e4d-3c93-4e97-9a53-17337075e5b3}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {d7d4122f-64a6-4dcf-acf6-b263cc928b3c}, !- Handle
-  Perimeter_bot_ZN_4ZN_Area,              !- Name
-  Perimeter_bot_ZN_4 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {8e3395f2-bf64-4a2c-bd5a-012901d293ed}, !- Handle
-  Component Data 92,                      !- Name
-  {3eb7996d-9d97-4a83-80bf-b66a9543c2a4}, !- UUID
-  {909626b8-d59c-499e-9d7d-42863e5cce95}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {d7d4122f-64a6-4dcf-acf6-b263cc928b3c}; !- Name of Object 1
-
-OS:EnergyManagementSystem:InternalVariable,
-  {9306ee95-9446-4b72-ae48-bdb8c7fbec4f}, !- Handle
-  Perimeter_top_ZN_2ZN_Area,              !- Name
-  Perimeter_top_ZN_2 ZN,                  !- Internal Data Index Key Name
-  Zone Floor Area;                        !- Internal Data Type
-
-OS:ComponentData,
-  {80f3b618-6d06-4673-9e60-7573547d943e}, !- Handle
-  Component Data 93,                      !- Name
-  {bf5fb1a0-7c9e-4092-8dc0-77f17c4548e5}, !- UUID
-  {a3fb96b4-958c-45fc-b013-78b9fa924cb8}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9306ee95-9446-4b72-ae48-bdb8c7fbec4f}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {144946e7-95ca-43b5-b89c-9b0afde50823}, !- Handle
-  SET_Perimeter_top_ZN_3 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {5d3a04e1-5cc3-4416-a536-8083a9dad0fe}; !- Program Name 1
-
-OS:ComponentData,
-  {19114dc8-d286-4439-8c3d-a9bd7c72fcef}, !- Handle
-  Component Data 94,                      !- Name
-  {df33a34d-8f48-47c2-9e6f-3ba836459611}, !- UUID
-  {ce6e0bf7-3849-4fc9-bb57-cdde394f4771}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {144946e7-95ca-43b5-b89c-9b0afde50823}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {5d3a04e1-5cc3-4416-a536-8083a9dad0fe}, !- Handle
-  SET_Perimeter_top_ZN_3ZN_Light_EMS_Program, !- Name
-  SET Perimeter_top_ZN_3ZN_LSr_IP=0.093*Perimeter_top_ZN_3ZN_LSr/Perimeter_top_ZN_3ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_top_ZN_3ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_top_ZN_3ZN_Light1_Actuator = 0.02*Perimeter_top_ZN_3ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_top_ZN_3ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {b0575264-86c0-461f-92cb-f686a479124f}, !- Handle
-  Component Data 95,                      !- Name
-  {c1af95be-1d4a-4d5d-bcb5-145e3735ba6b}, !- UUID
-  {59b46f6b-19af-4db2-a074-91329e7474f4}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {5d3a04e1-5cc3-4416-a536-8083a9dad0fe}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {2e1b17cc-c9a6-497a-9785-f853c4643836}, !- Handle
-  SET_Core_bottom ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {c860118b-52e9-4b69-949e-c617750396b0}; !- Program Name 1
-
-OS:ComponentData,
-  {4537c546-74db-43c4-93fd-855a4f5eadcf}, !- Handle
-  Component Data 96,                      !- Name
-  {97cc05da-6411-497d-8920-502b9306b42c}, !- UUID
-  {4fdd966f-cabf-40fa-93a2-a9d27ba54bbc}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {2e1b17cc-c9a6-497a-9785-f853c4643836}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {c860118b-52e9-4b69-949e-c617750396b0}, !- Handle
-  SET_Core_bottomZN_Light_EMS_Program,    !- Name
-  SET Core_bottomZN_LSr_IP=0.093*Core_bottomZN_LSr/Core_bottomZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Core_bottomZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Core_bottomZN_Light1_Actuator = 0.02*Core_bottomZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Core_bottomZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {6cdc6722-a427-495f-8af6-b26be6e80f27}, !- Handle
-  Component Data 97,                      !- Name
-  {fb0552a9-306a-4219-a1ce-6407290b8b48}, !- UUID
-  {6201f9c8-c511-45b2-b129-ebf0856505d6}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {c860118b-52e9-4b69-949e-c617750396b0}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {f2ecbb90-1de2-4220-9419-95c95bd6cecf}, !- Handle
-  SET_Perimeter_top_ZN_2 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {8d6c33ae-99fd-4e47-bf1d-b658effd562f}; !- Program Name 1
-
-OS:ComponentData,
-  {ec054503-33f0-45d5-ade4-f8926e3055b8}, !- Handle
-  Component Data 98,                      !- Name
-  {c053cd3e-2108-407f-8e28-00ebcfb7371a}, !- UUID
-  {51000765-b45f-4ce9-8128-bbecc6d55e64}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {f2ecbb90-1de2-4220-9419-95c95bd6cecf}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {8d6c33ae-99fd-4e47-bf1d-b658effd562f}, !- Handle
-  SET_Perimeter_top_ZN_2ZN_Light_EMS_Program, !- Name
-  SET Perimeter_top_ZN_2ZN_LSr_IP=0.093*Perimeter_top_ZN_2ZN_LSr/Perimeter_top_ZN_2ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_top_ZN_2ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_top_ZN_2ZN_Light1_Actuator = 0.02*Perimeter_top_ZN_2ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_top_ZN_2ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {1736e927-17f2-420e-a1ca-acabd1537dae}, !- Handle
-  Component Data 99,                      !- Name
-  {8b824e96-eb99-4077-8814-82f3fbef7b03}, !- UUID
-  {87cf509f-49f4-4c02-aad4-582a18346032}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {8d6c33ae-99fd-4e47-bf1d-b658effd562f}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {3ef10c57-1c66-414e-8fc5-f604233bb2ce}, !- Handle
-  SET_Perimeter_bot_ZN_1 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {4bd6bc5f-d9de-4562-bb73-cbab3d46c10a}; !- Program Name 1
-
-OS:ComponentData,
-  {04c2d95c-254e-4b0d-9372-5757def8c6b0}, !- Handle
-  Component Data 100,                     !- Name
-  {098ed3c7-039b-40e4-889e-90f10e943689}, !- UUID
-  {d7a0123d-1c5c-4999-b37c-23fe27e7cdfb}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3ef10c57-1c66-414e-8fc5-f604233bb2ce}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {4bd6bc5f-d9de-4562-bb73-cbab3d46c10a}, !- Handle
-  SET_Perimeter_bot_ZN_1ZN_Light_EMS_Program, !- Name
-  SET Perimeter_bot_ZN_1ZN_LSr_IP=0.093*Perimeter_bot_ZN_1ZN_LSr/Perimeter_bot_ZN_1ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_bot_ZN_1ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_bot_ZN_1ZN_Light1_Actuator = 0.02*Perimeter_bot_ZN_1ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_bot_ZN_1ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {7672b3b3-5936-4d67-b1cb-8876b5a41c63}, !- Handle
-  Component Data 101,                     !- Name
-  {d3b847d5-4c5a-4697-81d6-3c470d82ddd5}, !- UUID
-  {ed7032df-fcdf-4e2d-9704-b96bc816a1bd}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {4bd6bc5f-d9de-4562-bb73-cbab3d46c10a}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {3c7d79fb-aa1c-4ef9-9113-ca4938152da9}, !- Handle
-  SET_Perimeter_mid_ZN_1 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {3238cf1a-31c3-4958-af9f-3b6a60cd6250}; !- Program Name 1
-
-OS:ComponentData,
-  {37e29849-d4b3-4e98-bb28-5b9ee038f8ca}, !- Handle
-  Component Data 102,                     !- Name
-  {7960dcab-61c6-420d-8308-76607ca65e3b}, !- UUID
-  {5e3fead1-0f9d-4e89-9aab-aa0c0c11ba26}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3c7d79fb-aa1c-4ef9-9113-ca4938152da9}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {3238cf1a-31c3-4958-af9f-3b6a60cd6250}, !- Handle
-  SET_Perimeter_mid_ZN_1ZN_Light_EMS_Program, !- Name
-  SET Perimeter_mid_ZN_1ZN_LSr_IP=0.093*Perimeter_mid_ZN_1ZN_LSr/Perimeter_mid_ZN_1ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_mid_ZN_1ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_mid_ZN_1ZN_Light1_Actuator = 0.02*Perimeter_mid_ZN_1ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_mid_ZN_1ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {79cdaade-41fc-4251-a450-9431f39b6a8a}, !- Handle
-  Component Data 103,                     !- Name
-  {8e4c7ab3-0309-40f8-9e16-4878ffa27a1a}, !- UUID
-  {3ebb4cda-6254-4bf1-b038-085f57635040}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3238cf1a-31c3-4958-af9f-3b6a60cd6250}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {5afbb09b-9ee9-4a4e-8929-df339acb78c1}, !- Handle
-  SET_Perimeter_mid_ZN_4 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {fb5b67c1-4eae-4b06-956b-b46a456296b6}; !- Program Name 1
-
-OS:ComponentData,
-  {00602bd8-bd75-4d70-99c6-0fb47dcbd6d7}, !- Handle
-  Component Data 104,                     !- Name
-  {5538ae04-2caa-42f3-95d2-1ed2712a9cb7}, !- UUID
-  {18cb95e8-039b-4227-a9ce-1c1a0f0eaf17}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {5afbb09b-9ee9-4a4e-8929-df339acb78c1}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {fb5b67c1-4eae-4b06-956b-b46a456296b6}, !- Handle
-  SET_Perimeter_mid_ZN_4ZN_Light_EMS_Program, !- Name
-  SET Perimeter_mid_ZN_4ZN_LSr_IP=0.093*Perimeter_mid_ZN_4ZN_LSr/Perimeter_mid_ZN_4ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_mid_ZN_4ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_mid_ZN_4ZN_Light1_Actuator = 0.02*Perimeter_mid_ZN_4ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_mid_ZN_4ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {ef14222e-fa04-481b-8e38-00be647cb6b3}, !- Handle
-  Component Data 105,                     !- Name
-  {e00bfb6b-835d-456f-b477-9b37d0638a25}, !- UUID
-  {21ace69a-0a0e-4048-af6f-94edec0a6b6f}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {fb5b67c1-4eae-4b06-956b-b46a456296b6}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {7cda7fed-60ac-4b5a-8ed1-b781b49deccc}, !- Handle
-  SET_Core_mid ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {32f3a8a2-2652-46ad-8aa8-ff4c9043a2cc}; !- Program Name 1
-
-OS:ComponentData,
-  {b188318f-fd28-4ef7-a65b-e80b28188640}, !- Handle
-  Component Data 106,                     !- Name
-  {a2245d9d-334c-4e84-a6c8-78534588bfae}, !- UUID
-  {aec906ae-90b9-4d4d-8b49-2ca5279c0a62}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7cda7fed-60ac-4b5a-8ed1-b781b49deccc}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {32f3a8a2-2652-46ad-8aa8-ff4c9043a2cc}, !- Handle
-  SET_Core_midZN_Light_EMS_Program,       !- Name
-  SET Core_midZN_LSr_IP=0.093*Core_midZN_LSr/Core_midZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Core_midZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Core_midZN_Light1_Actuator = 0.02*Core_midZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Core_midZN_Light1_Actuator = NULL,  !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {015a98c0-d8e7-4e97-852e-aa6d3cbcf2db}, !- Handle
-  Component Data 107,                     !- Name
-  {25865faf-52c9-47b7-9949-d810133edeff}, !- UUID
-  {c5a975a0-1575-48ac-a679-b07dc231edf2}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {32f3a8a2-2652-46ad-8aa8-ff4c9043a2cc}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {1d399863-4217-40f7-8ed6-9d27fe0a291f}, !- Handle
-  SET_Perimeter_bot_ZN_3 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {fc74ec47-7379-4bc5-9e8b-44a76c2b4cfc}; !- Program Name 1
-
-OS:ComponentData,
-  {9dd2f8ed-28b6-4208-a9bd-c6f8363cf02e}, !- Handle
-  Component Data 108,                     !- Name
-  {20744d44-4b0e-4a4b-9759-61956d3ce99b}, !- UUID
-  {bc5ee256-b21d-4604-8096-7efbd779285f}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {1d399863-4217-40f7-8ed6-9d27fe0a291f}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {fc74ec47-7379-4bc5-9e8b-44a76c2b4cfc}, !- Handle
-  SET_Perimeter_bot_ZN_3ZN_Light_EMS_Program, !- Name
-  SET Perimeter_bot_ZN_3ZN_LSr_IP=0.093*Perimeter_bot_ZN_3ZN_LSr/Perimeter_bot_ZN_3ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_bot_ZN_3ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_bot_ZN_3ZN_Light1_Actuator = 0.02*Perimeter_bot_ZN_3ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_bot_ZN_3ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {b00aa37d-57c6-49f8-a394-ed97dce88b13}, !- Handle
-  Component Data 109,                     !- Name
-  {8323fed6-7780-4b2d-8dc7-513765733fa4}, !- UUID
-  {8d752c25-245e-454f-993e-db5176f2d60d}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {fc74ec47-7379-4bc5-9e8b-44a76c2b4cfc}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {db16a300-5988-4f3c-a7fe-3862cc980837}, !- Handle
-  SET_Perimeter_mid_ZN_3 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {ce6aa019-49a2-46d4-98fc-5530f71b1e8b}; !- Program Name 1
-
-OS:ComponentData,
-  {40af0a0d-a8fd-4b30-9ed4-4976ad535c2e}, !- Handle
-  Component Data 110,                     !- Name
-  {e34a97e8-65a9-41bd-b4d7-e92ccf8adf28}, !- UUID
-  {a30055e7-878f-49c3-b5eb-5f610c94d516}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {db16a300-5988-4f3c-a7fe-3862cc980837}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {ce6aa019-49a2-46d4-98fc-5530f71b1e8b}, !- Handle
-  SET_Perimeter_mid_ZN_3ZN_Light_EMS_Program, !- Name
-  SET Perimeter_mid_ZN_3ZN_LSr_IP=0.093*Perimeter_mid_ZN_3ZN_LSr/Perimeter_mid_ZN_3ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_mid_ZN_3ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_mid_ZN_3ZN_Light1_Actuator = 0.02*Perimeter_mid_ZN_3ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_mid_ZN_3ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {8a9cebe2-5d31-41b3-84c7-c300d27d7c96}, !- Handle
-  Component Data 111,                     !- Name
-  {d1f45b0b-66a9-4b4a-8156-89141d7ba037}, !- UUID
-  {64981ff6-80a3-4e52-8d4a-8ae5ecd87c7c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {ce6aa019-49a2-46d4-98fc-5530f71b1e8b}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {2a47baed-a7f4-47a7-942a-00230fb454f8}, !- Handle
-  SET_Core_top ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {292a92fc-ae9e-453e-80cc-9bc06d61cffd}; !- Program Name 1
-
-OS:ComponentData,
-  {9b167d7f-94a3-4a7e-bd30-a41e23992144}, !- Handle
-  Component Data 112,                     !- Name
-  {32f7aa6b-02ce-4555-ab7d-12ffaf4b298d}, !- UUID
-  {93ec4c1f-1938-4897-99d5-3d614487a74e}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {2a47baed-a7f4-47a7-942a-00230fb454f8}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {292a92fc-ae9e-453e-80cc-9bc06d61cffd}, !- Handle
-  SET_Core_topZN_Light_EMS_Program,       !- Name
-  SET Core_topZN_LSr_IP=0.093*Core_topZN_LSr/Core_topZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Core_topZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Core_topZN_Light1_Actuator = 0.02*Core_topZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Core_topZN_Light1_Actuator = NULL,  !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {4783d574-ca36-4751-bbd2-61b696444d5f}, !- Handle
-  Component Data 113,                     !- Name
-  {104aae3c-af5a-456a-8916-737d1060459b}, !- UUID
-  {7809d764-0d8c-4235-9c7f-c1dcc72e49bc}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {292a92fc-ae9e-453e-80cc-9bc06d61cffd}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {7df34160-5728-48aa-bc9e-fb537ec7e9d0}, !- Handle
-  SET_Perimeter_top_ZN_1 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {52949d01-b69a-4638-80c4-047090f44af1}; !- Program Name 1
-
-OS:ComponentData,
-  {f8fde667-254d-4f11-bd50-fdc786daf1a4}, !- Handle
-  Component Data 114,                     !- Name
-  {639c1603-c63d-4f18-9288-2d654c8919ad}, !- UUID
-  {404b6961-6f2c-4bcf-be48-3fba74cbdb0e}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {7df34160-5728-48aa-bc9e-fb537ec7e9d0}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {52949d01-b69a-4638-80c4-047090f44af1}, !- Handle
-  SET_Perimeter_top_ZN_1ZN_Light_EMS_Program, !- Name
-  SET Perimeter_top_ZN_1ZN_LSr_IP=0.093*Perimeter_top_ZN_1ZN_LSr/Perimeter_top_ZN_1ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_top_ZN_1ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_top_ZN_1ZN_Light1_Actuator = 0.02*Perimeter_top_ZN_1ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_top_ZN_1ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {ef9c8331-3710-4155-8338-f6aed00ea3a3}, !- Handle
-  Component Data 115,                     !- Name
-  {ac9c6320-3ed6-4b61-907c-5990875bc2f3}, !- UUID
-  {03367fcb-2e0b-46fe-bf68-edc72dbe1c8f}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {52949d01-b69a-4638-80c4-047090f44af1}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {df54c68d-16bf-4d65-ac0d-66e4666fa4db}, !- Handle
-  SET_Perimeter_bot_ZN_2 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {8fa4217f-54b8-4f49-9395-d7020999431e}; !- Program Name 1
-
-OS:ComponentData,
-  {fc472159-4287-4e80-a751-542d7136efdc}, !- Handle
-  Component Data 116,                     !- Name
-  {209938c1-ad0d-422e-a428-acdee941f3e0}, !- UUID
-  {4408c5d1-b9cd-46b1-a747-439fc3f05f64}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {df54c68d-16bf-4d65-ac0d-66e4666fa4db}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {8fa4217f-54b8-4f49-9395-d7020999431e}, !- Handle
-  SET_Perimeter_bot_ZN_2ZN_Light_EMS_Program, !- Name
-  SET Perimeter_bot_ZN_2ZN_LSr_IP=0.093*Perimeter_bot_ZN_2ZN_LSr/Perimeter_bot_ZN_2ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_bot_ZN_2ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_bot_ZN_2ZN_Light1_Actuator = 0.02*Perimeter_bot_ZN_2ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_bot_ZN_2ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {a541c90d-2d5a-4790-b97e-30c812ef8487}, !- Handle
-  Component Data 117,                     !- Name
-  {5023e16e-ab72-47e6-af9f-e78d4f1fdb6e}, !- UUID
-  {e992248d-6d73-452a-bca3-46d0b5b6803c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {8fa4217f-54b8-4f49-9395-d7020999431e}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {e29426f8-1730-4ba1-bcb0-6c357d5bec50}, !- Handle
-  SET_Perimeter_bot_ZN_4 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {9a639483-0188-401d-8b44-820eb2914b06}; !- Program Name 1
-
-OS:ComponentData,
-  {6c2e0a9d-4328-45ff-a65c-df51772e0004}, !- Handle
-  Component Data 118,                     !- Name
-  {7bce7997-4263-4d29-a221-0c3741d6b695}, !- UUID
-  {3dde1648-4e7b-4d06-a266-937ae2a3772c}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {e29426f8-1730-4ba1-bcb0-6c357d5bec50}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {9a639483-0188-401d-8b44-820eb2914b06}, !- Handle
-  SET_Perimeter_bot_ZN_4ZN_Light_EMS_Program, !- Name
-  SET Perimeter_bot_ZN_4ZN_LSr_IP=0.093*Perimeter_bot_ZN_4ZN_LSr/Perimeter_bot_ZN_4ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_bot_ZN_4ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_bot_ZN_4ZN_Light1_Actuator = 0.02*Perimeter_bot_ZN_4ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_bot_ZN_4ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {b69a227e-0ea7-4d33-a58c-6854d02c3789}, !- Handle
-  Component Data 119,                     !- Name
-  {cc3d99ac-d557-406e-a702-5d306a32a406}, !- UUID
-  {de22f605-01f0-4441-bb7d-42e251bca6b3}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {9a639483-0188-401d-8b44-820eb2914b06}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {3836535a-ad0e-47c5-b738-7c9600e271a3}, !- Handle
-  SET_Perimeter_top_ZN_4 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {21817349-5802-4490-9ab0-d5044c5a87ca}; !- Program Name 1
-
-OS:ComponentData,
-  {b36fc84c-7d0d-4841-ad48-2758671c300a}, !- Handle
-  Component Data 120,                     !- Name
-  {c78c6570-d138-42bb-836d-6c1e7a6eec09}, !- UUID
-  {8e956ddf-c83c-4c91-a4d8-2ce713a9af55}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {3836535a-ad0e-47c5-b738-7c9600e271a3}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {21817349-5802-4490-9ab0-d5044c5a87ca}, !- Handle
-  SET_Perimeter_top_ZN_4ZN_Light_EMS_Program, !- Name
-  SET Perimeter_top_ZN_4ZN_LSr_IP=0.093*Perimeter_top_ZN_4ZN_LSr/Perimeter_top_ZN_4ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_top_ZN_4ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_top_ZN_4ZN_Light1_Actuator = 0.02*Perimeter_top_ZN_4ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_top_ZN_4ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {6c0307ad-d3e9-4daa-a67c-efa1afecd088}, !- Handle
-  Component Data 121,                     !- Name
-  {102edcda-d7dc-4b8b-a2ef-8b282981c015}, !- UUID
-  {6beb1437-5d3b-4b95-b2f5-84b9ea289940}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {21817349-5802-4490-9ab0-d5044c5a87ca}; !- Name of Object 1
-
-OS:EnergyManagementSystem:ProgramCallingManager,
-  {67f691b8-15f9-47df-bcd8-6af44dc4ec84}, !- Handle
-  SET_Perimeter_mid_ZN_2 ZN_Light_EMS_Program_Manager, !- Name
-  AfterPredictorAfterHVACManagers,        !- EnergyPlus Model Calling Point
-  {f1da654f-de2f-4f19-8b44-07715300e551}; !- Program Name 1
-
-OS:ComponentData,
-  {99cfe96a-3a84-4a60-8240-fb37ce1573e3}, !- Handle
-  Component Data 122,                     !- Name
-  {6c122d02-febb-493e-92ae-c2935cdd8f3d}, !- UUID
-  {0d3e525c-80d0-400f-8646-5e654df435a7}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {67f691b8-15f9-47df-bcd8-6af44dc4ec84}; !- Name of Object 1
-
-OS:EnergyManagementSystem:Program,
-  {f1da654f-de2f-4f19-8b44-07715300e551}, !- Handle
-  SET_Perimeter_mid_ZN_2ZN_Light_EMS_Program, !- Name
-  SET Perimeter_mid_ZN_2ZN_LSr_IP=0.093*Perimeter_mid_ZN_2ZN_LSr/Perimeter_mid_ZN_2ZN_Area, !- Program Line 1
-  IF (Business_Sensor <= 0) && (Perimeter_mid_ZN_2ZN_LSr_IP >= 0.02), !- Program Line 2
-  SET Perimeter_mid_ZN_2ZN_Light1_Actuator = 0.02*Perimeter_mid_ZN_2ZN_Area/0.09290304, !- Program Line 3
-  ELSE,                                   !- Program Line 4
-  SET Perimeter_mid_ZN_2ZN_Light1_Actuator = NULL, !- Program Line 5
-  ENDIF;                                  !- Program Line 6
-
-OS:ComponentData,
-  {e66347e8-29d9-4c92-a537-c095aaa074ac}, !- Handle
-  Component Data 123,                     !- Name
-  {b9c4a23e-77cd-47e3-beea-490655567dea}, !- UUID
-  {e4a009e5-a754-4479-945b-a7463f4ca80f}, !- Version UUID
-  1678880136,                             !- Creation Timestamp
-  1678880136,                             !- Version Timestamp
-  {f1da654f-de2f-4f19-8b44-07715300e551}; !- Name of Object 1
+  {971faa68-4514-4c8f-be4a-120d10b88729}, !- UUID
+  {c97eb492-8387-4fc2-9166-9e70aabb2147}, !- Version UUID
+  1680739566,                             !- Creation Timestamp
+  1680739566,                             !- Version Timestamp
+  {e5722d93-a06f-477e-9111-65ab2bf07336}, !- Name of Object 1
+  {91cc734b-b11a-4564-bdf3-b7ca8b685ac2}, !- Name of Object 2
+  {65760ea1-2626-47b2-86d4-dab76d62672d}, !- Name of Object 3
+  {cc472611-e8ed-448b-93fd-5f1f1c2b5e8a}, !- Name of Object 4
+  {3fab2023-e17a-4241-8ca6-3a6cd14aaba6}, !- Name of Object 5
+  {366324cf-37e7-46bc-b235-8b9afc731d15}, !- Name of Object 6
+  {1bb76ed4-8ea2-4f09-ace2-b38d3f8d8e20}, !- Name of Object 7
+  {763ef9a7-9105-4574-a69c-5724c0007974}, !- Name of Object 8
+  {2483e393-f467-4148-889c-5fd73c7d93db}, !- Name of Object 9
+  {7d319395-be0d-4480-a664-b77b5a9b4fba}, !- Name of Object 10
+  {5264fe01-ebf7-4c8b-adb8-3237affa15c5}; !- Name of Object 11
 

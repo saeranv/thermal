@@ -444,6 +444,7 @@ def swap_spc_light(act_osm, ref_osm):
         act_prog = assert_init(act_prog.to_EnergyManagementSystemProgram()).get()
         act_prog_call.eraseProgram(0)
         act_prog_call.addProgram(act_prog)
+
     #for ems_prog in ref_osm.getEnergyManagementSystemPrograms():
     #    swap_modelobj(ems_prog, act_osm)
     #ems_progs = act_osm.getEnergyManagementSystemPrograms()
