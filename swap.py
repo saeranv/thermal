@@ -60,7 +60,8 @@ def ppdir(modelobj, qstr="", *args, **kwargs):
             return modelobj_method_strs(parent, cond_fn, result)
 
     result = modelobj_method_strs(modelobj, _cond_fn, [])
-    print(*result, *args, **kwargs)
+    result += args
+    print(*result, **kwargs)
 
 
 def argmin(arr):
