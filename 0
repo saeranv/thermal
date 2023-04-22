@@ -499,7 +499,7 @@ if run:
     else:
         # Create filepath for edited osm
         _osm_dpath = os.path.dirname(_osm_fpath)
-        act_swap_dpath = os.path.join(_osm_dpath, '..','..','..') + "_Swap"
+        act_swap_dpath = os.path.join(_osm_dpath, '../../..') + "_Swap"
         if not os.path.isdir(act_swap_dpath):
             _ = os.mkdir(act_swap_dpath)
         act_swap_fpath_ = os.path.join(act_swap_dpath, "in.osm")
@@ -509,9 +509,9 @@ if run:
     swap_sizing_ = False if swap_sizing_ is None else swap_sizing_
     swap_equip_ = False if swap_equip_ is None else swap_equip_
     try:
-        component_args = (_osm_fpath, _ref_osm_fpath, act_swap_fpath_,
-                          swap_constr_, swap_sizing_, swap_equip_)
-        osm_fpath_edit = main(*component_args)
+        osm_fpath_edit = main(
+            osm_fpath, _ref_osm_fpath, act_swap_fpath_,
+            swap_constr_, swap_sizing_, swap_equip_)
         print("swap_constr:", swap_constr_,
               "swap_sizing:", swap_sizing_,
               "swap_equip: ", swap_equip_)
