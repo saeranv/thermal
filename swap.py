@@ -499,7 +499,8 @@ if run:
     else:
         # Create filepath for edited osm
         _osm_dpath = os.path.dirname(_osm_fpath)
-        act_swap_dpath = os.path.join(_osm_dpath, '..','..','..') + "_Swap"
+        act_swap_dpath = os.path.abspath(
+            os.path.join(_osm_dpath, '..','..')) + "_Swap"
         if not os.path.isdir(act_swap_dpath):
             _ = os.mkdir(act_swap_dpath)
         act_swap_fpath_ = os.path.join(act_swap_dpath, "in.osm")
