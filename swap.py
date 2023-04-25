@@ -107,23 +107,6 @@ def match_spc(rspcs, aspcs):
     return rspcs, aspcs
 
 
-def modelobj_set_fn(property_fn, property_set):
-    """Predicate fn for ModelObjs from property fn and set.
-
-    Given sets B, M, P, and Q:
-        B = {0, 1}
-        M = {m | m ∈ ModelObject set}
-        P = {p | p ∈ Property set}
-        Q ⊆ P, Property subset defined by user
-    and a function g:
-        g:M -> P | g(m) = p ∈ P
-
-    Function f is returned as subset of M where P(M) ∈ Q.
-        f:M -> B | f(m) = g(m) ⊆ Q
-    """
-    return lambda m: property_fn(m) in property_set
-
-
 def modelobj_subset(act_osm, ref_osm, swap_srf_types, swap_srf_bcs):
     """Filter subset of modelobs from user predicates.
 
@@ -131,7 +114,7 @@ def modelobj_subset(act_osm, ref_osm, swap_srf_types, swap_srf_bcs):
         act_osm: Ma ∈ act ModelObjects
         ref_osm: Ms ∈ ref ModelObjects
         swap_srf_types: Q ∈ Property set
-        swap_srf_vc: Q ∈ Property set
+        swap_srf_bcs: Q ∈ Property set
 
     Returns {Sa, Sr}
         where:
@@ -140,16 +123,20 @@ def modelobj_subset(act_osm, ref_osm, swap_srf_types, swap_srf_bcs):
             g(srf) = type(srf) ⊆ Q & bc(srf) ⊆ Q
     """
 
-    def _is_srf(s):
-        _is_type = modelobj_set_fn(
-            lambda s_: s_.surfaceType(), swap_srf_types)
-        _is_bc = modelobj_set_fn(
-            lambda s_: s_.outsideBoundaryCondition(), swap_srf_bcs)
-        return _is_bc(s) and _is_type(s)
+    def _is_srf_type(s):
+        return s.surfaceType() in swap_srf_types
 
-    act_srfs = list(filter(_is_srf, act_osm.getSurfaces()))
-    ref_srfs = list(filter(_is_srf, ref_osm.getSurfaces()))
+    def _is_srf_bc(s):
+        return s.outsideBoundaryCondition() in swap_srf_bcs
 
+    # Filter out surfaces that don't match bc, and type we are
+    # are looking for
+    act_srfs = list(
+        filter(_is_srf_type, filter(_is_srf_bc, act_osm.getSurfaces())))
+    ref_srfs = list(
+        filter(_is_srf_type, filter(_is_srf_bc, ref_osm.getSurfaces())))
+
+    # Check consistency of resulting surfaces
     act_len, ref_len = len(act_srfs), len(ref_srfs)
     assert act_len + ref_len > 0, "Zero surfaces lengths.\n" \
         "# act_srfs = {}, # ref_srfs = {}".format(act_len, ref_len)
@@ -261,12 +248,6 @@ def attr_dict(modelobj, attrs):
     return OrderedDict([(attr, getattr(modelobj, attr)()) for attr in attrs])
 
 
-# TODO: cross-entropy of attri
-def hist(values):
-    """Histogram of attribute values."""
-    pass
-
-
 def is_modelobj_approx_equal(attrs, refobj, actobj, eps=1e-6):
     """True if distance between attributes less than eps, else False."""
     ref_vec = attr_dict(refobj, attrs).values()
@@ -347,16 +328,6 @@ def swap_spc_equip(act_osm, ref_osm, verbose=False):
                 act_equip.nameString(), act_spc.nameString()))
 
     return act_osm
-
-
-def swap_hvac(act_osm, ref_osm):
-    """Swap hvac."""
-
-    def _diff_hvac(act_osm, ref_osm):
-        """Compare hvac."""
-        pass
-
-    # TODO: check if hvac objects exist using lib from idf
 
 
 def swap_spc_light(act_osm, ref_osm):
