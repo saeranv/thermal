@@ -2,6 +2,7 @@ from __future__ import print_function
 from collections import OrderedDict
 import os
 import json
+import shutil
 import sys
 pp = lambda *x: print(x, sep="\n")
 
@@ -9,6 +10,11 @@ INIT_ERR_MSG = lambda m: "Not initialized error, for {}.".format(m)
 IS_TTY = len(sys.argv[0]) > 0
 _LINEBREAK = "------------------------------------------"
 LINEBREAK = (_LINEBREAK, _LINEBREAK)
+
+try:
+    from ladybug.futil import preparedir, nukedir
+except ImportError as e:
+    raise ImportError('\nFailed to import ladybug:\n\t{}'.format(e))
 
 
 if not IS_TTY:
@@ -471,28 +477,35 @@ if run:
         # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
         # TODO: redo
         act_swap_dpath = _dpath
-        act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath, '../act_swap.osm'))
+        act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath, '../act.osm'))
         _osm_fpath = os.path.abspath(os.path.join(_dpath, '../in.osm'))
-
+        osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
     else:
         # Create filepath for edited osm
         _dpath, _fname = os.path.split(_osw_fpath)
-        # act_swap_dpath = os.path.abspath(os.path.join(_osw_dpath, '..')) + "_Swap"
-        act_swap_dpath = _dpath
-        act_swap_fpath_ = os.path.join(act_swap_dpath, 'run', 'in_swap.osm')
-        _osm_fpath = os.path.abspath(os.path.join(_dpath, 'run', 'in.osm'))
+        act_swap_dpath = os.path.abspath(os.path.join(_dpath, '..')) + "_Swap"
+        act_swap_fpath_ = os.path.join(act_swap_dpath, 'openstudio', 'run', 'in.osm')
+        _osm_fpath = os.path.abspath(os.path.join(_dpath, 'openstudio', 'run', 'in.osm'))
+        osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
 
-    osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname.replace('.osw', '_swap.osw'))
+    nukedir(act_swap_dpath, True)
+    preparedir(act_swap_dpath)
+    #shutil.copy(_dpath, act_swap_dpath)
+
+    # if not os.path.isdir(act_swap_dpath):
+        # _ = os.mkdir(act_swap_dpath)
+    # Copy osw file
+    shutil.copy(_osw_fpath, osw_swap_fpath_)
+    shutil.copy(_osm_fpath, act_swap_fpath_)
+
     with open(_osw_fpath, 'r') as f:
         osw_data = json.load(f)
 
+
     osw_data['seed_file'] = act_swap_fpath_
-    with open(_osw_fpath, 'w') as f:
+    with open(osw_swap_fpath_, 'w') as f:
         json.dump(osw_data, f, indent=4)
 
-    # if os.path.isdir(act_swap_dpath):
-        # shutil.rmtree(act_swap_dpath)
-    # _ = os.mkdir(act_swap_dpath)
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
