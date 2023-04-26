@@ -469,16 +469,19 @@ if run:
         #act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         _dpath, _fname = os.path.split(_osw_fpath)
         act_swap_dpath_ = os.path.abspath(os.path.join(_dpath, '../act_swap'))
+        act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath_, '../act_swap.osm'))
+        print(act_swap_fpath_)
+        assert False
     else:
         # Create filepath for edited osm
         _dpath, _fname = os.path.split(_osw_fpath)
         act_swap_dpath = os.path.abspath(os.path.join(_osw_dpath, '..')) + "_Swap"
+        act_swap_fpath = os.path.join(act_swap_dpath, _fname)
 
     osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
     shutil.copytree(_dpath, act_swap_fpath_)
     if not os.path.isdir(act_swap_dpath):
         _ = os.mkdir(act_swap_dpath)
-
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
