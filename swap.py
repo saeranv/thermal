@@ -1,6 +1,7 @@
 from __future__ import print_function
 from collections import OrderedDict
 import os
+import shutil
 import sys
 pp = lambda *x: print(x, sep="\n")
 
@@ -467,16 +468,17 @@ if run:
     if IS_TTY:
         #act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         _dpath, _fname = os.path.split(_osw_fpath)
-        act_swap_fpath_ = os.path.abspath(
-            os.path.join(_dpath, '../act_swap', _fname))
+        act_swap_dpath_ = os.path.abspath(os.path.join(_dpath, '../act_swap'))
     else:
         # Create filepath for edited osm
-        _osw_dpath, _ = os.path.split(_osw_fpath)
-        act_swap_dpath = os.path.abspath(
-            os.path.join(_osw_dpath, '..')) + "_Swap"
-        if not os.path.isdir(act_swap_dpath):
-            _ = os.mkdir(act_swap_dpath)
-        act_swap_fpath_ = os.path.join(act_swap_dpath, "workflow.osw")
+        _dpath, _fname = os.path.split(_osw_fpath)
+        act_swap_dpath = os.path.abspath(os.path.join(_osw_dpath, '..')) + "_Swap"
+
+    osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
+    shutil.copytree(_dpath, act_swap_fpath_)
+    if not os.path.isdir(act_swap_dpath):
+        _ = os.mkdir(act_swap_dpath)
+
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
