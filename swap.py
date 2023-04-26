@@ -483,28 +483,32 @@ if run:
     else:
         # Create filepath for edited osm
         _dpath, _fname = os.path.split(_osw_fpath)
-        act_swap_dpath = os.path.abspath(os.path.join(_dpath, '..')) + "_Swap"
-        act_swap_fpath_ = os.path.join(act_swap_dpath, 'openstudio', 'run', 'in.osm')
+        _dpath = os.path.abspath(os.path.join(_dpath, '..'))
         _osm_fpath = os.path.abspath(os.path.join(_dpath, 'openstudio', 'run', 'in.osm'))
-        osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
+        _swap_dpath = _dpath + "_Swap"
+        osm_swap_fpath_ = os.path.join(_swap_dpath, 'openstudio', 'run', 'in.osm')
+        osw_swap_fpath_ = os.path.join(_swap_dpath, _fname)
 
-    nukedir(act_swap_dpath, True)
-    preparedir(act_swap_dpath)
-    #shutil.copy(_dpath, act_swap_dpath)
-
+    nukedir(_swap_dpath, True)
+    #preparedir(_swap_dpath)
+    print(_dpath)
+    print(_swap_dpath)
+    print(os.path.exists(_dpath))
+    _ = shutil.copytree(_dpath, _swap_dpath)
+    print('asfad')
     # if not os.path.isdir(act_swap_dpath):
         # _ = os.mkdir(act_swap_dpath)
     # Copy osw file
-    shutil.copy(_osw_fpath, osw_swap_fpath_)
-    shutil.copy(_osm_fpath, act_swap_fpath_)
+    # shutil.copy(_osw_fpath, osw_swap_fpath_)
+    # shutil.copy(_osm_fpath, act_swap_fpath_)
 
-    with open(_osw_fpath, 'r') as f:
-        osw_data = json.load(f)
-
-
-    osw_data['seed_file'] = act_swap_fpath_
-    with open(osw_swap_fpath_, 'w') as f:
-        json.dump(osw_data, f, indent=4)
+    # with open(_osw_fpath, 'r') as f:
+        # osw_data = json.load(f)
+#
+#
+    # osw_data['seed_file'] = act_swap_fpath_
+    # with open(osw_swap_fpath_, 'w') as f:
+        # json.dump(osw_data, f, indent=4)
 
 
     # Define defaults
