@@ -33,7 +33,7 @@ else:
     else:
         _swaps = args
     swap_constr_, swap_sizing_, swap_equip_ = [bool(int(i)) for i in _swaps]
-    _osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw" #act.osm")
+    _osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw") #act.osm")
     _ref_osm_fpath = os.path.join(os.getcwd(), "ref/ref.osm")
     assert os.path.exists(_osw_fpath), os.path.abspath(_osw_fpath)
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
@@ -465,15 +465,18 @@ def main(act_fpath, ref_fpath, act_swap_fpath,
 
 if run:
     if IS_TTY:
-        act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
+        #act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
+        _dpath, _fname = os.path.split(_osw_fpath)
+        act_swap_fpath_ = os.path.abspath(
+            os.path.join(_dpath, '../act_swap', _fname))
     else:
         # Create filepath for edited osm
-        _osw_dpath = os.path.dirname(_osw_fpath)
+        _osw_dpath, _ = os.path.split(_osw_fpath)
         act_swap_dpath = os.path.abspath(
-            os.path.join(_osw_dpath, '..','..')) + "_Swap"
+            os.path.join(_osw_dpath, '..')) + "_Swap"
         if not os.path.isdir(act_swap_dpath):
             _ = os.mkdir(act_swap_dpath)
-        act_swap_fpath_ = os.path.join(act_swap_dpath, "in.osm")
+        act_swap_fpath_ = os.path.join(act_swap_dpath, "workflow.osw")
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
