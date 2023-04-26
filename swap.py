@@ -468,9 +468,12 @@ if run:
     if IS_TTY:
         #act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         _dpath, _fname = os.path.split(_osw_fpath)
-        act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
+        # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
+        # TODO: redo
+        act_swap_dpath = _dpath
         act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath, '../act_swap.osm'))
         _osm_fpath = os.path.abspath(os.path.join(_dpath, '../in.osm'))
+
     else:
         # Create filepath for edited osm
         _dpath, _fname = os.path.split(_osw_fpath)
@@ -479,10 +482,14 @@ if run:
         act_swap_fpath_ = os.path.join(act_swap_dpath, 'run', 'in_swap.osm')
         _osm_fpath = os.path.abspath(os.path.join(_dpath, 'run', 'in.osm'))
 
-    osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
+    osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname.replace('.osw', '_swap.osw'))
     with open(_osw_fpath, 'r') as f:
-        data = json.load(f)
-    print(data['seed_file'])
+        osw_data = json.load(f)
+
+    osw_data['seed_file'] = act_swap_fpath_
+    with open(_osw_fpath, 'w') as f:
+        json.dump(osw_data, f, indent=4)
+
     # if os.path.isdir(act_swap_dpath):
         # shutil.rmtree(act_swap_dpath)
     # _ = os.mkdir(act_swap_dpath)
@@ -499,6 +506,6 @@ if run:
               "swap_sizing:", swap_sizing_,
               "swap_equip: ", swap_equip_)
         print('Edited file:', osm_fpath_edit)
-
+        print('OSW file:', osw_swap_fpath_)
     except Exception as err:
         print(err)
