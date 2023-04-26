@@ -1,7 +1,7 @@
 from __future__ import print_function
 from collections import OrderedDict
 import os
-import shutil
+import json
 import sys
 pp = lambda *x: print(x, sep="\n")
 
@@ -468,20 +468,24 @@ if run:
     if IS_TTY:
         #act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         _dpath, _fname = os.path.split(_osw_fpath)
-        act_swap_dpath_ = os.path.abspath(os.path.join(_dpath, '../act_swap'))
-        act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath_, '../act_swap.osm'))
-        print(act_swap_fpath_)
-        assert False
+        act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
+        act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath, '../act_swap.osm'))
+        _osm_fpath = os.path.abspath(os.path.join(_dpath, '../in.osm'))
     else:
         # Create filepath for edited osm
         _dpath, _fname = os.path.split(_osw_fpath)
-        act_swap_dpath = os.path.abspath(os.path.join(_osw_dpath, '..')) + "_Swap"
-        act_swap_fpath = os.path.join(act_swap_dpath, _fname)
+        # act_swap_dpath = os.path.abspath(os.path.join(_osw_dpath, '..')) + "_Swap"
+        act_swap_dpath = _dpath
+        act_swap_fpath_ = os.path.join(act_swap_dpath, 'run', 'in_swap.osm')
+        _osm_fpath = os.path.abspath(os.path.join(_dpath, 'run', 'in.osm'))
 
     osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
-    shutil.copytree(_dpath, act_swap_fpath_)
-    if not os.path.isdir(act_swap_dpath):
-        _ = os.mkdir(act_swap_dpath)
+    with open(_osw_fpath, 'r') as f:
+        data = json.load(f)
+    print(data['seed_file'])
+    # if os.path.isdir(act_swap_dpath):
+        # shutil.rmtree(act_swap_dpath)
+    # _ = os.mkdir(act_swap_dpath)
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
