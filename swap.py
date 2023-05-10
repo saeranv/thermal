@@ -42,7 +42,6 @@ else:
     swap_constr_, swap_sizing_, swap_equip_ = [bool(int(i)) for i in _swaps]
     _act_osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw")
     _ref_osm_fpath = os.path.join(os.getcwd(), "ref/ref.osm")
-    assert os.path.exists(_act_osw_fpath), os.path.abspath(_act_osw_fpath)
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
 
 
@@ -322,8 +321,8 @@ def swap_spc_equip(act_osm, ref_osm, verbose=False):
         #    parent = assert_init(act_equip.parent()).get()
         #    print(type(parent.iddObjectType()))
         for ref_equip in ref_spc.electricEquipment():
-            ## TODO: add the diff-check which adds unique_ref_equip
-            ## i.e. unique_ref_equip = ref_equip not in (act_equip AND ref_equip)
+            # TODO: add the diff-check which adds unique_ref_equip
+            # i.e. unique_ref_equip = ref_equip not in (act_equip AND ref_equip)
             if "elevator" not in ref_equip.nameString().lower():
                 continue
             act_equip = swap_modelobj(ref_equip, act_osm)
@@ -374,44 +373,40 @@ def main(act_fpath, ref_fpath, act_swap_fpath,
 
 
 if run:
+
+    assert os.path.exists(_act_osw_fpath), os.path.abspath(_act_osw_fpath)
+    act_osw_fpath = _act_osw_fpath
+
     if IS_TTY:
-        #act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
-        _dpath, _fname = os.path.split(_osw_fpath)
+        _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
+        # act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
-        # TODO: redo
-        act_swap_dpath = _dpath
-        act_swap_fpath_ = os.path.abspath(os.path.join(act_swap_dpath, '../act.osm'))
-        _osm_fpath = os.path.abspath(os.path.join(_dpath, '../in.osm'))
-        osw_swap_fpath_ = os.path.join(act_swap_dpath, _fname)
+        old_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../in.osm'))
+        new_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../swap.osm'))
     else:
         # Create filepath for edited osm
-        _dpath, _fname = os.path.split(_osw_fpath)
-        _dpath = os.path.abspath(os.path.join(_dpath, '..'))
-        _osm_fpath = os.path.abspath(os.path.join(_dpath, 'openstudio', 'run', 'in.osm'))
-        _swap_dpath = _dpath + "_Swap"
-        osm_swap_fpath_ = os.path.join(_swap_dpath, 'openstudio', 'run', 'in.osm')
-        osw_swap_fpath_ = os.path.join(_swap_dpath, _fname)
+        _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
+        _act_dpath = os.path.abspath(os.path.join(_act_dpath, '..'))
+        old_osm_fpath = os.path.abspath(os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
+        new_osm_fpath = os.path.abspath(os.path.join(_act_dpath, 'openstudio', 'run', 'swap.osm'))
+        # _swap_dpath = _act_dpath + "_Swap"
+        # osm_swap_fpath_ = os.path.join(_swap_dpath, 'openstudio', 'run', 'in.osm')
+        # osw_swap_fpath_ = os.path.join(_swap_dpath, _fname)
 
-    nukedir(_swap_dpath, True)
-    #preparedir(_swap_dpath)
-    print(_dpath)
-    print(_swap_dpath)
-    print(os.path.exists(_dpath))
-    _ = shutil.copytree(_dpath, _swap_dpath)
-    print('asfad')
+    print('act_osw_fpath: ', act_osw_fpath, os.path.exists(_act_dpath))
+    # nukedir(_swap_dpath, True)
+    # preparedir(_swap_dpath)
+    # _ = shutil.copytree(_dpath, _swap_dpath)
     # if not os.path.isdir(act_swap_dpath):
         # _ = os.mkdir(act_swap_dpath)
     # Copy osw file
-    # shutil.copy(_osw_fpath, osw_swap_fpath_)
+    # shutil.copy(act_osw_fpath, osw_swap_fpath_)
     # shutil.copy(_osm_fpath, act_swap_fpath_)
-
-    # with open(_osw_fpath, 'r') as f:
-        # osw_data = json.load(f)
-#
-#
-    # osw_data['seed_file'] = act_swap_fpath_
-    # with open(osw_swap_fpath_, 'w') as f:
-        # json.dump(osw_data, f, indent=4)
+    with open(act_osw_fpath, 'r') as f:
+        osw_data = json.load(f)
+        osw_data['seed_file'] = new_osm_fpath
+    with open(act_osw_fpath, 'w') as f:
+        json.dump(osw_data, f, indent=4)
 
 
     # Define defaults
@@ -419,13 +414,13 @@ if run:
     swap_sizing_ = False if swap_sizing_ is None else swap_sizing_
     swap_equip_ = False if swap_equip_ is None else swap_equip_
     try:
-        component_args = (_osm_fpath, _ref_osm_fpath, act_swap_fpath_,
+        component_args = (old_osm_fpath, _ref_osm_fpath, new_osm_fpath,
                           swap_constr_, swap_sizing_, swap_equip_)
         osm_fpath_edit = main(*component_args)
         print("swap_constr:", swap_constr_,
               "swap_sizing:", swap_sizing_,
               "swap_equip: ", swap_equip_)
         print('Edited file:', osm_fpath_edit)
-        print('OSW file:', osw_swap_fpath_)
+        print('OSW file:', act_osw_fpath)
     except Exception as err:
         print(err)

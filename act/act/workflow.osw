@@ -1,6 +1,6 @@
 {
     "created_at": "20230225T074600Z",
-    "seed_file": "../act.osm",
+    "seed_file": "/home/saeranv/master/thermal/act/swap.osm",
     "steps": [
         {
             "arguments": {
