@@ -40,9 +40,9 @@ else:
     else:
         _swaps = args
     swap_constr_, swap_sizing_, swap_equip_ = [bool(int(i)) for i in _swaps]
-    _osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw") #act.osm")
+    _act_osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw")
     _ref_osm_fpath = os.path.join(os.getcwd(), "ref/ref.osm")
-    assert os.path.exists(_osw_fpath), os.path.abspath(_osw_fpath)
+    assert os.path.exists(_act_osw_fpath), os.path.abspath(_act_osw_fpath)
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
 
 
