@@ -17,7 +17,6 @@ except ImportError as e:
     raise ImportError('\nFailed to import ladybug:\n\t{}'.format(e))
 
 
-
 if not IS_TTY:
     from ladybug_rhino.openstudio import load_osm, dump_osm
     from honeybee_energy.config import folders as energy_folders
@@ -402,18 +401,28 @@ if run:
     # Copy osw file
     # shutil.copy(act_osw_fpath, osw_swap_fpath_)
     # shutil.copy(_osm_fpath, act_swap_fpath_)
-    with open(act_osw_fpath, 'r') as f:
+    writem, readm = ('wb', 'rb') if (sys.version_info < (3, 0)) else ('w', 'r')
+    with open(act_osw_fpath, readm) as f:
         osw_data = json.load(f)
         osw_data['seed_file'] = act_osm_fpath
         osw_data['steps'] = osw_data['steps'][2:]
-    with open(act_osw_fpath, 'w') as f:
-        json.dump(osw_data, f, indent=4)
-    if not IS_TTY:
-        hb_os_gem_dpath = energy_folders.honeybee_openstudio_gem_path
-        os_exe_dpath = energy_folders.openstudio_path + "/openstudio.exe"
-        with open(act_bat_fpath, 'w') as f:
-            f.write('C:"{}" -I "{}" run -w "{}"'.format(
-                hb_os_gem_dpath, os_exe_fpath, act_osw_fpath))
+        osw_data['measure_paths'] = osw_data['measure_paths'][1:]
+        osw_data['file_paths'] = []
+
+    if (sys.version_info < (3, 0)):  # we need to manually encode it as UTF-8
+        with open(act_osw_fpath, writem) as fp:
+            workflow_str = json.dumps(osw_data, indent=4, ensure_ascii=False)
+            fp.write(workflow_str.encode('utf-8'))
+    else:
+        with open(act_osw_fpath, writem, encoding='utf-8') as fp:
+            workflow_str = json.dump(osw_data, fp, indent=4, ensure_ascii=False)
+
+    # if not IS_TTY:
+        # hb_os_gem_dpath = energy_folders.honeybee_openstudio_gem_path
+        # os_exe_dpath = energy_folders.openstudio_path + "/openstudio.exe"
+        # with open(act_bat_fpath, 'w') as f:
+            # f.write('C:"{}" -I "{}" run -w "{}"'.format(
+                # hb_os_gem_dpath, os_exe_fpath, act_osw_fpath))
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
