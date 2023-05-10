@@ -362,10 +362,6 @@ def main(act_fpath, ref_fpath, act_swap_fpath,
     if is_swap_equip:
         print("{}\nSWAP EQUIP\n{}".format(*LINEBREAK))
         act_model = swap_spc_equip(act_model, ref_model, verbose=True)
-    # SWAP LIGHT
-    # if is_swap_light:
-        # print("{}\nSWAP INTERIOR-LIGHT\n{}".format(*LINEBREAK))
-        # act_model = swap_spc_light(act_model, ref_model)
 
     ## Dump osm model
     act_swap_fpath = dump_osm(act_model, act_swap_fpath)
@@ -381,8 +377,8 @@ if run:
         _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
         # act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
-        old_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../in.osm'))
-        new_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../swap.osm'))
+        old_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../act.osm'))
+        new_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../act_swap.osm'))
     else:
         # Create filepath for edited osm
         _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
@@ -413,7 +409,7 @@ if run:
     swap_constr_ = False if swap_constr_ is None else swap_constr_
     swap_sizing_ = False if swap_sizing_ is None else swap_sizing_
     swap_equip_ = False if swap_equip_ is None else swap_equip_
-    try:
+    if True:#try:
         component_args = (old_osm_fpath, _ref_osm_fpath, new_osm_fpath,
                           swap_constr_, swap_sizing_, swap_equip_)
         osm_fpath_edit = main(*component_args)
@@ -422,5 +418,5 @@ if run:
               "swap_equip: ", swap_equip_)
         print('Edited file:', osm_fpath_edit)
         print('OSW file:', act_osw_fpath)
-    except Exception as err:
-        print(err)
+    # except Exception as err:
+        # print(err)
