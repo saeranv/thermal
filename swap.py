@@ -40,7 +40,7 @@ else:
     else:
         _swaps = args
     swap_constr_, swap_sizing_, swap_equip_ = [bool(int(i)) for i in _swaps]
-    _act_osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw")
+    _osw_fpath = os.path.join(os.getcwd(), "act/act/workflow.osw")
     _ref_osm_fpath = os.path.join(os.getcwd(), "ref/ref.osm")
     assert os.path.exists(_ref_osm_fpath), os.path.abspath(_ref_osm_fpath)
 
@@ -370,21 +370,25 @@ def main(act_fpath, ref_fpath, act_swap_fpath,
 
 if run:
 
-    assert os.path.exists(_act_osw_fpath), os.path.abspath(_act_osw_fpath)
-    act_osw_fpath = _act_osw_fpath
+    assert os.path.exists(_osw_fpath), os.path.abspath(_osw_fpath)
+    act_osw_fpath = _osw_fpath
 
     if IS_TTY:
         _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
         # act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
-        old_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../act.osm'))
-        new_osm_fpath = os.path.abspath(os.path.join(_act_dpath, '../act_swap.osm'))
+        old_osm_fpath = os.path.abspath(
+            os.path.join(_act_dpath, '../act.osm'))
+        new_osm_fpath = os.path.abspath(
+            os.path.join(_act_dpath, '../in.osm'))
     else:
         # Create filepath for edited osm
         _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
         _act_dpath = os.path.abspath(os.path.join(_act_dpath, '..'))
-        old_osm_fpath = os.path.abspath(os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
-        new_osm_fpath = os.path.abspath(os.path.join(_act_dpath, 'openstudio', 'run', 'swap.osm'))
+        old_osm_fpath = os.path.abspath(
+            os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
+        new_osm_fpath = os.path.abspath(
+            os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
         # _swap_dpath = _act_dpath + "_Swap"
         # osm_swap_fpath_ = os.path.join(_swap_dpath, 'openstudio', 'run', 'in.osm')
         # osw_swap_fpath_ = os.path.join(_swap_dpath, _fname)
@@ -398,11 +402,11 @@ if run:
     # Copy osw file
     # shutil.copy(act_osw_fpath, osw_swap_fpath_)
     # shutil.copy(_osm_fpath, act_swap_fpath_)
-    with open(act_osw_fpath, 'r') as f:
-        osw_data = json.load(f)
-        osw_data['seed_file'] = new_osm_fpath
-    with open(act_osw_fpath, 'w') as f:
-        json.dump(osw_data, f, indent=4)
+    # with open(act_osw_fpath, 'r') as f:
+        # osw_data = json.load(f)
+        # osw_data['seed_file'] = new_osm_fpath
+    # with open(act_osw_fpath, 'w') as f:
+        # json.dump(osw_data, f, indent=4)
 
 
     # Define defaults
