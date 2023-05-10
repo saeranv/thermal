@@ -379,11 +379,9 @@ if run:
         # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
         act_osm_fpath = os.path.abspath(
             os.path.join(_act_dpath, '../act.osm'))
-
-
     else:
         # Create filepath for edited osm
-        _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
+        _act_dpath, act_osw_fname = os.path.split(_osw_fpath)
         _act_dpath = os.path.abspath(os.path.join(_act_dpath, '..'))
         act_osm_fpath = os.path.abspath(
             os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
@@ -400,11 +398,12 @@ if run:
     # Copy osw file
     # shutil.copy(act_osw_fpath, osw_swap_fpath_)
     # shutil.copy(_osm_fpath, act_swap_fpath_)
-    # with open(act_osw_fpath, 'r') as f:
-        # osw_data = json.load(f)
-        # osw_data['seed_file'] = new_osm_fpath
-    # with open(act_osw_fpath, 'w') as f:
-        # json.dump(osw_data, f, indent=4)
+    with open(act_osw_fpath, 'r') as f:
+        osw_data = json.load(f)
+        osw_data['seed_file'] = act_osm_fpath
+        osw_data['steps'] = osw_data['steps'][2:]
+    with open(act_osw_fpath, 'w') as f:
+        json.dump(osw_data, f, indent=4)
 
 
     # Define defaults
