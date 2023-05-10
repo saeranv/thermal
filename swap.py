@@ -374,20 +374,18 @@ if run:
     act_osw_fpath = _osw_fpath
 
     if IS_TTY:
-        _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
+        _act_dpath, act_osw_fname = os.path.split(_osw_fpath)
         # act_swap_fpath_ = _osw_fpath.replace('.osw', '_swap.osw')
         # act_swap_dpath = os.path.abspath(os.path.join(_dpath, '../act_swap'))
-        old_osm_fpath = os.path.abspath(
+        act_osm_fpath = os.path.abspath(
             os.path.join(_act_dpath, '../act.osm'))
-        new_osm_fpath = os.path.abspath(
-            os.path.join(_act_dpath, '../in.osm'))
+
+
     else:
         # Create filepath for edited osm
         _act_dpath, act_osw_fname = os.path.split(act_osw_fpath)
         _act_dpath = os.path.abspath(os.path.join(_act_dpath, '..'))
-        old_osm_fpath = os.path.abspath(
-            os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
-        new_osm_fpath = os.path.abspath(
+        act_osm_fpath = os.path.abspath(
             os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
         # _swap_dpath = _act_dpath + "_Swap"
         # osm_swap_fpath_ = os.path.join(_swap_dpath, 'openstudio', 'run', 'in.osm')
@@ -414,7 +412,7 @@ if run:
     swap_sizing_ = False if swap_sizing_ is None else swap_sizing_
     swap_equip_ = False if swap_equip_ is None else swap_equip_
     if True:#try:
-        component_args = (old_osm_fpath, _ref_osm_fpath, new_osm_fpath,
+        component_args = (act_osm_fpath, _ref_osm_fpath, act_osm_fpath,
                           swap_constr_, swap_sizing_, swap_equip_)
         osm_fpath_edit = main(*component_args)
         print("swap_constr:", swap_constr_,
