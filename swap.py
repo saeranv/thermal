@@ -17,8 +17,10 @@ except ImportError as e:
     raise ImportError('\nFailed to import ladybug:\n\t{}'.format(e))
 
 
+
 if not IS_TTY:
     from ladybug_rhino.openstudio import load_osm, dump_osm
+    from honeybee_energy.config import folders as energy_folders
 else:
     # Define load_osm, dump_osm
     import openstudio as ops
@@ -385,6 +387,8 @@ if run:
         _act_dpath = os.path.abspath(os.path.join(_act_dpath, '..'))
         act_osm_fpath = os.path.abspath(
             os.path.join(_act_dpath, 'openstudio', 'run', 'in.osm'))
+        act_bat_fpath = os.path.abspath(
+            os.path.join(_act_dpath, 'openstudio', 'run_swap_workflow.bat'))
         # _swap_dpath = _act_dpath + "_Swap"
         # osm_swap_fpath_ = os.path.join(_swap_dpath, 'openstudio', 'run', 'in.osm')
         # osw_swap_fpath_ = os.path.join(_swap_dpath, _fname)
@@ -404,7 +408,12 @@ if run:
         osw_data['steps'] = osw_data['steps'][2:]
     with open(act_osw_fpath, 'w') as f:
         json.dump(osw_data, f, indent=4)
-
+    if not IS_TTY:
+        hb_os_gem_dpath = energy_folders.honeybee_openstudio_gem_path
+        os_exe_dpath = energy_folders.openstudio_path + "/openstudio.exe"
+        with open(act_bat_fpath, 'w') as f:
+            f.write('C:"{}" -I "{}" run -w "{}"'.format(
+                hb_os_gem_dpath, os_exe_fpath, act_osw_fpath))
 
     # Define defaults
     swap_constr_ = False if swap_constr_ is None else swap_constr_
