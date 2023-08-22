@@ -1,13 +1,13 @@
 # EPLUS
 # Ignores all files/dirs from .osm except:
 # seed .osm, measures/, workflow.osw
-files/
-generated_files/
-reports/
-run/
-measures/
+_archive_/
+sim_/
+cad_/
+
 # EP files
-*out.osw
+*/in.osw
+*/out.osw
 *stderr
 *stdout
 *.sql
@@ -35,11 +35,10 @@ openstudio/
 *.bat
 *.hbjson
 
-# GH/RHINO
+# RHINO
 *.3dm
 *.3dmbak
 *.3dm.rhl
-*.gh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

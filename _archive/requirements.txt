@@ -1,5 +1,0 @@
-openstudio==3.4.0
-numpy
-pandas
-ladybug-rhino
-
