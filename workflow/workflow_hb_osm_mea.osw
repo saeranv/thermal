@@ -1,0 +1,43 @@
+{
+    "weather_file": "C:\\Users\\admin\\masterwin\\thermal\\epw\\USA_HI_Honolulu.Intl.AP.911820_TMY3\\USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
+    "measure_paths": [
+        "C:\\Users\\admin\\masterwin\\thermal\\mea"
+    ],
+    "steps": {
+        "measure_dir_name": "CreateTypicalDOEBuildingFromModel",
+        "arguments": {
+            "wknd_op_hrs_duration": 0.0,
+            "add_constructions": true,
+            "add_exterior_lights": true,
+            "enable_dst": true,
+            "hvac_delivery_type": "Forced Air",
+            "wkdy_op_hrs_duration": 0.0,
+            "swh_src": "Inferred",
+            "add_exhaust": true,
+            "add_elevators": false,
+            "system_type": "Inferred",
+            "exterior_lighting_zone": "3 - All Other Areas",
+            "clg_src": "Electricity",
+            "htg_src": "NaturalGas",
+            "add_refrigeration": false,
+            "add_hvac": true,
+            "kitchen_makeup": "Adjacent",
+            "add_thermostat": true,
+            "onsite_parking_fraction": 1.0,
+            "template": "90.1-2016",
+            "wkdy_op_hrs_start_time": 0.0,
+            "add_internal_mass": true,
+            "modify_wkdy_op_hrs": false,
+            "modify_wknd_op_hrs": false,
+            "unmet_hours_tolerance": 1.0,
+            "add_swh": true,
+            "use_upstream_args": true,
+            "add_space_type_loads": false,
+            "remove_objects": true,
+            "wknd_op_hrs_start_time": 0.0
+        }
+    },
+    "file_paths": [
+        "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\schedules"
+    ]
+}
