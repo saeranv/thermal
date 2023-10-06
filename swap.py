@@ -6,18 +6,19 @@ pp = lambda *x: print(x, sep="\n")
 IS_TTY = sys.stdin.isatty() or len(sys.argv) > 1
 
 
+import openstudio as ops
+def load_osm(osm_fpath):
+    model = ops.model.Model.load(ops.toPath(osm_fpath))
+    assert model.is_initialized()
+    return model.get()
+
+def dump_osm(osm_model, osm_fpath):
+    osm_model.save(ops.toPath(osm_fpath), True)
+    return osm_fpath
+
+# from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
+
 if IS_TTY:
-    # Define load_osm, dump_osm, inputs
-    import openstudio as ops
-    def load_osm(osm_fpath):
-        model = ops.model.Model.load(ops.toPath(osm_fpath))
-        assert model.is_initialized()
-        return model.get()
-
-    def dump_osm(osm_model, osm_fpath):
-        osm_model.save(ops.toPath(osm_fpath), True)
-        return osm_fpath
-
     # Define inputs args
     run_, args = True, sys.argv[1:]
     is_help = len(args) == 0 or args[0] in {'-h', '--help'}
@@ -28,7 +29,6 @@ if IS_TTY:
         _osm_fpath, _epw_fpath, _mea_dpath = args[0], args[1], args[2]
 else:
 
-    from ladybug_rhino.openstudio import load_osm, dump_osm
     try:
         _osm_fpath, _epw_fpath, _mea_dpath = _osm, _epw, _mea
     except NameError:
@@ -86,7 +86,7 @@ def edit_spacetype(osm_model, verbose=False):
 
     return osm_model
 
-def add_mea(epw_fpath, mea_dpath):
+def add_mea(epw_fpath, mea_dpath, mea_name):
     """Adds a measure to the osw file."""
 
     osw_dict = {}
@@ -120,7 +120,7 @@ def add_mea(epw_fpath, mea_dpath):
             "use_upstream_args" : False
          },
          "description" : "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating.",
-         "measure_dir_name" : "CreateTypicalDOEBuildingFromModel",
+         "measure_dir_name" : mea_name,
          "modeler_description" : "It is important that the template argument chosen for this measure is in line with the buding types for the stub space types of the model passed in.",
          "name" : "Create Typical DOE Building from Model"
       }
@@ -129,7 +129,7 @@ def add_mea(epw_fpath, mea_dpath):
     return osw_dict
 
 
-def main(osm_fpath, epw_fpath, mea_dpath):
+def main(osm_fpath, epw_fpath, mea_dpath, mea_name):
     """Main function."""
 
     # Load OSM model
@@ -148,12 +148,12 @@ def main(osm_fpath, epw_fpath, mea_dpath):
         os.path.dirname(osm_fpath), "workflow.osw")
 
     # Modify OSW
-    osw_dict = add_mea(epw_fpath, mea_dpath)
+    osw_dict = add_mea(epw_fpath, mea_dpath, mea_name)
 
     # Dump modified model into original filepath
-    print(f"Save OSM: {os.path.relpath(osm_fpath)}")
+    print("Save OSM: {}".format(os.path.relpath(osm_fpath)))
     osm_fpath_swap = dump_osm(osm_model, osm_fpath)
-    print(f"Save OSW unix: {os.path.relpath(osw_fpath)}")
+    print("Save OSW: {}".format(os.path.relpath(osw_fpath)))
     _ = dump_osw(osw_dict, osw_fpath)
 
     # # For testing in gitbash
@@ -174,15 +174,16 @@ if run_:
         _osm_fpath = os.path.realpath(_osm_fpath)
         _epw_fpath = os.path.realpath(_epw_fpath)
         _mea_dpath = os.path.realpath(_mea_dpath)
+        _mea_dpath, _mea_name = os.path.split(_mea_dpath)
 
         assert os.path.exists(_osm_fpath), \
-                "Error, OSM file not exist, got {}.".format(_osm_fpath)
+                "Error, OSM file not exist, got {}".format(_osm_fpath)
         assert os.path.exists(_epw_fpath), \
-                "Error, EPW file not exist, got {}.".format(_epw_fpath)
+                "Error, EPW file not exist, got {}".format(_epw_fpath)
         assert os.path.exists(_mea_dpath), \
-                "Error, Measure dir not exist, got {}.".format(_mea_dpath)
+                "Error, Measure dir not exist, got {}".format(_mea_dpath)
 
-        _osm_swap = main(_osm_fpath, _epw_fpath, _mea_dpath)
+        _osm_swap = main(_osm_fpath, _epw_fpath, _mea_dpath, _mea_name)
     except Exception as err:
         print("Error: ", err)
         # for error, tb in zip(log_osw.errors, log_osw.error_tracebacks):

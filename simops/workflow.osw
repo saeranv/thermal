@@ -1,0 +1,24 @@
+{
+    "weather_file": "C:\\Users\\admin\\masterwin\\thermal\\epw\\USA_HI_Honolulu.Intl.AP.911820_TMY3\\USA_HI_Honolulu.Intl.AP.911820_TMY3.epw", 
+    "measure_paths": [
+        "C:\\Users\\admin\\ladybug_tools\\resources\\measures\\honeybee_openstudio_gem\\lib\\measures"
+    ], 
+    "steps": [
+        {
+            "arguments": {
+                "simulation_parameter_json": "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\simulation_parameter.json"
+            }, 
+            "measure_dir_name": "from_honeybee_simulation_parameter"
+        }, 
+        {
+            "arguments": {
+                "model_json": "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\20230817_DOEPrototype_GH.hbjson", 
+                "schedule_csv_dir": "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\schedules"
+            }, 
+            "measure_dir_name": "from_honeybee_model"
+        }
+    ], 
+    "file_paths": [
+        "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\schedules"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "seed_file": "./in.osm",
+    "weather_file": "C:\\users\\admin\\masterwin\\thermal\\epw\\USA_HI_Honolulu.Intl.AP.911820_TMY3\\USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
+    "measure_paths": [
+        "C:\\users\\admin\\masterwin\\thermal\\mea"
+    ],
+    "steps": [
+        {
+            "arguments": {
+                "add_constructions": false,
+                "add_elevators": false,
+                "add_exhaust": false,
+                "add_hvac": true,
+                "add_internal_mass": true,
+                "add_refrigeration": false,
+                "add_space_type_loads": true,
+                "add_swh": true,
+                "add_thermostat": true,
+                "enable_dst": false,
+                "system_type": "PTAC with gas boiler",
+                "template": "90.1-2016",
+                "use_upstream_args": false
+            },
+            "description": "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating.",
+            "measure_dir_name": "CreateTypicalDOEBuildingFromModel",
+            "modeler_description": "It is important that the template argument chosen for this measure is in line with the buding types for the stub space types of the model passed in.",
+            "name": "Create Typical DOE Building from Model"
+        }
+    ]
+}
