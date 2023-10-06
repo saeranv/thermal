@@ -134,7 +134,7 @@ def main(osm_fpath, epw_fpath, mea_dpath, mea_name):
     # Modify OSW
     osw_dict = load_osw(osw_fpath)
     osw_dict_swap = add_measure(
-        osw_dict, osm_fpath, epw_fpath, mea_dpath, mea_name)
+        osw_dict, osm_fpath_swap, epw_fpath, mea_dpath, mea_name)
 
     # Dump modified model into swap filepaths
     print("Dumping modified OSM to:", osm_fpath_swap)
@@ -164,7 +164,7 @@ if __name__ == "__main__":
         try:
             _osm_swap, _osw_swap = \
                 main(_osm_fpath, _epw_fpath, _mea_dpath, _mea_name)
-            print(_osw_swap)
+            print(f"\n{_osm_swap}\n{_osw_swap}")
 
         except Exception as err:
             print("Error: ", err)
