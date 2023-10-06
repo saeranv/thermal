@@ -1,22 +1,12 @@
+"""v0.0.1"""
 from __future__ import print_function
 import os
 import sys
 import json
-pp = lambda *x: print(x, sep="\n")
+import openstudio as ops
+# from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
 IS_TTY = sys.stdin.isatty() or len(sys.argv) > 1
 
-
-import openstudio as ops
-def load_osm(osm_fpath):
-    model = ops.model.Model.load(ops.toPath(osm_fpath))
-    assert model.is_initialized()
-    return model.get()
-
-def dump_osm(osm_model, osm_fpath):
-    osm_model.save(ops.toPath(osm_fpath), True)
-    return osm_fpath
-
-# from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
 
 if IS_TTY:
     # Define inputs args
@@ -33,6 +23,17 @@ else:
         _osm_fpath, _epw_fpath, _mea_dpath = _osm, _epw, _mea
     except NameError:
         raise Exception("Can't find _osm, or _osw _epw, _mea. Are you in GH?")
+
+
+def load_osm(osm_fpath):
+    model = ops.model.Model.load(ops.toPath(osm_fpath))
+    assert model.is_initialized()
+    return model.get()
+
+
+def dump_osm(osm_model, osm_fpath):
+    osm_model.save(ops.toPath(osm_fpath), True)
+    return osm_fpath
 
 
 def load_osw(osw_fpath):
@@ -86,13 +87,11 @@ def edit_spacetype(osm_model, verbose=False):
 
     return osm_model
 
-def add_mea(epw_fpath, mea_dpath, mea_name):
+def add_measure(osw_dict, osm_fpath, epw_fpath, mea_dpath, mea_name):
     """Adds a measure to the osw file."""
 
-    osw_dict = {}
-
     # Add the seed file
-    osw_dict["seed_file"] = "./in.osm"
+    osw_dict["seed_file"] = osm_fpath
 
     # Add weather file
     osw_dict["weather_file"] = epw_fpath
@@ -132,37 +131,26 @@ def add_mea(epw_fpath, mea_dpath, mea_name):
 def main(osm_fpath, epw_fpath, mea_dpath, mea_name):
     """Main function."""
 
-    # Load OSM model
+    # Make fpaths
+    run_dpath = os.path.dirname(osm_fpath)
+    osm_fpath_swap = osm_fpath.replace(".osm", "_swap.osm")
+    osw_fpath = os.path.join(run_dpath, "workflow.osw")
+    osw_fpath_swap = osw_fpath.replace(".osw", "_swap.osw")
+
+    # Load OSM model, modify it
     osm_model = load_osm(osm_fpath)
-
-    # Create copy of original OSM
-    osm_fpath_cp = osm_fpath.replace(".osm", "_cp.osm")
-    osm_fpath_cp = dump_osm(osm_model, osm_fpath_cp)
-
-    # Modify OSM
-    osm_model = edit_spacetype(osm_model, verbose=False)
-
-    # Load OSW dict
-    # osw_dict = load_osw(osw_fpath)
-    osw_fpath = os.path.join(
-        os.path.dirname(osm_fpath), "workflow.osw")
+    osm_model_swap = edit_spacetype(osm_model, verbose=False)
 
     # Modify OSW
-    osw_dict = add_mea(epw_fpath, mea_dpath, mea_name)
+    osw_dict = load_osw(osw_fpath)
+    osw_dict_swap = add_measure(
+        osw_dict, osm_fpath, epw_fpath, mea_dpath, mea_name)
 
-    # Dump modified model into original filepath
-    print("Save OSM: {}".format(os.path.relpath(osm_fpath)))
-    osm_fpath_swap = dump_osm(osm_model, osm_fpath)
-    print("Save OSW: {}".format(os.path.relpath(osw_fpath)))
-    _ = dump_osw(osw_dict, osw_fpath)
-
-    # # For testing in gitbash
-    # osw_fpath_dos = osw_fpath.replace(".osw", "_dos.osw")
-    # osw_dict_dos = add_mea(
-    #     "C:/users/admin/masterwin/thermal/epw/" + epw_fpath.split("/epw/")[-1],
-    #     "C:/users/admin/masterwin/thermal/mea")
-    # print(f"Save OSW dos: {os.path.relpath(osw_fpath_dos)}")
-    # _ = dump_osw(osw_dict_dos, osw_fpath_dos)
+    # Dump modified model into swap filepaths
+    print(f"Save OSM: {osm_fpath_swap}")
+    osm_fpath_swap = dump_osm(osm_model_swap, osm_fpath_swap)
+    print("Save OSW: {osw_fpath_swap}")
+    _ = dump_osw(osw_dict_swap, osw_fpath_swap)
 
     return osm_fpath_swap
 
