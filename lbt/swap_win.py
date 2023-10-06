@@ -140,6 +140,8 @@ def main(osw_fpath, osm_fpath, epw_fpath):
 
 if __name__ == "__main__":
 
+    # Version
+    print("Swap v0.0.1")
     # Define inputs args
     paths = argv[1:]
     is_help = len(paths) == 0 or paths[0] in {'-h', '--help'}
