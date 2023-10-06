@@ -39,7 +39,7 @@ def unix2dos(ctx):
     """Make dos version of swap file for GH."""
 
     # Paths
-    swap_fpath = os.path.join(THERMD, "swap.py")
+    swap_fpath = os.path.join(THERMD, "lbt", "swap.py")
     swap_fpath_dos = os.path.join(THERMD, "lbt", "swap_win.py")
 
     # cd to thermd
@@ -52,21 +52,6 @@ def unix2dos(ctx):
         cmd = f"unix2dos -n {swap_fpath} {swap_fpath_dos}"
         _ = ctx.run(cmd, hide=True)
 
-@task
-def swap(ctx, osm_fpath=None, epw_fpath=None, mea_dpath=None,
-         dry=False, echo=False):
-    """Run swap.py"""
-
-    if osm_fpath is None:
-        osm_fpath = os.path.join(THERMD, "simops_/run/in.osm")
-    if epw_fpath is None:
-        epw_fpath = os.path.join(THERMD, "epw/a1.epw")
-    if mea_dpath is None:
-        mea_dpath = os.path.join(THERMD, "mea")
-
-    cmd = f"python swap.py {osm_fpath} {epw_fpath} {mea_dpath}"
-    _ = ctx.run(cmd, dry=dry, echo=echo)
-
 
 @task
 def swap_tmux(ctx, t="x:1.2", dry=False, echo=False):
@@ -75,7 +60,7 @@ def swap_tmux(ctx, t="x:1.2", dry=False, echo=False):
     osm = "./simops_/run/in.osm"
     epw = "./epw/a1.epw"
     mea = "./mea"
-    swapf = "swap.py"
+    swapf = "./lbt/swap.py"
     cmd = f'''tmux send-keys -t {t} '''
     cmd += f'''"cd {THERMD} && python {swapf} {osm} {epw} {mea}" ENTER'''
 
