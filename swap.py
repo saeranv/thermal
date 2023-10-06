@@ -1,28 +1,18 @@
 """v0.0.1"""
 from __future__ import print_function
 import os
-import sys
+from sys import argv
 import json
 import openstudio as ops
 # from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
-IS_TTY = sys.stdin.isatty() or len(sys.argv) > 1
 
 
-if IS_TTY:
-    # Define inputs args
-    run_, args = True, sys.argv[1:]
-    is_help = len(args) == 0 or args[0] in {'-h', '--help'}
-    if len(args) != 3 or is_help:
-        print("Usage: python swap.py [--osm] <osm_fpath>")
-        exit()
-    else:
-        _osm_fpath, _epw_fpath, _mea_dpath = args[0], args[1], args[2]
-else:
-
-    try:
-        _osm_fpath, _epw_fpath, _mea_dpath = _osm, _epw, _mea
-    except NameError:
-        raise Exception("Can't find _osm, or _osw _epw, _mea. Are you in GH?")
+def clean_path(path):
+    """Converts to realpath, checks existence."""
+    path_ = os.path.realpath(path)
+    assert os.path.exists(path_), \
+        f"Path does not exist: {path_}"
+    return path_
 
 
 def load_osm(osm_fpath):
@@ -147,39 +137,35 @@ def main(osm_fpath, epw_fpath, mea_dpath, mea_name):
         osw_dict, osm_fpath, epw_fpath, mea_dpath, mea_name)
 
     # Dump modified model into swap filepaths
-    print(f"Save OSM: {osm_fpath_swap}")
+    print("Dumping modified OSM to:", osm_fpath_swap)
     osm_fpath_swap = dump_osm(osm_model_swap, osm_fpath_swap)
-    print("Save OSW: {osw_fpath_swap}")
-    _ = dump_osw(osw_dict_swap, osw_fpath_swap)
+    print("Dumping modified OSW to:", osw_fpath_swap)
+    osw_fpath_swap = dump_osw(osw_dict_swap, osw_fpath_swap)
 
-    return osm_fpath_swap
+    return osm_fpath_swap, osw_fpath_swap
 
 
-if run_:
-    # "openstudio -w wea_fpath -i eplus.idd -x"
-    try:
-        # Clean filepath
-        _osm_fpath = os.path.realpath(_osm_fpath)
-        _epw_fpath = os.path.realpath(_epw_fpath)
-        _mea_dpath = os.path.realpath(_mea_dpath)
+if __name__ == "__main__":
+
+    # Define inputs args
+    paths = argv[1:]
+    is_help = len(paths) == 0 or paths[0] in {'-h', '--help'}
+    if len(paths) != 3 or is_help:
+
+        print("Usage: python swap.py [osm] [epw] [mea]")
+
+    else:
+
+        # Get paths from args
+        paths = [clean_path(p) for p in paths]
+        _osm_fpath, _epw_fpath, _mea_dpath = paths
         _mea_dpath, _mea_name = os.path.split(_mea_dpath)
 
-        assert os.path.exists(_osm_fpath), \
-                "Error, OSM file not exist, got {}".format(_osm_fpath)
-        assert os.path.exists(_epw_fpath), \
-                "Error, EPW file not exist, got {}".format(_epw_fpath)
-        assert os.path.exists(_mea_dpath), \
-                "Error, Measure dir not exist, got {}".format(_mea_dpath)
+        try:
+            _osm_swap, _osw_swap = \
+                main(_osm_fpath, _epw_fpath, _mea_dpath, _mea_name)
+            print(_osw_swap)
 
-        _osm_swap = main(_osm_fpath, _epw_fpath, _mea_dpath, _mea_name)
-    except Exception as err:
-        print("Error: ", err)
-        # for error, tb in zip(log_osw.errors, log_osw.error_tracebacks):
-        # print(tb)
-        # errors.append(error)
-        if IS_TTY:
-            import traceback
-            traceback.print_tb(err.__traceback__)
-
-
+        except Exception as err:
+            print("Error: ", err)
 
