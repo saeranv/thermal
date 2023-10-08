@@ -5,6 +5,7 @@ import typing as ty
 from sys import argv
 import json
 import ntpath
+import re
 path = os.path
 # from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
 
@@ -84,7 +85,11 @@ def edit_spacetype(osm_model, verbose=False):
     # Get all spacetypes in model
     spacetypes = list(osm_model.getSpaceTypes())
     for i, spct in enumerate(spacetypes):
-        stdtag = STDTAG_DICT[spct.nameString()]
+        spct_name = spct.nameString()
+        for stdkey in STDTAG_DICT.keys():
+            re.sub(r'\s', '', stdkey)
+
+        stdtag = STDTAG_DICT[spct_name]
         spct.setStandardsTemplate(
             stdtag["standardsTemplate"])
         spct.setStandardsBuildingType(
@@ -215,7 +220,5 @@ if __name__ == "__main__":
         raise
 
     print(osmswap_fpath, oswswap_fpath, sep="\n")
-
-
 
 

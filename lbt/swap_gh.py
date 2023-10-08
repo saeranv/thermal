@@ -88,13 +88,13 @@ if run_swap_ or run_sim_ or update_:
     # run_swap_ = False
     # run_sim_ = False
     _osw_swap, _osm_swap = None, None
-    # swap_fpath = path.join(hb_config.python_scripts_path, SWAP_NAME)
     lbt_pytexe = hb_config.python_exe_path
     lbt_opsexe = hbe_config.openstudio_exe
     opsv_ = hbe_config.openstudio_version
     ops_version = "{}.{}.{}".format(opsv_[0], opsv_[1], opsv_[2])
     runsim_dpath = path.join(path.dirname(_osm), "run") # sim dpath is child
     # # TODO: only for debugging
+    # swap_fpath = path.join(hb_config.python_scripts_path, SWAP_NAME)
     swap_fpath = path.abspath(path.join(_epw, "../../../lbt", SWAP_NAME))
 
     # Update/confirm swap_fpath exists
