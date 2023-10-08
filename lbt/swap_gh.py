@@ -70,8 +70,6 @@ def dump_mea(measure, osw_fpath):
 
     osw_dict = measure.to_osw_dict()
     osw_dict["measure_paths"] = [measure.folder]
-    print(osw_dict)
-    print(osw_fpath)
     with open(osw_fpath, "w") as fp:
         json.dump(osw_dict, fp, indent=4)
     return osw_fpath
