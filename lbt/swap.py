@@ -162,20 +162,22 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
     # Set measure path
     meadir_dpath, mea_name = path.split(mea_dpath)
     workflow.addMeasurePath(ops.toPath(meadir_dpath))
-    # print(meadir_dpath)
-    # Check that measure path can be found
-    # mea_fpath = assert_init(workflow.findMeasure(mea_name)).get()
 
     # Set measures
+    # mea_fpath = assert_init(workflow.findMeasure(mea_name)).get()
     # measure = ops.BCLMeasure(mea_fpath)
     # args = measure.arguments()
-    # print(*dir(workflow), sep='\n')
-    # arg = args[2]
-    # print(arg.name()); print(type(arg))
-    # osw_dict['arguments']
-    # measure.save()
+    workflow.saveAs(ops.toPath(osw_fpath))
 
-    return workflow
+    # Now edit the json
+    osw_dict_swap = load_osw(osw_fpath)
+    osw_dict_swap["steps"] = {
+        "measure_dir_name": mea_name,
+		"arguments": osw_dict["arguments"],
+    }
+    osw_fpath = dump_osw(osw_dict_swap, osw_fpath)
+
+    return osw_fpath
 
 
 def run(osw_fpath, osm_fpath, epw_fpath, echo):
@@ -194,22 +196,16 @@ def run(osw_fpath, osm_fpath, epw_fpath, echo):
     osw_dict["weather_file"] = epw_fpath
     osw_dict["seed_file"] = osm_fpath_swap
 
-    # Dump rest of measures
-    # print(osw_dict.keys())
-    # args = osw_dict['args']
-
     # Modify OSW
-    workflow = edit_workflow(ops, osm_model_swap, osw_dict, osw_fpath_swap)
-
-    # del osm_model_swap
+    osw_fpath_swap = edit_workflow(ops, osm_model_swap, osw_dict, osw_fpath_swap)
 
     # Dump OSM
     if echo:
         simdir = path.dirname(path.abspath(osm_fpath_swap))
         print(f"Saving modified OSW, OSM to {simdir}")
     osm_fpath_swap = dump_osm(ops, osm_model_swap, osm_fpath_swap)
-    workflow.saveAs(ops.toPath(osw_fpath_swap))
     return osm_fpath_swap, osw_fpath_swap
+
 
 if __name__ == "__main__":
 
@@ -237,6 +233,6 @@ if __name__ == "__main__":
         # raise w/o arg means gets last exception and reraise it
         raise
 
-    print(osmswap_fpath, oswswap_fpath, sep="\n")
+    if echo: print(osmswap_fpath, oswswap_fpath, sep="\n")
 
 
