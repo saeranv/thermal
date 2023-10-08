@@ -13,8 +13,8 @@ from ladybug_rhino.download import download_file
 
 # Global
 path = os.path
-SWAP_URL = "https://raw.githubusercontent.com/saeranv/thermal/main/lbt/swap_win.py"
-SWAP_NAME = "swap_win.py"
+SWAP_URL = "https://raw.githubusercontent.com/saeranv/thermal/main/lbt/swap.py"
+SWAP_NAME = "swap.py"
 IS_TTY = sys.stdin.isatty() or len(sys.argv) > 1
 
 
