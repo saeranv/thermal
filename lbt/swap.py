@@ -179,6 +179,7 @@ def run(osw_fpath, osm_fpath, epw_fpath):
         ops, osm_model_swap, osw_dict, osw_fpath_swap)
     del osm_model_swap
 
+
     # Dump OSM
     # print("Dumping modified OSM to:", osm_fpath_swap)
     # osm_fpath_swap = dump_osm(ops, osm_model_swap, osm_fpath_swap)
