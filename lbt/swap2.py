@@ -4,7 +4,7 @@ import os
 import typing as ty
 from sys import argv
 import json
-import ntpath
+import openstudio as ops
 path = os.path
 # from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
 
@@ -22,30 +22,21 @@ def assert_init(mobj):
     return mobj
 
 
-def assert_path(pth):
+def assert_path(path_str):
     """Identity fn converts path to realpath, assert existence."""
-
-    def _convert_os(pth):
-        if os.name == 'nt':
-            pth = pth.replace(os.sep, ntpath.sep)
-            return pth.replace("/mnt/c", "C:")
-        # else: # posix
-        pth = pth.replace(ntpath.sep, os.sep)
-        return pth.lower().replace("c:", "/mnt/c")
-
-    pth = _convert_os(pth)
+    pth = path.realpath(path_str)
     if not path.exists(pth):
         raise FileExistsError(pth)
     return pth
 
 
-def load_osm(_ops, _osm_fpath):
-    _model = _ops.model.Model.load(_ops.toPath(_osm_fpath))
-    return assert_init(_model).get()
+def load_osm(_osm_fpath):
+    model = ops.model.Model.load(ops.toPath(_osm_fpath))
+    return assert_init(model).get()
 
 
-def dump_osm(_ops, osm_model, osm_fpath):
-    osm_model.save(_ops.toPath(osm_fpath), True)
+def dump_osm(osm_model, osm_fpath):
+    osm_model.save(ops.toPath(osm_fpath), True)
     return osm_fpath
 
 
@@ -127,66 +118,39 @@ def ppdir(mobj, qstr="", *args, **kwargs):
     print(*result, *args, **kwargs)
 
 
-def make_workflow(ops, model, osw_dict, osw_fpath):
+def make_workflow(model, osw_dict):
     """Make workflow OSW from osm model from osw_dict."""
 
-    # Set paths
     osm_fpath = osw_dict['seed_file']
     epw_fpath = osw_dict['weather_file']
     _mea_dpath = osw_dict['measure_paths'][0]
-    _mea_dpath = assert_path(_mea_dpath)
+
+    workflow = model.workflowJSON()
+    # ppdir(workflow, '', sep='\n')
 
     # Set paths
-    workflow = model.workflowJSON()
     workflow.setSeedFile(ops.toPath(osm_fpath))
     workflow.setWeatherFile(ops.toPath(epw_fpath))
-    mea_dpath, mea_name = path.split(_mea_dpath)
-    # print(mea_dpath)
-    # TODO: redundant?
-    workflow.addFilePath(ops.toPath(mea_dpath))
-    workflow.addMeasurePath(ops.toPath(mea_dpath))
-    _chk_mea_dpath = workflow.findMeasure(mea_name)
 
-    # print(mea_dpath)
-    # TODO: set assert check if path exists
-    # print(*dir(workflow), sep='\n')
+    # Set directory ops will search for measures
+    # TODO: fix this in swapgh?
+    # mea_parent_dpath = path.dirname(_mea_dpath)
+    from pathlib import PureWindowsPath, PurePosixPath
+    import ntpath
+    # print(_mea_dpath)
+    mea_dpath = PureWindowsPath(_mea_dpath).as_posix()
+    mea_dpath_ = _mea_dpath.replace(os.sep, ntpath.sep)
+    print(os.sep, ntpath.sep)
+    print(mea_dpath_)
+    mea_parent_dpath = path.dirname(mea_dpath)
+    mea_parent_dpath_ = path.dirname(mea_dpath_)
+    # workflow.addMeasurePath(ops.toPath(mea_dpath))
+    print('parent', mea_parent_dpath)
+    print('parent', mea_parent_dpath_)
+
+    # print('name', mea_name)
     # Set measures
-    workflow.saveAs(ops.toPath(osw_fpath))
 
-
-def run(osw_fpath, osm_fpath, epw_fpath):
-
-    import openstudio as ops
-    # Define swap paths
-    osm_fpath_swap = osm_fpath.replace(".osm", "_swap.osm")
-    osw_fpath_swap = osw_fpath.replace(".osw", "_swap.osw")
-
-    # Load OSM model, modify it
-    osm_model_swap = load_osm(ops, osm_fpath)
-    osm_model_swap = edit_spacetype(osm_model_swap, verbose=False)
-
-    # Add the osm, epw file
-    osw_dict = load_osw(osw_fpath)
-    osw_dict["weather_file"] = epw_fpath
-    osw_dict["seed_file"] = osm_fpath_swap
-
-    # Dump rest of measures
-    # print(osw_dict.keys())
-    # args = osw_dict['args']
-
-    # Modify OSW
-    make_workflow(
-        ops, osm_model_swap, osw_dict, osw_fpath_swap)
-    del osm_model_swap
-
-
-    # Dump OSM
-    # print("Dumping modified OSM to:", osm_fpath_swap)
-    # osm_fpath_swap = dump_osm(ops, osm_model_swap, osm_fpath_swap)
-    # Dump OSW
-    # print("Dumping modified OSW to:", osw_fpath_swap)
-    # osw_fpath_swap = dump_osw(osw_dict_swap, osw_fpath_swap)
-    return osm_fpath_swap, osw_fpath_swap
 
 if __name__ == "__main__":
 
@@ -202,19 +166,29 @@ if __name__ == "__main__":
 
     # Get paths from args, make swap fpaths
     paths = [assert_path(p) for p in paths]
-    _osw_fpath, _osm_fpath, _epw_fpath = paths
+    osw_fpath, osm_fpath, epw_fpath = paths
+    osm_fpath_swap = osm_fpath.replace(".osm", "_swap.osm")
+    osw_fpath_swap = osw_fpath.replace(".osw", "_swap.osw")
 
     try:
-        osmswap_fpath, oswswap_fpath = \
-            run(_osw_fpath, _osm_fpath, _epw_fpath)
+        # Load OSM model, modify it
+        __osm_model = load_osm(osm_fpath)
+        # osm_model_swap = edit_spacetype(osm_model, verbose=False)
+        # print("Dumping modified OSM to:", osm_fpath_swap)
+        # osm_fpath_swap = dump_osm(osm_model_swap, osm_fpath_swap)
+        # Modify OSW
+        # Add the osm, epw file
+        # osw_dict = load_osw(osw_fpath)
+        # osw_dict["weather_file"] = epw_fpath
+        # osw_dict["seed_file"] = osm_fpath_swap
+        #osw_dict_swap = make_workflow(osm_model_swap, osw_dict)
+        # print("Dumping modified OSW to:", osw_fpath_swap)
+        # osw_fpath_swap = dump_osw(osw_dict_swap, osw_fpath_swap)
     except Exception as err:
-        for name in dir():
-            if not name.startswith("_"):
-                del globals()[name]
         # raise w/o arg means gets last exception and reraise it
         raise
 
-    # print(osmswap_fpath, oswswap_fpath, sep="\n")
+    # print(osm_fpath_swap, osw_fpath_swap, sep="\n")
 
 
 
