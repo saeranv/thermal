@@ -171,10 +171,12 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
 
     # Now edit the json
     osw_dict_swap = load_osw(osw_fpath)
-    osw_dict_swap["steps"] = {
+    _mea_step = {
         "measure_dir_name": mea_name,
-		"arguments": osw_dict["arguments"],
+		"arguments": osw_dict["arguments"]
     }
+    osw_dict_swap["steps"] = [_mea_step]
+
     osw_fpath = dump_osw(osw_dict_swap, osw_fpath)
 
     return osw_fpath
