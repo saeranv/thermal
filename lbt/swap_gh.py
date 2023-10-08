@@ -65,12 +65,13 @@ def update_pip(_lbt_pytexe, _ops_version):
         if _stderr: print(_stderr.decode("utf-8").strip())
 
 
-def dump_mea(measure, osm_fpath):
+def dump_mea(measure, osw_fpath):
     """Dump measure to osw file."""
 
-    osw_fpath = path.join(path.dirname(osm_fpath), "workflow.osw")
     osw_dict = measure.to_osw_dict()
     osw_dict["measure_paths"] = [measure.folder]
+    print(osw_dict)
+    print(osw_fpath)
     with open(osw_fpath, "w") as fp:
         json.dump(osw_dict, fp, indent=4)
     return osw_fpath
@@ -79,7 +80,7 @@ if IS_TTY:
     # Label bool, fpath inputs
     run_swap_, run_sim_, update_ = True, True, True
     _osm, _epw, _mea_dpath = sys.argv[-3:]
-    mea = Measure(_mea_dpath)
+    _mea = Measure(_mea_dpath)
 
 if run_swap_ or run_sim_ or update_:
 
@@ -92,10 +93,12 @@ if run_swap_ or run_sim_ or update_:
     lbt_opsexe = hbe_config.openstudio_exe
     opsv_ = hbe_config.openstudio_version
     ops_version = "{}.{}.{}".format(opsv_[0], opsv_[1], opsv_[2])
-    runsim_dpath = path.join(path.dirname(_osm), "run") # sim dpath is child
+    runsim_dpath = path.dirname(_osm) # sim dpath is child
+    _osw = path.join(runsim_dpath, "workflow.osw")
+
     # # TODO: only for debugging
-    # swap_fpath = path.join(hb_config.python_scripts_path, SWAP_NAME)
-    swap_fpath = path.abspath(path.join(_epw, "../../../lbt", SWAP_NAME))
+    swap_fpath = path.join(hb_config.python_scripts_path, SWAP_NAME)
+    # swap_fpath = path.abspath(path.join(_epw, "../../../lbt", SWAP_NAME))
 
     # Update/confirm swap_fpath exists
     if update_ or (not path.exists(swap_fpath)):
@@ -105,9 +108,8 @@ if run_swap_ or run_sim_ or update_:
     if run_swap_:
         # Run swap
         print("\n## Running swap.py on lbtpyt.exe")
-
         # Update measure, and run swap_win.py
-        _osw = dump_mea(_mea[0], _osm)
+        _osw = dump_mea(_mea[0], _osw)
         swap_cmds = [lbt_pytexe, swap_fpath, _osw, _osm, _epw]
         stdout, stderr = run_subproc(swap_cmds)
         _osm_swap, _osw_swap = \

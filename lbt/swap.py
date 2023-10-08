@@ -162,8 +162,9 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
     # Set measure path
     meadir_dpath, mea_name = path.split(mea_dpath)
     workflow.addMeasurePath(ops.toPath(meadir_dpath))
+    # print(meadir_dpath)
     # Check that measure path can be found
-    mea_fpath = assert_init(workflow.findMeasure(mea_name)).get()
+    # mea_fpath = assert_init(workflow.findMeasure(mea_name)).get()
 
     # Set measures
     # measure = ops.BCLMeasure(mea_fpath)
@@ -172,7 +173,6 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
     # arg = args[2]
     # print(arg.name()); print(type(arg))
     # osw_dict['arguments']
-
     # measure.save()
 
     return workflow
@@ -208,7 +208,7 @@ def run(osw_fpath, osm_fpath, epw_fpath, echo):
         simdir = path.dirname(path.abspath(osm_fpath_swap))
         print(f"Saving modified OSW, OSM to {simdir}")
     osm_fpath_swap = dump_osm(ops, osm_model_swap, osm_fpath_swap)
-    workflow.saveAs(ops.toPath(osw_fpath))
+    workflow.saveAs(ops.toPath(osw_fpath_swap))
     return osm_fpath_swap, osw_fpath_swap
 
 if __name__ == "__main__":
