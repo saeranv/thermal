@@ -1,16 +1,12 @@
 {
-   "created_at" : "20231008T023528Z",
-   "file_paths" : 
-   [
-      "/mnt/c/users/admin/masterwin/thermal/mea"
-   ],
-   "hash" : "2C27F6BE",
+   "created_at" : "20231008T091523Z",
+   "hash" : "588E1B09",
    "measure_paths" : 
    [
       "/mnt/c/users/admin/masterwin/thermal/mea"
    ],
    "seed_file" : "in_swap.osm",
    "steps" : [],
-   "updated_at" : "20231008T023528Z",
+   "updated_at" : "20231008T091524Z",
    "weather_file" : "in.epw"
 }

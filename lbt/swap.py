@@ -10,6 +10,21 @@ path = os.path
 # from ladybug_rhino.openstudio import load_osm, dump_osm, import_openstudio
 
 
+# TODO: fix the Hardcode edits
+STDTAG_DICT = {
+    "Office WholeBuilding - Md Office": {
+        "standardsTemplate": "90.1-2016",
+        "standardsBuildingType": "Office",
+        "standardsSpaceType": "WholeBuilding - Md Office"
+    },
+    "Plenum": {
+        "standardsTemplate": "90.1-2016",
+        "standardsBuildingType": "MediumOffice",
+        "standardsSpaceType": "Plenum"
+    }
+}
+
+
 class InitError(Exception):
     """OpenStudio initialization errors."""
     def __init__(self, mobj):
@@ -40,71 +55,6 @@ def assert_path(pth):
     return pth
 
 
-def load_osm(_ops, _osm_fpath):
-    _model = _ops.model.Model.load(_ops.toPath(_osm_fpath))
-    return assert_init(_model).get()
-
-
-def dump_osm(_ops, osm_model, osm_fpath):
-    osm_model.save(_ops.toPath(osm_fpath), True)
-    return osm_fpath
-
-
-def load_osw(osw_fpath):
-    """Load an OpenStudio Workflow file."""
-    with open(osw_fpath, 'r') as f:
-        osw_dict = json.load(f)
-    return osw_dict
-
-
-def dump_osw(osw_dict, osw_fpath):
-    """Dump an OpenStudio Workflow file."""
-    with open(osw_fpath, 'w') as f:
-        _ = json.dump(osw_dict, f, indent=4)
-
-    return osw_fpath
-
-
-def edit_spacetype(osm_model, verbose=False):
-    """Changes the spacetype of spaces in model."""
-
-    # Hardcode edits
-    STDTAG_DICT = {
-        "Office WholeBuilding - Md Office": {
-            "standardsTemplate": "90.1-2016",
-            "standardsBuildingType": "Office",
-            "standardsSpaceType": "WholeBuilding - Md Office"
-        },
-        "Plenum": {
-            "standardsTemplate": "90.1-2016",
-            "standardsBuildingType": "MediumOffice",
-            "standardsSpaceType": "Plenum"
-        }
-    }
-
-    # Get all spacetypes in model
-    spacetypes = list(osm_model.getSpaceTypes())
-    for i, spct in enumerate(spacetypes):
-        spct_name = spct.nameString()
-        for stdkey in STDTAG_DICT.keys():
-            re.sub(r'\s', '', stdkey)
-
-        stdtag = STDTAG_DICT[spct_name]
-        spct.setStandardsTemplate(
-            stdtag["standardsTemplate"])
-        spct.setStandardsBuildingType(
-            stdtag["standardsBuildingType"])
-        spct.setStandardsSpaceType(
-            stdtag["standardsSpaceType"])
-        if verbose:
-            print()
-            print(i, spct.nameString())
-            print(i, spct.standardsTemplate())
-            print(i, spct.standardsBuildingType())
-            print(i, spct.standardsSpaceType())
-
-    return osm_model
-
 def ppdir(mobj, qstr="", *args, **kwargs):
     """Print model objects mobj methods given query qstr.
 
@@ -132,34 +82,103 @@ def ppdir(mobj, qstr="", *args, **kwargs):
     print(*result, *args, **kwargs)
 
 
-def make_workflow(ops, model, osw_dict, osw_fpath):
+def load_osm(_ops, _osm_fpath):
+    _model = _ops.model.Model.load(_ops.toPath(_osm_fpath))
+    return assert_init(_model).get()
+
+
+def dump_osm(_ops, osm_model, osm_fpath):
+    osm_model.save(_ops.toPath(osm_fpath), True)
+    return osm_fpath
+
+
+def load_osw(osw_fpath):
+    """Load an OpenStudio Workflow file."""
+    with open(osw_fpath, 'r') as f:
+        osw_dict = json.load(f)
+    return osw_dict
+
+
+def dump_osw(osw_dict, osw_fpath):
+    """Dump an OpenStudio Workflow file."""
+    with open(osw_fpath, 'w') as f:
+        _ = json.dump(osw_dict, f, indent=4)
+
+    return osw_fpath
+
+
+def match_phrase(query, phrases):
+    """Given list of phrases, returns phrase most like query."""
+
+    def _tkize(words):
+        """Tokenizes words into tokens via regex.
+        # [..] match char inside; [^..] not match char inside
+        # \s all whitepace; \W all non-alphanum; x{n,} match >n reps of x
+        """
+        return re.sub(r'\s{1,}', '_', re.sub(r'[^\s\w]', '', words))
+
+    # joint_len: how many words in overlap btwn query and phrase
+    q, ps = query, phrases
+    q_set = set(_tkize(q).split('_'))
+    p_sets = [set(_tkize(p).split('_'))
+              for p in ps]
+    joints = [len(q_set.intersection(p_set))
+              for p_set in p_sets]
+
+    # Get phrase with highest joint (most matches) with query
+    return ps[joints.index(max(joints))]
+
+
+def edit_spacetype(osm_model, echo=False):
+    """Changes the spacetype of spaces in model."""
+
+    for spct in osm_model.getSpaceTypes():
+        # Get std that matches spct name
+        spct_name = spct.nameString()
+        stdtag_key = match_phrase(spct_name, list(STDTAG_DICT.keys()))
+        stdtag = STDTAG_DICT[stdtag_key]
+        # Set the std from dict.
+        spct.setStandardsTemplate(stdtag["standardsTemplate"])
+        spct.setStandardsBuildingType(stdtag["standardsBuildingType"])
+        spct.setStandardsSpaceType(stdtag["standardsSpaceType"])
+        if echo:
+            print(f'Defining spacetype `{stdtag_key}` for `{spct_name}`')
+    return osm_model
+
+
+def edit_workflow(ops, model, osw_dict, osw_fpath):
     """Make workflow OSW from osm model from osw_dict."""
 
     # Set paths
     osm_fpath = osw_dict['seed_file']
     epw_fpath = osw_dict['weather_file']
-    _mea_dpath = osw_dict['measure_paths'][0]
-    _mea_dpath = assert_path(_mea_dpath)
+    mea_dpath = osw_dict['measure_paths'][0]
+    mea_dpath = assert_path(mea_dpath)
 
-    # Set paths
+    # Set seed, epw paths
     workflow = model.workflowJSON()
     workflow.setSeedFile(ops.toPath(osm_fpath))
     workflow.setWeatherFile(ops.toPath(epw_fpath))
-    mea_dpath, mea_name = path.split(_mea_dpath)
-    # print(mea_dpath)
-    # TODO: redundant?
-    workflow.addFilePath(ops.toPath(mea_dpath))
-    workflow.addMeasurePath(ops.toPath(mea_dpath))
-    _chk_mea_dpath = workflow.findMeasure(mea_name)
+    # Set measure path
+    meadir_dpath, mea_name = path.split(mea_dpath)
+    workflow.addMeasurePath(ops.toPath(meadir_dpath))
+    # Check that measure path can be found
+    mea_fpath = assert_init(workflow.findMeasure(mea_name)).get()
 
-    # print(mea_dpath)
-    # TODO: set assert check if path exists
-    # print(*dir(workflow), sep='\n')
     # Set measures
-    workflow.saveAs(ops.toPath(osw_fpath))
+    # measure = ops.BCLMeasure(mea_fpath)
+    # args = measure.arguments()
+    # print(*dir(workflow), sep='\n')
+    # arg = args[2]
+    # print(arg.name()); print(type(arg))
+    # osw_dict['arguments']
+
+    # measure.save()
+
+    return workflow
 
 
-def run(osw_fpath, osm_fpath, epw_fpath):
+def run(osw_fpath, osm_fpath, epw_fpath, echo):
 
     import openstudio as ops
     # Define swap paths
@@ -168,9 +187,9 @@ def run(osw_fpath, osm_fpath, epw_fpath):
 
     # Load OSM model, modify it
     osm_model_swap = load_osm(ops, osm_fpath)
-    osm_model_swap = edit_spacetype(osm_model_swap, verbose=False)
+    osm_model_swap = edit_spacetype(osm_model_swap, echo=echo)
 
-    # Add the osm, epw file
+    # Load OSW dict, add the osm, epw file
     osw_dict = load_osw(osw_fpath)
     osw_dict["weather_file"] = epw_fpath
     osw_dict["seed_file"] = osm_fpath_swap
@@ -180,42 +199,41 @@ def run(osw_fpath, osm_fpath, epw_fpath):
     # args = osw_dict['args']
 
     # Modify OSW
-    make_workflow(
-        ops, osm_model_swap, osw_dict, osw_fpath_swap)
-    del osm_model_swap
+    workflow = edit_workflow(ops, osm_model_swap, osw_dict, osw_fpath_swap)
 
+    # del osm_model_swap
 
     # Dump OSM
-    # print("Dumping modified OSM to:", osm_fpath_swap)
-    # osm_fpath_swap = dump_osm(ops, osm_model_swap, osm_fpath_swap)
-    # Dump OSW
-    # print("Dumping modified OSW to:", osw_fpath_swap)
-    # osw_fpath_swap = dump_osw(osw_dict_swap, osw_fpath_swap)
+    if echo:
+        simdir = path.dirname(path.abspath(osm_fpath_swap))
+        print(f"Saving modified OSW, OSM to {simdir}")
+    osm_fpath_swap = dump_osm(ops, osm_model_swap, osm_fpath_swap)
+    workflow.saveAs(ops.toPath(osw_fpath))
     return osm_fpath_swap, osw_fpath_swap
 
 if __name__ == "__main__":
 
     # Version
-    print("Swap v0.0.1")
     # Define inputs args
-    paths = argv[1:]
-    is_help = len(paths) == 0 or paths[0] in {'-h', '--help'}
-    if len(paths) != 3 or is_help:
-
+    print("Swap v0.0.2")
+    paths, echo = argv[1:], True
+    is_help = len(paths) < 3 or paths[0] in {'-h', '--help'}
+    if is_help:
         print("Usage: python swap.py [osw] [osm] [epw]")
         exit(1)
 
     # Get paths from args, make swap fpaths
     paths = [assert_path(p) for p in paths]
-    _osw_fpath, _osm_fpath, _epw_fpath = paths
+    _osw_fpath, _osm_fpath, _epw_fpath = paths[:3]
 
     try:
         osmswap_fpath, oswswap_fpath = \
-            run(_osw_fpath, _osm_fpath, _epw_fpath)
+            run(_osw_fpath, _osm_fpath, _epw_fpath, echo=echo)
     except Exception as err:
         for name in dir():
-            if not name.startswith("_"):
-                del globals()[name]
+            if name.startswith("_"):
+                continue
+            del globals()[name]
         # raise w/o arg means gets last exception and reraise it
         raise
 

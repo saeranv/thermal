@@ -1,0 +1,12 @@
+{
+  "FromHoneybeeSimulationParameter": {
+    "simulation_parameter_json": "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\simulation_parameter.json",
+    "applicable": true
+  },
+  "FromHoneybeeModel": {
+    "model_json": "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\20230817_DOEPrototype_GH.hbjson",
+    "schedule_csv_dir": "C:\\Users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\schedules",
+    "include_datetimes": false,
+    "applicable": true
+  }
+}

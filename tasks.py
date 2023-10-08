@@ -39,8 +39,8 @@ def unix2dos(ctx):
     """Make dos version of swap file for GH."""
 
     # Paths
-    swap_fpath = os.path.join(THERMD, "lbt", "swap.py")
-    swap_fpath_dos = os.path.join(THERMD, "lbt", "swap_win.py")
+    swap_fpath = os.path.join(THERMD, "lbt", "swap_gh.py")
+    swap_fpath_dos = os.path.join(THERMD, "lbt", "swap_gh_win.py")
 
     # cd to thermd
     with ctx.cd(THERMD):
@@ -83,7 +83,8 @@ def eval_env(ctx, win=False, epw=None, osm=None, mea_d=None,
         $ lbtpyt swap.py osm epw mea_d mea_n
 
     Default values:
-        osm = ./simops_/run/in.osm
+        osm = ./simops/run/in.osm
+        osw = ./simops/run/workflow.osw
         epw = ./epw/a1.epw
         mea_d = ./mea
         mea_n = CreateTypicalDOEBuildingFromModel
@@ -99,6 +100,7 @@ def eval_env(ctx, win=False, epw=None, osm=None, mea_d=None,
     epw1a = "USA_HI_Honolulu.Intl.AP.911820_TMY3"
     epw_fpath = f"{THERMD}/epw/{epw1a}/{epw1a}.epw"
     osm_fpath = f"{THERMD}/simops/run/in.osm"
+    osw_fpath = f"{THERMD}/simops/run/workflow.osw"
     mea_dpath = f"{THERMD}/mea/CreateTypicalDOEBuildingFromModel"
     if win:
         paths = [lbtpyt, epw_fpath, osm_fpath, mea_dpath]
@@ -110,6 +112,7 @@ def eval_env(ctx, win=False, epw=None, osm=None, mea_d=None,
     env_cmd = (
         f'epw="{epw_fpath}"\n'
         f'osm="{osm_fpath}"\n'
+        f'osw="{osw_fpath}"\n'
         f'mea="{mea_dpath}"\n'
         f'lbtpyt="{lbtpyt}"\n'
     )
