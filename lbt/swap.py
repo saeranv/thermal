@@ -1,4 +1,3 @@
-"""v0.0.1"""
 from __future__ import print_function
 import os
 import typing as ty
@@ -217,7 +216,7 @@ if __name__ == "__main__":
     is_help = len(paths) < 3 or paths[0] in {'-h', '--help'}
     if is_help:
         # print("Usage: python swap.py [osw] [osm] [epw]")
-        print("Swap v0.0.4")
+        print("Swap v0.1.0")
         exit(0)
 
     # Get paths from args, make swap fpaths
