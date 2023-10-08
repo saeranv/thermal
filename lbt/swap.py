@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
     # Version
     # Define inputs args
-    print("Swap v0.0.2")
+    print("Swap v0.0.3")
     paths, echo = argv[1:], True
     is_help = len(paths) < 3 or paths[0] in {'-h', '--help'}
     if is_help:
