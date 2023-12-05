@@ -1,0 +1,15 @@
+ ! The following Location and Design Day data are produced as possible from the indicated data source.
+ ! Wind Speeds follow the indicated design conditions rather than traditional values (6.7 m/s heating, 3.35 m/s cooling)
+ ! No special attempts at re-creating or determining missing data parts (e.g. Wind speed or direction)
+ ! are done.  Therefore, you should look at the data and fill in any incorrect values as you desire.
+
+ Site:Location,
+  Honolulu Intl Arpt_HI_USA Design_Conditions,     !- Location Name
+      21.32,     !- Latitude {N+ S-}
+    -157.93,     !- Longitude {W- E+}
+     -10.00,     !- Time Zone Relative to GMT {GMT+/-}
+       2.00;     !- Elevation {m}
+
+ SizingPeriod:DesignDay,Honolulu Intl Arpt Ann Clg .4% Condns DB=>MWB,8,21,SummerDesignDay,32.2,7.1,DefaultMultipliers,,Wetbulb,23.3,,,,,101301,6.7,60,No,No,No,ASHRAETau,,,0.382,2.521,,,FullResetAtBeginEnvironment;
+
+ SizingPeriod:DesignDay,Honolulu Intl Arpt Ann Htg 99.6% Condns DB,2,21,WinterDesignDay,16.2,0,DefaultMultipliers,,Wetbulb,16.2,,,,,101301,1.9,320,No,No,No,ASHRAEClearSky,,,,,0,,FullResetAtBeginEnvironment;

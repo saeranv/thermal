@@ -1,7 +1,0 @@
-{
-    "weather_file": "C:\\Users\\admin\\masterwin\\thermal\\epw\\USA_HI_Honolulu.Intl.AP.911820_TMY3\\USA_HI_Honolulu.Intl.AP.911820_TMY3.epw", 
-    "seed_file": "C:\\users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\run\\in.osm", 
-    "file_paths": [
-        "C:\\users\\admin\\masterwin\\thermal\\sim_\\20230817_DOEPrototype_GH\\openstudio\\schedules"
-    ]
-}

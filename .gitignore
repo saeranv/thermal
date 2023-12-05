@@ -1,11 +1,16 @@
 # EPLUS
 # Ignores all files/dirs from .osm except:
 # seed .osm, measures/, workflow.osw
-_archive_/
-sim_/
-cad_/
+_archive
+_sim
+
+# RH files
+*.3dm
+*.3dm.rhl
+*.3dmback
 
 # EP files
+*.epw
 */in.osw
 */out.osw
 *stderr
@@ -24,7 +29,7 @@ cad_/
 *.htm
 *.csv
 *.html
-*.svg 
+*.svg
 *.rvaudit
 *.mtr
 *.erb
