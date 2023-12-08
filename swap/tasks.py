@@ -9,8 +9,8 @@ path = os.path
 
 LBT_DPATH = "/mnt/c/Users/admin/ladybug_tools"
 THERM_DPATH = "/mnt/c/Users/admin/masterwin/thermal"
-SIM_GH_DPATH = path.join(THERM_DPATH, "sim_/gh/rep_doe")
-SIM_CLI_DPATH = path.join(THERM_DPATH, "sim_/cli/rep_doe")
+SIM_GH_DPATH = path.join(THERM_DPATH, "_sim/gh/rep_doe")
+SIM_CLI_DPATH = path.join(THERM_DPATH, "_sim/cli/rep_doe")
 lbt_python = path.join(LBT_DPATH, "python/python.exe")
 epw_dpath = path.join(THERM_DPATH, "epw")
 
