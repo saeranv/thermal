@@ -46,6 +46,7 @@ def assert_path(pth):
         if os.name == 'nt':
             pth = pth.replace(os.sep, ntpath.sep)
             return pth.replace("/mnt/c", "C:")
+
         # else: # posix
         pth = pth.replace(ntpath.sep, os.sep)
         return pth.lower().replace("c:", "/mnt/c")

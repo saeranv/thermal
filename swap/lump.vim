@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd /mnt/c/users/admin/masterwin/thermal/lbt
+cd /mnt/c/Users/admin/masterwin/thermal/swap
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,15 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+badd +67 lump.ipynb
 badd +1 /mnt/c/users/admin/masterwin/orgmode/gtd/mlgtd.org
-badd +1 swap.py
-badd +1 /mnt/c/users/admin/masterwin/thermal/tests/test_swap.py
 argglobal
 %argdel
+$argadd lump.ipynb
 $argadd /mnt/c/users/admin/masterwin/orgmode/gtd/mlgtd.org
-$argadd swap.py
-$argadd /mnt/c/users/admin/masterwin/thermal/tests/test_swap.py
-edit swap.py
+edit lump.ipynb
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -30,11 +28,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-if bufexists(fnamemodify("swap.py", ":p")) | buffer swap.py | else | edit swap.py | endif
-if &buftype ==# 'terminal'
-  silent file swap.py
-endif
-balt /mnt/c/users/admin/masterwin/thermal/tests/test_swap.py
+balt /mnt/c/users/admin/masterwin/orgmode/gtd/mlgtd.org
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -45,13 +39,13 @@ setlocal fdn=20
 setlocal nofen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+let s:l = 67 - ((23 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
-lcd /mnt/c/users/admin/masterwin/thermal/lbt
+keepjumps 67
+normal! 05|
+lcd /mnt/c/Users/admin/masterwin/thermal/swap
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -67,7 +61,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
