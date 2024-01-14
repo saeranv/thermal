@@ -77,7 +77,7 @@ def dump_mea(measure, osw_fpath):
 if IS_TTY:
     # Label bool, fpath inputs
     run_swap_, run_sim_, update_ = True, True, True
-    _osm, _epw, _mea_dpath = sys.argv[-3:]
+    _osm, _ref_osm, _epw, _mea_dpath = sys.argv[-3:]
     _mea = Measure(_mea_dpath)
 
 if run_swap_ or run_sim_ or update_:
@@ -121,7 +121,7 @@ if run_swap_ or run_sim_ or update_:
             print("\n## Running swap.py on lbtpyt.exe")
             # Update measure, and run swap_win.py
             _osw = dump_mea(_mea[0], _osw)
-            swap_cmds = [lbt_pytexe, swap_fpath, _osw, _osm, _epw]
+            swap_cmds = [lbt_pytexe, swap_fpath, _osw, _osm, _ref_osm, _epw]
             stdout, stderr = run_subproc(swap_cmds)
             _osm_swap, _osw_swap = \
                 stdout.decode('utf-8').strip().split("\n")[-2:]

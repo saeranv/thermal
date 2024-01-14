@@ -143,12 +143,15 @@ def match_phrase(query: str, phrases: Sequence[str]) -> str:
     return ps[joints.index(max(joints))]
 
 
-def add_spacetype_std(osm_model, echo=False):
+def add_spacetype_std(osm_model, echo=True):
     """Changes the spacetype of spaces in model."""
 
     dictkeys = list(STDTAG_DICT.keys())
     spcts = osm_model.getSpaceTypes()
     spcts_id = [spct.nameString() for spct in spcts]
+    print('must match')
+    print(spcts_id)
+    print(dictkeys)
     spcts_std = [match_phrase(x, dictkeys) for x in spcts_id]
     zipped = zip(spcts, spcts_id, spcts_std)
 
@@ -199,7 +202,70 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
     return osw_fpath
 
 
-def run(osw_fpath, osm_fpath, epw_fpath, echo):
+def swap_modelobj(ref_modelobj, act_osm):
+    """Insert ref_modelobj into act_osm, return relevant act_modelobj.
+
+    Note: ref_modelobj must be initialized.
+    """
+    # Create ref-component from ref-modelobj
+    ref_comp = ref_modelobj.createComponent()
+    # Insert ref-component into act-model
+    act_comp_data = act_osm.insertComponent(ref_comp)
+    # Get act-modelobj from act-component
+    act_modelobj = assert_init(act_comp_data).get().primaryComponentObject()
+
+    return act_modelobj
+
+
+def swap_design_days(act_osm, ref_osm):
+    """Swap sizing period."""
+
+    def diff(dds, mod_name):
+        print("{} has {} DesignDay objects:".format(mod_name, len(dds)))
+        _ = [print("  " + dd.nameString()) for dd in dds]
+
+    ref_dd = list(ref_osm.getDesignDays())
+    act_dd = list(act_osm.getDesignDays())
+
+    print("Swap DesignDays:")
+    diff(ref_dd, 'Ref'); diff(act_dd, 'Act')
+
+    # Remove act_osm design days, add ref_osm design days.
+    _ = [dd.remove() for dd in act_dd]
+    _ = [swap_modelobj(dd, act_osm) for dd in ref_dd]
+
+    return act_osm
+
+
+def swap_spc_equip(act_osm, ref_osm, verbose=False):
+    """Remove spc equip from ref_osm."""
+
+    # Get all spaces, and sort them
+    ref_spcs, act_spcs = ref_osm.getSpaces(), act_osm.getSpaces()
+    ref_spcs = [x for x in ref_spcs if "Core_bottom" in x.nameString()]
+    act_spcs = [x for x in act_spcs if "Core_bottom" in x.nameString()]
+
+    ## Loop through spaces and remove/then assign eqiuip_defn to space
+    for ref_spc, act_spc in zip(ref_spcs, act_spcs):
+        # TODO: check if parent spacetype or space and check accordingly
+        #for act_equip in act_spc.electricEquipment():
+        #    parent = assert_init(act_equip.parent()).get()
+        #    print(type(parent.iddObjectType()))
+        for ref_equip in ref_spc.electricEquipment():
+            # TODO: add the diff-check which adds unique_ref_equip
+            # i.e. unique_ref_equip = ref_equip not in (act_equip AND ref_equip)
+            if "elevator" not in ref_equip.nameString().lower():
+                continue
+            act_equip = swap_modelobj(ref_equip, act_osm)
+            is_parent_set = act_equip.setParent(act_spc)
+            assert is_parent_set, \
+                "Error! setParent fail for {}".format(act_equip)
+            print('Added equip: {} to space: {}'.format(
+                act_equip.nameString(), act_spc.nameString()))
+
+    return act_osm
+
+def run(osw_fpath, osm_fpath, ref_osm_fpath, epw_fpath, echo):
 
     import openstudio as ops
     # Define swap paths
@@ -217,6 +283,14 @@ def run(osw_fpath, osm_fpath, epw_fpath, echo):
 
     # Modify OSW
     osw_fpath_swap = edit_workflow(ops, osm_model_swap, osw_dict, osw_fpath_swap)
+
+    # Load reference file
+    osm_model_ref = load_osm(ops, ref_osm_fpath)
+
+    # Swap DDY
+    osm_model_swap = swap_design_days(osm_model_swap, osm_model_ref)
+    # Swap equip
+    osm_model_swap = swap_spc_equip(osm_model_swap, osm_model_ref)
 
     # Dump OSM
     if echo:
@@ -238,11 +312,11 @@ if __name__ == "__main__":
 
     # Get paths from args, make swap fpaths
     paths = [assert_path(p) for p in paths]
-    _osw_fpath, _osm_fpath, _epw_fpath = paths[:3]
+    _osw_fpath, _osm_fpath, _ref_osm_fpath, _epw_fpath = paths[:4]
 
     try:
         osmswap_fpath, oswswap_fpath = \
-            run(_osw_fpath, _osm_fpath, _epw_fpath, echo=echo)
+            run(_osw_fpath, _osm_fpath, _ref_osm_fpath, _epw_fpath, echo=echo)
     except Exception as err:
         for name in dir():
             if name.startswith("_"):

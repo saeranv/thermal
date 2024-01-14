@@ -1,36 +1,6 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2021, Alliance for Sustainable Energy, LLC.
-# All rights reserved.
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# (1) Redistributions of source code must retain the above copyright notice,
-# this list of conditions and the following disclaimer.
-#
-# (2) Redistributions in binary form must reproduce the above copyright notice,
-# this list of conditions and the following disclaimer in the documentation
-# and/or other materials provided with the distribution.
-#
-# (3) Neither the name of the copyright holder nor the names of any contributors
-# may be used to endorse or promote products derived from this software without
-# specific prior written permission from the respective party.
-#
-# (4) Other than as required in clauses (1) and (2), distributions in any form
-# of modifications or other derivative works may not use the "OpenStudio"
-# trademark, "OS", "os", or any other confusingly similar designation without
-# specific prior written permission from Alliance for Sustainable Energy, LLC.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER(S) AND ANY CONTRIBUTORS
-# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER(S), ANY CONTRIBUTORS, THE
-# UNITED STATES GOVERNMENT, OR THE UNITED STATES DEPARTMENT OF ENERGY, NOR ANY OF
-# THEIR EMPLOYEES, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
-# OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# OpenStudio(R), Copyright (c) Alliance for Sustainable Energy, LLC.
+# See also https://openstudio.net/license
 # *******************************************************************************
 
 # Start the measure
@@ -79,6 +49,8 @@ class CreateDOEPrototypeBuilding < OpenStudio::Measure::ModelMeasure
     building_type_chs << 'LargeDataCenterLowITE'
     building_type_chs << 'SmallDataCenterHighITE'
     building_type_chs << 'SmallDataCenterLowITE'
+    building_type_chs << 'Courthouse'
+    building_type_chs << 'College'
     building_type = OpenStudio::Measure::OSArgument.makeChoiceArgument('building_type', building_type_chs, true)
     building_type.setDisplayName('Building Type.')
     building_type.setDefaultValue('SmallOffice')
@@ -94,6 +66,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Measure::ModelMeasure
     template_chs << '90.1-2010'
     template_chs << '90.1-2013'
     template_chs << '90.1-2016'
+    template_chs << '90.1-2019'
     template_chs << 'NECB 2011'
     template = OpenStudio::Measure::OSArgument.makeChoiceArgument('template', template_chs, true)
     template.setDisplayName('Template.')
@@ -204,7 +177,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Measure::ModelMeasure
     reset_log
 
     return true
-  end # end the run method
+  end
 
   # Get all the log messages and put into output
   # for users to see.
@@ -233,7 +206,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Measure::ModelMeasure
     end
     @runner.registerInfo("Total Time = #{(Time.new - @start_time).round}sec.")
   end
-end # end the measure
+end
 
 # this allows the measure to be use by the application
 CreateDOEPrototypeBuilding.new.registerWithApplication
