@@ -146,12 +146,12 @@ def match_phrase(query: str, phrases: Sequence[str]) -> str:
 def add_spacetype_std(osm_model, echo=True):
     """Changes the spacetype of spaces in model."""
 
+    print("## Add std tags")
     dictkeys = list(STDTAG_DICT.keys())
     spcts = osm_model.getSpaceTypes()
     spcts_id = [spct.nameString() for spct in spcts]
-    print('must match')
-    print(spcts_id)
-    print(dictkeys)
+    
+    print(" - Matching: ", spcts_id, ' to ', dictkeys)
     spcts_std = [match_phrase(x, dictkeys) for x in spcts_id]
     zipped = zip(spcts, spcts_id, spcts_std)
 
