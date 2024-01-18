@@ -221,13 +221,13 @@ def swap_design_days(act_osm, ref_osm):
     """Swap sizing period."""
 
     def diff(dds, mod_name):
-        print("{} has {} DesignDay objects:".format(mod_name, len(dds)))
-        _ = [print("  " + dd.nameString()) for dd in dds]
+        print(" - {} has {} DesignDay objects.".format(mod_name, len(dds)))
+        #_ = [print("  " + dd.nameString()) for dd in dds]
 
     ref_dd = list(ref_osm.getDesignDays())
     act_dd = list(act_osm.getDesignDays())
 
-    print("Swap DesignDays:")
+    print("## Swap DesignDays:")
     diff(ref_dd, 'Ref'); diff(act_dd, 'Act')
 
     # Remove act_osm design days, add ref_osm design days.
@@ -240,6 +240,7 @@ def swap_design_days(act_osm, ref_osm):
 def swap_spc_equip(act_osm, ref_osm, verbose=False):
     """Remove spc equip from ref_osm."""
 
+    print("## Swap Elevator")
     # Get all spaces, and sort them
     ref_spcs, act_spcs = ref_osm.getSpaces(), act_osm.getSpaces()
     ref_spcs = [x for x in ref_spcs if "Core_bottom" in x.nameString()]
@@ -260,10 +261,71 @@ def swap_spc_equip(act_osm, ref_osm, verbose=False):
             is_parent_set = act_equip.setParent(act_spc)
             assert is_parent_set, \
                 "Error! setParent fail for {}".format(act_equip)
-            print('Added equip: {} to space: {}'.format(
+            print(' - Added equip: {} to space: {}'.format(
                 act_equip.nameString(), act_spc.nameString()))
 
     return act_osm
+
+def swap_airloops(swp_osm, ref_osm):
+    """Change OA system properties.
+    
+    Modifies OS:AirLoopHVAC object, which lists air loop 
+    for all zones per storey.
+
+    1. Add availability schedule to OA loop 
+    2. Modify 'System Outdoor Air Method' to ZoneSum 
+       in OA:Controller.
+    3. Enable economizer by defining 
+       'Economizer Control Type' as 'DifferentialDryBulb' 
+       in OS:Controller:OutdoorAir.
+    4. Attach return plenum. 
+    """
+    
+    def _get_oa_ctrl(_airloop):
+        """Get OA controller given AirloopHVAC obj."""
+        oa_sys = assert_init(
+            _airloop.airLoopHVACOutdoorAirSystem()
+        ).get()
+        return oa_sys.getControllerOutdoorAir()
+        
+    ref_airloop = ref_osm.getAirLoopHVACs()[0] 
+    
+    # Add Economizer to mechanical ventilation controller
+    print("## Swap airloop economizer") 
+    # Airloop -> OASystem -> OA Controller -> Economizer
+    # Assume economizer same for all loops
+    ref_oa_ctrl = _get_oa_ctrl(ref_airloop)
+    ref_econ_type = ref_oa_ctrl.getEconomizerControlType()
+    for airloop in swp_osm.getAirLoopHVACs():
+        oa_ctrl = _get_oa_ctrl(airloop)
+        econ_type = oa_ctrl.getEconomizerControlType()
+        oa_ctrl.setEconomizerControlType(ref_econ_type)
+        print(f" - {airloop.nameString()}: "
+              f"rep econ={econ_type}; ref econ={ref_econ_type}.")
+    
+    # Swap ScheduleRuleset in 'Availability Schedule'
+    print("## Swap airloop HVAC availability schedule")
+    ref_sched = ref_airloop.availabilitySchedule()
+    ref_sched_clone = assert_init(
+        ref_sched.clone(swp_osm).to_ScheduleRuleset()
+    ).get()
+    for swp_airloop in swp_osm.getAirLoopHVACs():
+        swp_sched = swp_airloop.availabilitySchedule()
+        print(f" - {swp_airloop.nameString()}: "
+              f"rep: {swp_sched.nameString()}; "
+              f"ref: {ref_sched.nameString()}")
+        swp_airloop.setAvailabilitySchedule(
+            ref_sched_clone)
+            
+    
+    # 'System Outdoor Air Method' to ZoneSum 
+    # in Controller:MechanicalVentilation
+    
+    # ppdir(ref_osm, 'mechanicalventilation')
+    
+    
+    return swp_osm
+
 
 def run(osw_fpath, osm_fpath, ref_osm_fpath, epw_fpath, echo):
 
@@ -272,25 +334,22 @@ def run(osw_fpath, osm_fpath, ref_osm_fpath, epw_fpath, echo):
     osm_fpath_swap = osm_fpath.replace(".osm", "_swap.osm")
     osw_fpath_swap = osw_fpath.replace(".osw", "_swap.osw")
 
-    # Load OSM model, modify it
+    # Load OSM models
     osm_model_swap = load_osm(ops, osm_fpath)
-    osm_model_swap = add_spacetype_std(osm_model_swap, echo=echo)
-
-    # Load OSW dict, add the osm, epw file
-    osw_dict = load_osw(osw_fpath)
-    osw_dict["weather_file"] = epw_fpath
-    osw_dict["seed_file"] = osm_fpath_swap
-
-    # Modify OSW
-    osw_fpath_swap = edit_workflow(ops, osm_model_swap, osw_dict, osw_fpath_swap)
-
-    # Load reference file
     osm_model_ref = load_osm(ops, ref_osm_fpath)
 
+    # Swap airloop sched
+    osm_model_swap = swap_airloops(osm_model_swap, osm_model_ref)
     # Swap DDY
     osm_model_swap = swap_design_days(osm_model_swap, osm_model_ref)
     # Swap equip
-    osm_model_swap = swap_spc_equip(osm_model_swap, osm_model_ref)
+    osm_model_swap = swap_spc_equip(osm_model_swap, osm_model_ref)    
+    # Load, modify OSW
+    osm_model_swap = add_spacetype_std(osm_model_swap, echo=echo)
+    osw_dict = load_osw(osw_fpath)
+    osw_dict["weather_file"] = epw_fpath
+    osw_dict["seed_file"] = osm_fpath_swap
+    osw_fpath_swap = edit_workflow(ops, osm_model_swap, osw_dict, osw_fpath_swap)
 
     # Dump OSM
     if echo:
@@ -304,7 +363,7 @@ if __name__ == "__main__":
 
     # Version
     # Define inputs args
-    paths, echo = argv[1:], True
+    paths, echo = argv[1:], False
     is_help = len(paths) < 3 or paths[0] in {'-h', '--help'}
     if is_help:
         print("Swap v0.2.0 usage: python swap.py [osw] [osm] [epw]")
@@ -325,8 +384,7 @@ if __name__ == "__main__":
         # raise w/o arg means gets last exception and reraise it
         raise
 
-    if echo:
-        print(osmswap_fpath, oswswap_fpath, sep="\n")
+    print(osmswap_fpath, oswswap_fpath, sep="\n")
 
 
 

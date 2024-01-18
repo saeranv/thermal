@@ -20,7 +20,7 @@ IS_TTY = sys.stdin.isatty() or len(sys.argv) > 1
 def run_subproc(cmds):
     """Run subprocess for list of commands (cmds)."""
 
-    print("Running command:\n{}\n".format(" ".join(cmds)))
+    #print("Running command:\n{}\n".format(" ".join(cmds)))
     p = Popen(cmds, shell=True, stdout=PIPE, stderr=PIPE)
     _stdout, _stderr = p.communicate()
 
@@ -76,7 +76,7 @@ def dump_mea(measure, osw_fpath):
 
 if IS_TTY:
     # Label bool, fpath inputs
-    run_swap_, run_sim_, update_ = True, True, True
+    run_swap_, run_sim_, update_ = True, True, False
     _osm, _ref_osm, _epw, _mea_dpath = sys.argv[-3:]
     _mea = Measure(_mea_dpath)
 
@@ -93,8 +93,8 @@ if run_swap_ or run_sim_ or update_:
     ops_version = "{}.{}.{}".format(opsv_[0], opsv_[1], opsv_[2])
     swap_fpath = path.join(hb_config.python_scripts_path, SWAP_NAME)
     # # TODO: only for debugging
-    # swap_fpath = path.abspath(path.join(_epw, "../../../lbt", SWAP_NAME))
-
+    swap_fpath = path.abspath(path.join(_epw, "../../../swap", "swap2.py"))
+    
     # Update/confirm swap_fpath exists
     if update_ or (not path.exists(swap_fpath)):
         _ = update_swap(swap_fpath)
@@ -123,9 +123,11 @@ if run_swap_ or run_sim_ or update_:
             _osw = dump_mea(_mea[0], _osw)
             swap_cmds = [lbt_pytexe, swap_fpath, _osw, _osm, _ref_osm, _epw]
             stdout, stderr = run_subproc(swap_cmds)
-            _osm_swap, _osw_swap = \
-                stdout.decode('utf-8').strip().split("\n")[-2:]
-            if stdout: print(stdout.decode('utf-8'))
+            
+            if stdout: 
+                print(stdout.decode('utf-8'))
+                _osm_swap, _osw_swap = \
+                    stdout.decode('utf-8').strip().split("\n")[-2:]
             if stderr: print(stderr.decode('utf-8'))
 
         if run_sim_:
