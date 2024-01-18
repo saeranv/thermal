@@ -366,7 +366,7 @@ if __name__ == "__main__":
     paths, echo = argv[1:], False
     is_help = len(paths) < 3 or paths[0] in {'-h', '--help'}
     if is_help:
-        print("Swap v0.2.0 usage: python swap.py [osw] [osm] [epw]")
+        print("Swap v2.0.0 usage: python swap.py [osw] [osm] [epw]")
         exit(0)
 
     # Get paths from args, make swap fpaths
