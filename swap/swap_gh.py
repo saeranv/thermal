@@ -21,7 +21,7 @@ def run_subproc(cmds):
     """Run subprocess for list of commands (cmds)."""
 
     #print("Running command:\n{}\n".format(" ".join(cmds)))
-    p = Popen(cmds, shell=True, stdout=PIPE, stderr=PIPE)
+    p = Popen(cmds, shell=False, stdout=PIPE, stderr=PIPE)
     _stdout, _stderr = p.communicate()
 
     assert p.returncode == 0, \
@@ -93,7 +93,7 @@ if run_swap_ or run_sim_ or update_:
     ops_version = "{}.{}.{}".format(opsv_[0], opsv_[1], opsv_[2])
     swap_fpath = path.join(hb_config.python_scripts_path, SWAP_NAME)
     # # TODO: only for debugging
-    swap_fpath = path.abspath(path.join(_epw, "../../../swap", "swap2.py"))
+    # swap_fpath = path.abspath(path.join(_epw, "../../../swap", "swap2.py"))
     
     # Update/confirm swap_fpath exists
     if update_ or (not path.exists(swap_fpath)):
