@@ -17,11 +17,11 @@ STDTAG_DICT = {
         "standardsBuildingType": "Office",
         "standardsSpaceType": "WholeBuilding - Md Office"
     },
-    "Plenum": {
-        "standardsTemplate": "90.1-2016",
-        "standardsBuildingType": "MediumOffice",
-        "standardsSpaceType": "Plenum"
-    }
+    # "Plenum": {
+    #     "standardsTemplate": "90.1-2016",
+    #     "standardsBuildingType": "MediumOffice",
+    #     "standardsSpaceType": "Plenum"
+    # }
 }
 
 
@@ -176,27 +176,28 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
     # Set paths
     osm_fpath = osw_dict['seed_file']
     epw_fpath = osw_dict['weather_file']
-    mea_dpath = osw_dict['measure_paths'][0]
-    mea_dpath = assert_path(mea_dpath)
+    #mea_dpath = osw_dict['measure_paths'][0]
+    #mea_dpath = assert_path(mea_dpath)
 
     # Set seed, epw paths
     workflow = model.workflowJSON()
     workflow.setSeedFile(ops.toPath(osm_fpath))
     workflow.setWeatherFile(ops.toPath(epw_fpath))
+    
     # Set measure path
-    meadir_dpath, mea_name = path.split(mea_dpath)
-    workflow.addMeasurePath(ops.toPath(meadir_dpath))
+    # meadir_dpath, mea_name = path.split(mea_dpath)
+    # workflow.addMeasurePath(ops.toPath(meadir_dpath))
 
     # Set measures
     workflow.saveAs(ops.toPath(osw_fpath))
 
     # Now edit the json
     osw_dict_swap = load_osw(osw_fpath)
-    _mea_step = {
-        "measure_dir_name": mea_name,
-        "arguments": osw_dict["arguments"]
-    }
-    osw_dict_swap["steps"] = [_mea_step]
+    # _mea_step = {
+    #     "measure_dir_name": mea_name,
+    #     "arguments": osw_dict["arguments"]
+    # }
+    # osw_dict_swap["steps"] = [_mea_step]
     osw_fpath = dump_osw(osw_dict_swap, osw_fpath)
 
     return osw_fpath
@@ -317,14 +318,24 @@ def swap_airloops(swp_osm, ref_osm):
         swp_airloop.setAvailabilitySchedule(
             ref_sched_clone)
             
-    
     # 'System Outdoor Air Method' to ZoneSum 
     # in Controller:MechanicalVentilation
-    
     # ppdir(ref_osm, 'mechanicalventilation')
     
-    
     return swp_osm
+
+
+# def swap_shw(ref_osm, swp_osm):
+#     """Swap SHW."""
+#     return swp_osm
+
+
+# def modify_plenum(ref_osm, swp_osm):
+#     """Modifications to plenum."""
+
+#     levels = swp_osm.getStoreys()
+
+
 
 
 def run(osw_fpath, osm_fpath, ref_osm_fpath, epw_fpath, echo):
@@ -345,7 +356,8 @@ def run(osw_fpath, osm_fpath, ref_osm_fpath, epw_fpath, echo):
     # Swap equip
     osm_model_swap = swap_spc_equip(osm_model_swap, osm_model_ref)    
     # Load, modify OSW
-    osm_model_swap = add_spacetype_std(osm_model_swap, echo=echo)
+    # osm_model_swap = add_spacetype_std(osm_model_swap, echo=echo)
+    print("## Making osw. Skipping measure.")
     osw_dict = load_osw(osw_fpath)
     osw_dict["weather_file"] = epw_fpath
     osw_dict["seed_file"] = osm_fpath_swap
