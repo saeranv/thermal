@@ -176,31 +176,30 @@ def edit_workflow(ops, model, osw_dict, osw_fpath):
     # Set paths
     osm_fpath = osw_dict['seed_file']
     epw_fpath = osw_dict['weather_file']
-    #mea_dpath = osw_dict['measure_paths'][0]
-    #mea_dpath = assert_path(mea_dpath)
-
+    
+    # # Set measures
+    mea_dpath = osw_dict['measure_paths'][0]
+    mea_dpath = assert_path(mea_dpath)
+    meadir_dpath, mea_name = path.split(mea_dpath)
+    
     # Set seed, epw paths
     workflow = model.workflowJSON()
     workflow.setSeedFile(ops.toPath(osm_fpath))
     workflow.setWeatherFile(ops.toPath(epw_fpath))
+    workflow.addMeasurePath(ops.toPath(meadir_dpath))
     
-    # Set measure path
-    # meadir_dpath, mea_name = path.split(mea_dpath)
-    # workflow.addMeasurePath(ops.toPath(meadir_dpath))
-
-    # Set measures
+    # Save workflow and now edit the json
     workflow.saveAs(ops.toPath(osw_fpath))
-
-    # Now edit the json
     osw_dict_swap = load_osw(osw_fpath)
+
     # _mea_step = {
     #     "measure_dir_name": mea_name,
     #     "arguments": osw_dict["arguments"]
     # }
     # osw_dict_swap["steps"] = [_mea_step]
-    osw_fpath = dump_osw(osw_dict_swap, osw_fpath)
-
-    return osw_fpath
+    
+    
+    return dump_osw(osw_dict_swap, osw_fpath)
 
 
 def swap_modelobj(ref_modelobj, act_osm):
